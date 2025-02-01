@@ -1,0 +1,520 @@
+/* default color: #fa6a2e  */
+.bg-color,
+section.bg-color,
+section.call-to-action,
+.btn-main,
+#mainmenu li li a.menu-item:hover,
+#mainmenu ul li:hover>a.menu-item,
+.price-row,
+.slider-info .text1,
+.btn-primary,
+.bg-id-color,
+.dropcap,
+.fullwidthbanner-container a.btn,
+.feature-box-big-icon i,
+#testimonial-full,
+.icon-deco i,
+.feature-box-small-icon .border,
+.date-post,
+.team-list .small-border,
+.de-team-list .small-border,
+.owl-arrow span,
+.de-progress .progress-bar,
+#btn-close-x:hover,
+.box-fx .info,
+.btn-more,
+.widget .small-border,
+.product img:hover,
+#btn-search,
+.de_tab.timeline li.active .dot,
+.btn-id,
+.tiny-border,
+#subheader .small-border-deco span,
+#services-list li a:hover,
+#form_subscribe #btn-subscribe i,
+.timeline .tl-block .tl-line,
+.de_tab.tab_style_2 .de_nav li.active span,
+.de_tab.tab_methods.style-2 .de_nav li.active span,
+.feature-box-small-icon.style-2 .number.bg-color,
+.owl-custom-nav .btn-next:before,
+.owl-custom-nav .btn-prev:before,
+.timeline>li>.timeline-badge,
+.de_light .de_tab.tab_style_3 .de_nav li.active span,
+.de_tab.tab_style_4 .de_nav li.active span,
+.circle,
+.social-icons-sm i:hover,
+.btn-rsvp,
+.pricing-table .ribbon,
+.de_tab.tab_style_4 .de_nav li.active,
+#preloader .s1 span,
+.custom-show:after,
+.custom-close:after,
+.widget-post .date,
+.style-2 .date-box,
+.d-card i,
+#form_subscribe #btn-submit i,
+.bg-gradient-to-right-2,
+.d-card.hover i,
+.d-card:hover i,
+.ribbon,
+.box-icon-simple .num,
+.feature-box.f-boxed:hover,
+.fpw-overlay-btm,
+.fp-wrap .fpwow-icons,
+.owl-item.active.center .feature-box-type-2,
+.testimonial-color .item:nth-child(1n) blockquote:before,
+.spinner>div,
+.d-gallery-item .dgi-1,
+a.btn-border:hover,
+.dih-overlay,
+.widget_tags li a,
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link,
+#cookieConsent a.cookieConsentOK,
+.mask .cover,
+.icon-box:hover,
+.feature-box.f-boxed.invert,
+.text-light .container-timeline ul li::before,
+.text-light .de_countdown,
+.text-light .dropdown li span,
+#selector #dark-mode,
+#selector #related-items,
+.dropdown li span:hover,
+.de-event-item .d-date,
+.switch,
+h5 span.label,
+.lds-roller div:after,
+.de_pricing-table .d-list li:before,
+.ul-style-4 li:before,
+#mainmenu ul li b,
+h1.s2 .c1 span,
+.d-arrow-left,
+.d-arrow-right,
+.de-marquee-list .d-item-block,
+.scrollbar,
+.d_demo_img .d-overlay span
+ {
+    background:var(--primary-color);
+}
+::-moz-selection { /* Code for Firefox */
+    color:#ffffff;
+    background:var(--secondary-color);
+}
+
+::selection {
+    color:#ffffff;
+    background:var(--secondary-color);
+}
+
+#back-to-top,
+.btn-line:hover,
+a.btn-line:hover,
+.btn-main.bg-color,
+.de-marquee-list .d-item-block.bg-color{
+    background: var(--primary-color);
+}
+
+.id-color,
+.date-box .day,
+.slider_text h1,
+h1.id-color,
+h2.id-color,
+h3.id-color,
+h4.id-color,
+.pricing-box li h1,
+.title span,
+i.large:hover,
+.feature-box-small-icon-2 i,
+.pricing-dark .pricing-box li.price-row,
+.ratings i,
+header.smaller #mainmenu a.menu-item.active,
+.pricing-dark .pricing-box li.price-row,
+.dark .feature-box-small-icon i,
+a.btn-slider:after,
+a.btn-line:after,
+.team-list .social a,
+.de_contact_info i,
+.dark .btn-line:hover:after,
+.dark a.btn-line:hover:after,
+.dark a.btn-line.hover:after,
+a.btn-text:after,
+.separator span i,
+address span strong,
+.widget_tags li a,
+.dark .btn-line:after,
+.dark a.btn-line:after,
+.crumb li .active,
+.btn-right:after,
+.btn-left:before,
+#mainmenu li a.menu-item:after,
+header .info .social i:hover,
+#services-list li.active,
+#services-list li.active a:after,
+.testimonial-list:before,
+span.deco-big,
+h2.hs1 span,
+.blog-list .date-box .day,
+.social-icons-sm i,
+.de_tab.tab_style_4 .de_nav li span,
+.de_testi.opt-2 blockquote:before,
+.profile_pic .subtitle,
+.countdown-s3 .countdown-period,
+.countdown-s4 .countdown-period,
+a.btn-link,
+blockquote.s1:before,
+.accordion a:before,
+.expand-custom .toggle:before,
+.sitemap.s1 li:before,
+.list li:before,
+.post-meta span:before,
+.mask .cover .date:before,
+.pricing-s2 .bottom i,
+.post-text h3 a:hover,
+.demo-icon-wrap i,
+.demo-icon-wrap-s2 span,
+a.btn-border.light:hover,
+.de_testi.opt-2.review .p-rating,
+.p-title,
+a.btn-main.btn-white,
+a.bc-btn,
+.de_tab .de_nav li span,
+.nav-link, .nav-link:focus, .nav-link:hover,
+.pricing-table .bottom i,
+.de-icon,
+a#cookit-link {
+    color: var(--primary-color);
+}
+
+
+a,
+a:hover,
+footer .widget a:hover,
+.id-color-2,
+.id-color-secondary,
+span.id-color-2,
+.icon-box i,
+.h-phone i.id-color-secondary,
+.mask:hover .cover h3 i,
+address.s1 span i,
+.de_table .tr .td:nth-child(2) span,
+.activity-filter i,
+.dark-scheme .demo-icon-wrap i,
+.dark-scheme .demo-icon-wrap-s2 span,
+.de_tab .de_nav li span,
+.dark-scheme .small-border,
+.profile_username,
+.de_tab.tab_methods .de_nav li.active span img,
+.ul-style-3 li:after,
+.accordion-button:not(.collapsed),
+.ul-style-2 li:before,
+.pricing-table.table-featured .bottom i,
+.schedule-item .sc-name
+h1.id-color-2,
+h2.id-color-2,
+h3.id-color-2,
+h4.id-color-2
+{
+    color: var(--secondary-color);
+}
+
+
+.bg-color-2,
+.bg-color-secondary,
+section.bg-color-2,
+section.bg-color-secondary,
+.timeline h5,
+.testimonial-color .item:nth-child(2n) blockquote:before,
+a.btn-main.bg-color-2,
+a.btn-main.invert,
+#mainmenu li li a.menu-item:hover,
+#mainmenu ul li:hover>a.menu-item,
+.icon-box.invert:hover,
+#jpreBar,
+.t-circle,
+.author_list_pp i,
+.pagination>.active>a,
+.pagination>.active>span,
+.pagination>.active>a:hover,
+.pagination>.active>span:hover,
+.pagination>.active>a:focus,
+.pagination>.active>span:focus,
+.profile_avatar i,
+#btn_copy.clicked,
+#form_quick_search #btn-submit i,
+.owl-dot.active,
+.p_list_pp i,
+.author_list_pp img,
+.activity-filter li.active,
+.dark-scheme .de_countdown.bg-color-secondary,
+.btn-line.hover,
+a.btn-line.hover,
+.de_form input[type="checkbox"]:checked + label:before,
+.coll_list_pp i,
+#form_sb #btn-submit i,
+.de-switch input[type=checkbox]:checked + label,
+.de-card .de-price span,
+.de-color-icons i,
+.container-timeline ul li::before,
+.pricing-table.table-featured .mid,
+.pricing-table.table-featured a.btn-main,
+.page-item.active .page-link,
+.de-marquee-list .d-item-block.bg-color-2,
+body::-webkit-scrollbar-thumb,#de_modal::-webkit-scrollbar-thumb{
+    background: var(--secondary-color);
+}
+
+section.dark {
+    background: rgba(var(--primary-color-rgb), .98);
+}
+
+.feature-box-group .d-card i,
+.accordion-section-title.active,
+.accordion.secondary .accordion-section-title:before
+.d-card i {
+    background: var(--secondary-color);
+}
+
+.bg-color-3{
+    background: var(--tertiary-color);
+}
+
+
+.bg-color-4{
+    background: var(--quaternary-color);
+}
+
+.bg-gradient-to-right,
+.post-image .post-info .inner,
+.de_table.table-style-2:not(.no-heading) .tr:first-child,
+h1 .label,
+a.btn-main.secondary,
+header.header-gradient,
+.ribbon.s2 {
+    background: var(--primary-color);
+}
+
+.table-pricing thead,
+.bg-gradient-to-top-right,
+.p-tagline,
+h5.title{
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+}
+
+.gradient-soft {
+    background: -moz-linear-gradient(180deg, rgba(var(--primary-color-rgb), 0.125) 0%, rgba(var(--primary-color-rgb), 0) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(var(--primary-color-rgb), 0.125) 0%, rgba(var(--primary-color-rgb), 0) 100%);
+    background: linear-gradient(180deg, rgba(var(--primary-color-rgb), 0.125) 0%, rgba(var(--primary-color-rgb), 0) 100%);
+}
+
+.gradient-soft-2 {
+    background: -moz-linear-gradient(180deg, rgba(var(--primary-color-rgb), 0.2) 0%, rgba(var(--primary-color-rgb), 0) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(var(--primary-color-rgb), 0.2) 0%, rgba(var(--primary-color-rgb), 0) 100%);
+    background: linear-gradient(180deg, rgba(var(--primary-color-rgb), 0.2) 0%, rgba(var(--primary-color-rgb), 0) 100%);
+}
+
+.gradient-soft-45 {
+    background: -moz-linear-gradient(45deg, rgba(var(--secondary-color-rgb), .3) 0%, rgba(var(--primary-color-rgb), .3) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(var(--secondary-color-rgb), .3) 0%, rgba(var(--primary-color-rgb), .3) 100%);
+    background: linear-gradient(45deg, rgba(var(--secondary-color-rgb), .3) 0%, rgba(var(--primary-color-rgb), .3) 100%);
+}
+
+.d-card i,.d-card:hover i{
+    background: -moz-linear-gradient(180deg, rgba(var(--primary-color-rgb), 1) 20%, rgba(var(--primary-color-rgb), 0) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(var(--primary-color-rgb), 1) 20%, rgba(var(--primary-color-rgb), 0) 100%);
+    background: linear-gradient(180deg, rgba(var(--primary-color-rgb), 1) 20%, rgba(var(--primary-color-rgb), 0) 100%);
+}
+
+#preloader {
+    background-image: linear-gradient(to top right, var(--primary-color), var(--secondary-color));
+}
+
+.overlay-gradient {
+    background: -moz-linear-gradient(45deg, rgba(var(--primary-color-rgb), 0.9) 0%, rgba(var(--primary-color-2-rgb), 0.9) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(var(--primary-color-rgb), 0.9) 0%, rgba(var(--primary-color-2-rgb), 0.9) 100%);
+    background: linear-gradient(45deg, rgba(var(--primary-color-rgb), 0.9) 0%, rgba(var(--primary-color-2-rgb), 0.9) 100%);
+}
+
+.overlay-gradient.t80 {
+    background: -moz-linear-gradient(45deg, rgba(var(--primary-color-rgb), 0.8) 0%, rgba(var(--primary-color-2-rgb), 0.8) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(var(--primary-color-rgb), 0.8) 0%, rgba(var(--primary-color-2-rgb), 0.8) 100%);
+    background: linear-gradient(45deg, rgba(var(--primary-color-rgb), 0.8) 0%, rgba(var(--primary-color-2-rgb), 0.8) 100%);
+}
+
+.overlay-gradient.t70 {
+    background: -moz-linear-gradient(45deg, rgba(var(--primary-color-rgb), 0.7) 0%, rgba(var(--primary-color-2-rgb), 0.7) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(var(--primary-color-rgb), 0.7) 0%, rgba(var(--primary-color-2-rgb), 0.7) 100%);
+    background: linear-gradient(45deg, rgba(var(--primary-color-rgb), 0.7) 0%, rgba(var(--primary-color-2-rgb), 0.7) 100%);
+}
+
+.overlay-gradient.t60 {
+    background: -moz-linear-gradient(45deg, rgba(var(--primary-color-rgb), 0.6) 0%, rgba(var(--primary-color-2-rgb), 0.6) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(var(--primary-color-rgb), 0.6) 0%, rgba(var(--primary-color-2-rgb), 0.6) 100%);
+    background: linear-gradient(45deg, rgba(var(--primary-color-rgb), 0.6) 0%, rgba(var(--primary-color-2-rgb), 0.6) 100%);
+}
+
+.overlay-gradient.t50 {
+    background: -moz-linear-gradient(45deg, rgba(var(--primary-color-rgb), 0.5) 0%, rgba(var(--primary-color-2-rgb), 0.5) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(var(--primary-color-rgb), 0.5) 0%, rgba(var(--primary-color-2-rgb), 0.5) 100%);
+    background: linear-gradient(45deg, rgba(var(--primary-color-rgb), 0.5) 0%, rgba(var(--primary-color-2-rgb), 0.5) 100%);
+}
+
+.all-timelines::before {
+    background: rgba(var(--secondary-color-rgb), .3);
+}
+
+.pricing-table .bottom i{
+    background: rgba(var(--secondary-color-rgb), .2);
+}
+
+.activity-list li:after{
+    color: rgba(var(--secondary-color-rgb), 1);
+}
+
+.item_info_counts>div,
+.de_table .tr .td:nth-child(2) span,
+.activity-filter i,
+.accordion-button:not(.collapsed) {
+    background: rgba(var(--secondary-color-rgb), .1);
+}
+
+.activity-list li{
+    background: rgba(var(--secondary-color-rgb), .07);
+}
+
+a.btn-border.btn-invert,
+.small-border,
+.icon-box,
+#slider-carousel .owl-thumb-item.active img {
+    border-color: var(--primary-color);
+}
+
+.de_countdown,
+.container-timeline ul li::before,
+.de_tab.tab_methods .de_nav li.active span,
+.dark-scheme .pagination li.active a{
+    border-color: var(--secondary-color);
+}
+
+.author_list_pp:hover img{
+    -webkit-box-shadow: 0px 0px 0px 2px rgba(var(--secondary-color-rgb), 1);
+    -moz-box-shadow: 0px 0px 0px 2px rgba(var(--secondary-color-rgb), 1);
+    box-shadow: 0px 0px 0px 2px rgba(var(--secondary-color-rgb), 1);
+}
+
+.form-border input[type=text]:focus,
+.form-border textarea:focus,
+.form-underline input[type=email]:focus,
+.form-border input[type=date]:focus,
+.form-border select:focus,
+#quick_search:hover,
+.items_filter .dropdown:hover{
+    webkit-box-shadow: 0px 0px 0px 4px rgba(var(--primary-color-rgb), .3);
+    -moz-box-shadow: 0px 0px 0px 4px rgba(var(--primary-color-rgb), .3);
+    box-shadow: 0px 0px 0px 4px rgba(var(--primary-color-rgb), .3);
+}
+
+.container-timeline ul lifblockquote {
+    border-left-color: var(--primary-color);
+}
+
+.de_tab.tab_simple .de_nav li.active span{
+    border-bottom-color: var(--primary-color);
+}
+
+header #mainmenu a.menu-item span,
+header.transparent #mainmenu a.menu-item span,
+.de-grey #subheader h1 {
+    border-bottom-color: var(--secondary-color);
+}
+
+.header-light #quick_search {
+    background: rgba(var(--primary-color-rgb), .1);
+}
+
+.box-highlight{
+    background: rgba(var(--primary-color-rgb), .2);
+}
+
+.container-timeline ul li {
+    border-top-color: var(--secondary-color);
+}
+
+.line-preloader .p-line:nth-child(1) {
+    border-right-color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
+}
+
+.line-preloader .p-line:nth-child(2) {
+    border-left-color: var(--secondary-color);
+    border-top-color: var(--secondary-color);
+}
+
+.line-preloader .p-line:nth-child(3) {
+    border-right-color: var(--secondary-color);
+    border-top-color: var(--secondary-color);
+}
+
+.de-event-item .d-shadow{
+    border-color: transparent transparent transparent var(--secondary-color);;
+}
+
+.bg-color-4{
+    background: var(--quaternary-color);
+}
+
+.id-color-4{
+    color: var(--quaternary-color);
+}
+
+.preloader1 {
+    width: 60px;
+    border-top-color: rgba(var(--primary-color-rgb), 0.65);
+    border-bottom-color: rgba(var(--primary-color-rgb), 0.1);
+    border-left-color: rgba(var(--primary-color-rgb), 0.1);
+    border-right-color: rgba(var(--primary-color-rgb), 0.1);
+}
+.gradient,
+.menu-col li a.active{
+    background: -webkit-linear-gradient(45deg,var(--secondary-color) 0%, var(--primary-color) 100%);
+    background: -moz-linear-gradient(45deg,var(--secondary-color) 0%, var(--primary-color) 100%);
+    background: linear-gradient(45deg,var(--secondary-color) 0%, var(--primary-color) 100%);
+}
+
+.text-gradient{
+    background: -webkit-linear-gradient(45deg,var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: -moz-linear-gradient(45deg,var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(45deg,var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gradient-soft{
+background: -moz-linear-gradient(0deg, rgba(var(--primary-color-rgb), .45) 0%, rgba(var(--secondary-color-rgb), 0.25) 100%);
+background: -webkit-linear-gradient(0deg, rgba(var(--primary-color-rgb), .45) 0%, rgba(var(--secondary-color-rgb), 0.25) 100%);
+background: linear-gradient(0deg, rgba(var(--primary-color-rgb), .45) 0%, rgba(var(--secondary-color-rgb), 0.25) 100%);
+}
+
+.menu-col li a{
+background: -moz-linear-gradient(45deg, rgba(var(--secondary-color-rgb), 0.2) 0%, rgba(var(--secondary-color-rgb), 0) 100%);
+background: -webkit-linear-gradient(45deg, rgba(var(--secondary-color-rgb), 0.2) 0%, rgba(var(--secondary-color-rgb), 0) 100%);
+background: linear-gradient(45deg, rgba(var(--secondary-color-rgb), 0.2) 0%, rgba(var(--secondary-color-rgb), 0) 100%);
+}
+
+.overlay-bg{
+background: -moz-linear-gradient(0deg, rgba(var(--primary-color-rgb), .45) 0%, rgba(var(--secondary-color-rgb), 0.25) 100%);
+background: -webkit-linear-gradient(0deg, rgba(var(--primary-color-rgb), .45) 0%, rgba(var(--secondary-color-rgb), 0.25) 100%);
+background: linear-gradient(0deg, rgba(var(--primary-color-rgb), .45) 0%, rgba(var(--secondary-color-rgb), 0.25) 100%);
+}
+
+.bg-gradient-to-bottom{
+    background: -moz-linear-gradient(180deg, rgba(var(--primary-color-rgb), .35) 0%, rgba(var(--secondary-color-rgb), 0.25) 60%, rgba(var(--secondary-color-rgb), 0) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(var(--primary-color-rgb), .35) 0%, rgba(var(--secondary-color-rgb), 0.25) 60%, rgba(var(--secondary-color-rgb), 0) 100%);
+    background: linear-gradient(180deg, rgba(var(--primary-color-rgb), .35) 0%, rgba(var(--secondary-color-rgb), 0.25) 60%, rgba(var(--secondary-color-rgb), 0) 100%);
+}
+
+@media only screen and (max-width: 992px) {
+    .table-pricing tbody tr th {
+        background: var(--primary-color);
+    }
+
+}
