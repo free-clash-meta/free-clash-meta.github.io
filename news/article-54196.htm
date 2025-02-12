@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://free-clash-meta.github.io/news/article-54196.htm" />
+    <title>C#反射调用dll文件中的方法操作泛型与属性字段_C#教程</title>
+        <meta name="description" content="一、使用方法   查找DLL文件，   通过Reflection反射类库里的各种方法来操作dll文件   二、步骤 加载DLL文件  Assembly assembly1 = Assembly.Loa" />
+        <link rel="icon" href="/assets/website/img/free_clash_meta/favicon.ico" type="image/x-icon"/>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <meta name="author" content="Free Clash Meta免费节点机场官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://free-clash-meta.github.io/news/article-54196.htm" />
+    <meta property="og:site_name" content="Free Clash Meta免费节点机场官网" />
+    <meta property="og:title" content="C#反射调用dll文件中的方法操作泛型与属性字段_C#教程" />
+    <meta property="og:image" content="https://free-clash-meta.github.io/uploads/20250201-2/60bcc1cb9d09dac09c8031cb0da07251.webp" />
+        <meta property="og:release_date" content="2025-02-10T07:38:08" />
+    <meta property="og:updated_time" content="2025-02-10T07:38:08" />
+        <meta property="og:description" content="一、使用方法   查找DLL文件，   通过Reflection反射类库里的各种方法来操作dll文件   二、步骤 加载DLL文件  Assembly assembly1 = Assembly.Loa" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="C#反射调用dll文件中的方法操作泛型与属性字段_C#教程">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+
+    <!-- CSS Files
+    ================================================== -->
+    <link href="/assets/website/css/free_clash_meta/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="/assets/website/css/free_clash_meta/plugins.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/swiper.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/style.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/coloring.css" rel="stylesheet" type="text/css">
+    <!-- color scheme -->
+    <link id="colors" href="/assets/website/css/free_clash_meta/scheme-01.css" rel="stylesheet" type="text/css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8MB0F69N3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8MB0F69N3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <div id="wrapper">
+                <!-- page preloader begin -->
+        <div id="de-loader"></div>
+        <!-- page preloader close -->
+        <!-- header begin -->
+        <header class="transparent header-light has-topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="/" class="xcblog-blog-logo">
+                                                                                <span class="text-primary m-0">Free Clash Meta</span>
+                                                                            </a>
+                                </div>
+                                <!-- logo close -->
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <ul id="mainmenu">
+                                                                        <li><a class="menu-item" href="/">首页</a></li>
+                                                                        <li><a class="menu-item" href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a class="menu-item" href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a class="menu-item" href="/client.htm">客户端</a></li>
+                                                                        <li><a class="menu-item" href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div id="content" class="no-top no-bottom">
+            <div id="top"></div>
+            <!-- section begin -->
+            <section id="de-subheader" class="mt-sm-60 pt20 pb20 bg-gradient-45-deg text-light">
+                <div class="container relative z-index-1000">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="mb-0" style="font-size: 2.5rem;">C#反射调用dll文件中的方法操作泛型与属性字段_C#教程</h1>
+                        </div>
+                        <div class="col-lg-6 text-lg-end">
+                            <ul class="crumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li class="active">正文</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+            <section>
+                <div class="container relative">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<h2>一、使用方法</h2> <ul> <li> <p>查找DLL文件，</p> </li> <li> <p>通过Reflection反射类库里的各种方法来操作dll文件</p> </li> </ul> <h2>二、步骤</h2> <p>加载DLL文件</p> <div class="ay1code"> <pre class="brush:csharp;">Assembly assembly1 = Assembly.Load("SqlServerDB");//方式一：这个DLL文件要在启动项目下  string filePath = Environment.CurrentDirectory + "";  Assembly assembly2 = Assembly.LoadFile(filePath + @"\SqlServerDB.dll");//方式二：完整路径  Assembly assembly3 = Assembly.LoadFrom(filePath + @"\SqlServerDB.dll");//方式三：完整路径  Assembly assembly4 = Assembly.LoadFrom(@"SqlServerDB.dll");//方式三：完整路径</pre> </div> <p>获取指定类型</p> <div class="ay1code"> <pre class="brush:csharp;">foreach (var item in assembly4.GetTypes())//查找所有的类型,就是有多少个类  {      Console.WriteLine(item.Name);  }</pre> </div> <p>获取构造函数</p> <div class="ay1code"> <pre class="brush:csharp;">Type type = assembly4.GetType("SqlServerDB.ReflectionTest");//在ReflectionTest类中调用  foreach (var ctor in type.GetConstructors(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public))  {      Console.WriteLine($"构造方法：{ctor.Name}");      foreach (var param in ctor.GetParameters())      {          Console.WriteLine($"构造方法的参数：{param.ParameterType}");      }  }  //【3】实例化  //ReflectionTest reflectionTest = new ReflectionTest();//这种实例化是知道具体类型--静态    //object objTest = Activator.CreateInstance(type);//动态实例化--调用我们的构造方法  object objTest1 = Activator.CreateInstance(type, new object[] { "string" });//动态实例化--调用我们的有参数构造方法    //调用私有构造函数  //ReflectionTest reflectionTest = new ReflectionTest();  //普通调用  object objTest2 = Activator.CreateInstance(type, true);</pre> </div> <p>调用非构造方法</p> <div class="ay1code"> <pre class="brush:csharp;">object objTest2 = Activator.CreateInstance(type, true);  //调用普通方法  ReflectionTest reflectionTest = objTest2 as ReflectionTest;//as转换的好处，它不报错，类型不对的话就返回null  reflectionTest.Show1();    //调用私有方法  var method = type.GetMethod("Show2", BindingFlags.Instance | BindingFlags.NonPublic);  method.Invoke(objTest2, new object[] { });</pre> </div> <p>调用泛型方法</p> <div class="ay1code"> <pre class="brush:csharp;">//泛型无参数  var method3 = type.GetMethod("Show3");//查找指定方法  var genericMethod = method3.MakeGenericMethod(new Type[] { typeof(int) });//指定泛型参数类型T  genericMethod.Invoke(objTest2, new object[] { });    //泛型有参数  var method4 = type.GetMethod("Show4");//查找指定方法  var genericMethod4 = method4.MakeGenericMethod(new Type[] { typeof(string) });//指定泛型参数类型T  genericMethod4.Invoke(objTest2, new object[] { 123, "泛型string参数" });</pre> </div> <p>反射测试类</p> <blockquote> <p>位于SqlServerDB.dll中的ReflectionTest.cs文件中</p> </blockquote> <div class="ay1code"> <pre class="brush:csharp;">    /// &lt;summary&gt;      /// 反射测试类      /// &lt;/summary&gt;     public class ReflectionTest      {          //私有构造函数          private ReflectionTest()          {              Console.WriteLine("这是私有无参数构造方法");          }            //普通构造函数          //public ReflectionTest()          //{          //    Console.WriteLine("这是无参数构造方法");          //}            public ReflectionTest(string name)          {              Console.WriteLine($"这是有参数构造方法+参数值是：{name}");          }            public void Show1()          {              Console.WriteLine("调用普通方法", this.GetType());          }            private void Show2()          {              Console.WriteLine("调用私有方法",this.GetType());          }              public void Show3&lt;T&gt;()          {              Console.WriteLine("调用无参数泛型方法", this.GetType());          }            public void Show4&lt;T&gt;(int id,string name)          {              Console.WriteLine($"调用有参数泛型方法，参数是{id}，{name}", this.GetType());          }      }</pre> </div> <h2>操作泛型类和泛型方法</h2> <p>加载DLL文件</p> <div class="ay1code"> <pre class="brush:csharp;">Assembly assembly = Assembly.LoadFrom(@"SqlServerDB.dll");</pre> </div> <p>获取指定类型</p> <div class="ay1code"> <pre class="brush:csharp;">Type type = assembly.GetType("SqlServerDB.GenericClass`2").MakeGenericType(typeof(int), typeof(string));//一定给定具体类型参数</pre> </div> <p>调用泛型方法</p> <div class="ay1code"> <pre class="brush:csharp;">object objTest2 = Activator.CreateInstance(type);  var method = type.GetMethod("GenericMethod").MakeGenericMethod(typeof(int));  method.Invoke(objTest2, new object[] { });</pre> </div> <p>反射测试类</p> <blockquote> <p>位于SqlServerDB.dll中的GenericClass.cs文件中</p> </blockquote> <div class="ay1code"> <pre class="brush:csharp;">public class GenericClass&lt;T,W&gt;  {      public void GenericMethod&lt;TType&gt;()      {          Console.WriteLine("泛型类调用+泛型方法");      }  }</pre> </div> <h2>操作类属性字段</h2> <p>加载DLL文件</p> <div class="ay1code"> <pre class="brush:csharp;">Assembly assembly2 = Assembly.LoadFrom("SqlServerDB.dll");</pre> </div> <p>获取指定类型</p> <div class="ay1code"> <pre class="brush:csharp;">Type type2 = assembly2.GetType("SqlServerDB.PropertyClass");</pre> </div> <p>调用泛型方法</p> <div class="ay1code"> <pre class="brush:csharp;">object obj = Activator.CreateInstance(type2);  foreach (var property in type2.GetProperties())  {      Console.WriteLine(property.Name);      //给属性设置值      if (property.Name.Equals("Id"))      {          property.SetValue(obj, 1);      }      else if (property.Name.Equals("Name"))      {          property.SetValue(obj, "学习编程");      }      else if (property.Name.Equals("Phone"))      {          property.SetValue(obj, "123459789");      }      //获取属性值      Console.WriteLine(property.GetValue(obj));  }  </pre> </div> <p>反射测试类</p> <blockquote> <p>位于SqlServerDB.dll中的PropertyClass.cs文件中</p> </blockquote> <div class="ay1code"> <pre class="brush:csharp;">public class PropertyClass  {      public int Id { get; set; }      public string Name { get; set; }      public string Phone { get; set; }  }</pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-53641.htm">数据仓库(5)数仓Kimball与Inmon架构的对比</a></p>
+                                        <p>下一个：<a href="/news/article-54197.htm">不锈钢潜水泵生产厂家(不锈钢潜水泵厂家供应)</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-49692.htm" title="动物疫苗种类有几种类型图片大全（动物疫苗的种类和制备原理）">动物疫苗种类有几种类型图片大全（动物疫苗的种类和制备原理）</a></li>
+                        <li class="py-2"><a href="/news/article-50489.htm" title="python mysql 查询(in 、 like)">python mysql 查询(in 、 like)</a></li>
+                        <li class="py-2"><a href="/news/article-52568.htm" title="猫的疫苗三针隔多久打第二针疫苗（猫打疫苗三针间隔时间）">猫的疫苗三针隔多久打第二针疫苗（猫打疫苗三针间隔时间）</a></li>
+                        <li class="py-2"><a href="/news/article-49951.htm" title="python 数据加载工作">python 数据加载工作</a></li>
+                        <li class="py-2"><a href="/news/article-54197.htm" title="不锈钢潜水泵生产厂家(不锈钢潜水泵厂家供应)">不锈钢潜水泵生产厂家(不锈钢潜水泵厂家供应)</a></li>
+                        <li class="py-2"><a href="/news/article-53107.htm" title="属马养猫好吗（属马人养猫的大忌）">属马养猫好吗（属马人养猫的大忌）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-10-clash-meta-github.htm" title="2月10日最新Free Clash Meta订阅 | 21.1M/S|2025年V2ray/Clash/Shadowrocket/SSR免费节点地址链接分享">2月10日最新Free Clash Meta订阅 | 21.1M/S|2025年V2ray/Clash/Shadowrocket/SSR免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/news/article-54745.htm" title="免费领养宠物送到家（免费领养宠物怎么赚钱）">免费领养宠物送到家（免费领养宠物怎么赚钱）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-8-today-clash-meta-node.htm" title="2月8日最新Free Clash Meta订阅 | 20.4M/S|2025年Clash/Shadowrocket/V2ray/SSR免费节点地址链接分享">2月8日最新Free Clash Meta订阅 | 20.4M/S|2025年Clash/Shadowrocket/V2ray/SSR免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-1-free-ssr-node.htm" title="2月1日最新Clash-X订阅 | 19.1M/S|2025年Clash/SSR/V2ray/Shadowrocket免费节点地址链接分享">2月1日最新Clash-X订阅 | 19.1M/S|2025年Clash/SSR/V2ray/Shadowrocket免费节点地址链接分享</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">36</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- content close -->
+                <!-- footer begin -->
+        <footer class="footer-light">
+            <div class="subfooter relative z-1000">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                <a href="/">首页</a> |
+                                <a href="/free-node/">免费节点</a> |
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">Free Clash Meta免费节点机场官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+        <!-- Javascript Files
+                    ================================================== -->
+        <script src="/assets/website/js/frontend/free_clash_meta/plugins.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/designesia.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/swiper.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/custom-marquee.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/custom-swiper-1.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+</body>
+
+</html>
