@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://free-clash-meta.github.io/news/article-61555.htm" />
+    <title>python hdfs远程连接以及上传文件，读取文件内容，删除文件</title>
+        <meta name="description" content="目录 一、python连接操作hdfs 1 往hdfs上传文件 2 处理并存储到hdfs 3 读取hdfs上的txt文件  这里使用的是 pip 安装，很方便： pip install hdfs  f" />
+        <link rel="icon" href="/assets/website/img/free_clash_meta/favicon.ico" type="image/x-icon"/>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <meta name="author" content="Free Clash Meta免费节点机场官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://free-clash-meta.github.io/news/article-61555.htm" />
+    <meta property="og:site_name" content="Free Clash Meta免费节点机场官网" />
+    <meta property="og:title" content="python hdfs远程连接以及上传文件，读取文件内容，删除文件" />
+    <meta property="og:image" content="https://free-clash-meta.github.io/uploads/20250201-2/ed7fbe32af4ff558d2550bade0ba6280.webp" />
+        <meta property="og:release_date" content="2025-02-23T09:46:15" />
+    <meta property="og:updated_time" content="2025-02-23T09:46:15" />
+        <meta property="og:description" content="目录 一、python连接操作hdfs 1 往hdfs上传文件 2 处理并存储到hdfs 3 读取hdfs上的txt文件  这里使用的是 pip 安装，很方便： pip install hdfs  f" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="python hdfs远程连接以及上传文件，读取文件内容，删除文件">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+
+    <!-- CSS Files
+    ================================================== -->
+    <link href="/assets/website/css/free_clash_meta/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="/assets/website/css/free_clash_meta/plugins.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/swiper.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/style.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/coloring.css" rel="stylesheet" type="text/css">
+    <!-- color scheme -->
+    <link id="colors" href="/assets/website/css/free_clash_meta/scheme-01.css" rel="stylesheet" type="text/css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8MB0F69N3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8MB0F69N3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <div id="wrapper">
+                <!-- page preloader begin -->
+        <div id="de-loader"></div>
+        <!-- page preloader close -->
+        <!-- header begin -->
+        <header class="transparent header-light has-topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="/" class="xcblog-blog-logo">
+                                                                                <span class="text-primary m-0">Free Clash Meta</span>
+                                                                            </a>
+                                </div>
+                                <!-- logo close -->
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <ul id="mainmenu">
+                                                                        <li><a class="menu-item" href="/">首页</a></li>
+                                                                        <li><a class="menu-item" href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a class="menu-item" href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a class="menu-item" href="/client.htm">客户端</a></li>
+                                                                        <li><a class="menu-item" href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div id="content" class="no-top no-bottom">
+            <div id="top"></div>
+            <!-- section begin -->
+            <section id="de-subheader" class="mt-sm-60 pt20 pb20 bg-gradient-45-deg text-light">
+                <div class="container relative z-index-1000">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="mb-0" style="font-size: 2.5rem;">python hdfs远程连接以及上传文件，读取文件内容，删除文件</h1>
+                        </div>
+                        <div class="col-lg-6 text-lg-end">
+                            <ul class="crumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li class="active">正文</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+            <section>
+                <div class="container relative">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p id="main-toc"><strong>目录</strong></p> <p id="%E4%B8%80%E3%80%81python%E8%BF%9E%E6%8E%A5%E6%93%8D%E4%BD%9Chdfs-toc" style="margin-left:0px;"><a href="#%E4%B8%80%E3%80%81python%E8%BF%9E%E6%8E%A5%E6%93%8D%E4%BD%9Chdfs" rel="nofollow">一、python连接操作hdfs</a></p> <p id="1%20%E5%BE%80hdfs%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6-toc" style="margin-left:40px;"><a href="#1%20%E5%BE%80hdfs%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6" rel="nofollow">1 往hdfs上传文件</a></p> <p id="2%20%E5%A4%84%E7%90%86%E5%B9%B6%E5%AD%98%E5%82%A8%E5%88%B0hdfs-toc" style="margin-left:40px;"><a href="#2%20%E5%A4%84%E7%90%86%E5%B9%B6%E5%AD%98%E5%82%A8%E5%88%B0hdfs" rel="nofollow">2 处理并存储到hdfs</a></p> <p id="3%20%E8%AF%BB%E5%8F%96hdfs%E4%B8%8A%E7%9A%84txt%E6%96%87%E4%BB%B6-toc" style="margin-left:40px;"><a href="#3%20%E8%AF%BB%E5%8F%96hdfs%E4%B8%8A%E7%9A%84txt%E6%96%87%E4%BB%B6" rel="nofollow">3 读取hdfs上的txt文件</a></p> <hr id="hr-toc"/> <p>这里使用的是 pip 安装，很方便：</p> <pre><code class="language-python">pip install hdfs</code></pre> </h1> <pre><code class="language-python">from hdfs.client import Client client = Client("http://LocalHost:Port")  client.makedirs('/ml/zmingmingmng')#建立文件夹 client.delete('/ml/zmming')#删除文件夹 client.upload("/ml/zmingmingmng/zm.txt","E:/ttt/testhdfs.txt")#上传文件 client.download("/ml/zmingmingmng/zm.txt","E:/ming.txt")#下载文件 </code></pre> <pre><code class="language-python"># -*- encoding=utf-8 -*- from hdfs.client import Client   client = Client("http://XXX.XXX.XX.XX:50070")  # 创建目录 def mkdirs(client, hdfs_path):     client.makedirs(hdfs_path)   # 删除hdfs文件 def delete_hdfs_file(client, hdfs_path):     client.delete(hdfs_path)   # 上传文件到hdfs def put_to_hdfs(client, local_path, hdfs_path):     client.upload(hdfs_path, local_path, cleanup=True)   # 从hdfs获取文件到本地 def get_from_hdfs(client, hdfs_path, local_path):     client.download(hdfs_path, local_path, overwrite=False)   # 追加数据到hdfs文件 def append_to_hdfs(client, hdfs_path, data):     client.write(hdfs_path, data, overwrite=False, append=True)   # 覆盖数据写到hdfs文件 def write_to_hdfs(client, hdfs_path, data):     client.write(hdfs_path, data, overwrite=True, append=False)   # 移动或者修改文件 def move_or_rename(client, hdfs_src_path, hdfs_dst_path):     client.rename(hdfs_src_path, hdfs_dst_path)   # 返回目录下的文件 def list(client, hdfs_path):     return client.list(hdfs_path, status=False)   if __name__ == '__main__':     # 调用     kk=list(client,"/user/admin/deploy/user_lable_dimension/")     for each in kk:         print(each)   </code></pre> <p>&nbsp;</p> <h2 id="1%20%E5%BE%80hdfs%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6">1 往hdfs上传文件</h2> <pre><code class="language-python">from hdfs.client import Client  """往hdfs上传文件"""  # TODO 往hdfs上传文件 client = Client("http://XXX.XXX.XX.XX:50070")  # 新建文件夹 hdfs_path ="【文件要存放的目录路径,eg:/a/b/c】" client.makedirs(hdfs_path)  print("uploading data...") client.upload(hdfs_path, "intersection.xlsx", overwrite=True)	# 资源中心上传的文件 </code></pre> <p>&nbsp;</p> <h2 id="2%20%E5%A4%84%E7%90%86%E5%B9%B6%E5%AD%98%E5%82%A8%E5%88%B0hdfs">2 处理并存储到hdfs</h2> <pre><code class="language-python"># TODO 先得到结果列表。eg:i_list  # TODO 把结果列表存储成文件上传到hdfs print("===============================================") i_df = pd.DataFrame(i_list) client = Client("http://XXX.XXX.XX.XX:50070")  fout = "【文件要存放的路径,eg:/a/b/c.csv】"  # hdfs下的目录 with client.write(fout, encoding='utf-8') as writer:     i_df.to_csv(writer) print("存储成功")</code></pre> <p>&nbsp;</p> <h2 id="3%20%E8%AF%BB%E5%8F%96hdfs%E4%B8%8A%E7%9A%84txt%E6%96%87%E4%BB%B6">3 读取hdfs上的txt文件</h2> <pre><code class="language-python">from hdfs.client import Client import json from kafka import KafkaConsumer import time import pyhdfs  def  GetEncodingSheme(_filename):     """ 查看文本编码方式 """     with open(_filename, 'rb') as file:         buf = file.read()     result = chardet.detect(buf)     return result['encoding']   def read_hdfs_file(client, filename):     """读取hdfs文件内容,将每行存入数组返回"""     lines = []     print("开始读取txt数据")     with client.open(filename, delimiter='\n') as reader:         for line in reader:             lines.append(line.decode("GB2312").strip())     return lines   def deleteHDFSfile(client, hdfs_path):     """删除hdfs文件,删除文件夹时该文件夹必须为空"""     client.delete(hdfs_path)    if __name__ == "__main__": 	print(GetEncodingSheme('intersection.xlsx'))    # GB2312          # hdfs连接     client = pyhdfs.HdfsClient(hosts="http://xxxxxx:50070,http://xxxxxx:50070", user_name="xxxxxx")      # TODO 读取hdfs文件内容,将每行存入数组返回     hdfs_path = "【文件路径,eg:/a/b/c.xlsx】"    # hdfs存储目录     print("===============================================")     print("开始读取hdfs上的txt文件")     lines = read_hdfs_file(client, hdfs_path)     print(lines)     print("读取完成")     print("===============================================")       # TODO 删除hdfs存储目录下的文件     hdfs_path = "【文件路径】"     deleteHDFSfile(client, hdfs_path)</code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-60961.htm">沈阳兽医学校成人培训（沈阳兽医学校成人培训多少钱）</a></p>
+                                        <p>下一个：<a href="/news/article-61556.htm">河南省动物疫病预防控制中心（河南省动物疫病预防控制中心地址）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-62747.htm" title="Objective-C 基础教程第九章,内存管理">Objective-C 基础教程第九章,内存管理</a></li>
+                        <li class="py-2"><a href="/news/article-56392.htm" title="啥属相不能养狗（哪个属相不能养狗）">啥属相不能养狗（哪个属相不能养狗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-1-free-ssr-node.htm" title="2月1日最新Clash-X订阅 | 19.1M/S|2025年Clash/SSR/V2ray/Shadowrocket免费节点地址链接分享">2月1日最新Clash-X订阅 | 19.1M/S|2025年Clash/SSR/V2ray/Shadowrocket免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/news/article-59817.htm" title="自己给宠物打疫苗能开检疫证明吗怎么开（自己帮宠物打疫苗）">自己给宠物打疫苗能开检疫证明吗怎么开（自己帮宠物打疫苗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-21-clash-meta-node-github.htm" title="2月21日最新Free Clash Meta订阅 | 21M/S|2025年Shadowrocket/SSR/Clash/V2ray免费节点地址链接分享">2月21日最新Free Clash Meta订阅 | 21M/S|2025年Shadowrocket/SSR/Clash/V2ray免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-3-clash-meta-windows.htm" title="2月3日最新Free Clash Meta订阅 | 22.7M/S|2025年Shadowrocket/SSR/Clash/V2ray免费节点地址链接分享">2月3日最新Free Clash Meta订阅 | 22.7M/S|2025年Shadowrocket/SSR/Clash/V2ray免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/news/article-59242.htm" title="动物常用的免疫接种方法（动物免疫接种实验原理）">动物常用的免疫接种方法（动物免疫接种实验原理）</a></li>
+                        <li class="py-2"><a href="/news/article-53640.htm" title="Android中Handler的使用方法">Android中Handler的使用方法</a></li>
+                        <li class="py-2"><a href="/news/article-55296.htm" title="动物医院诊疗管理系统官网登录（动物医院诊疗范围）">动物医院诊疗管理系统官网登录（动物医院诊疗范围）</a></li>
+                        <li class="py-2"><a href="/news/article-60960.htm" title="襄阳流浪宠物领养中心在哪里?（最新襄阳市流浪狗救助站地址）">襄阳流浪宠物领养中心在哪里?（最新襄阳市流浪狗救助站地址）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">75</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- content close -->
+                <!-- footer begin -->
+        <footer class="footer-light">
+            <div class="subfooter relative z-1000">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                <a href="/">首页</a> |
+                                <a href="/free-node/">免费节点</a> |
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">Free Clash Meta免费节点机场官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+        <!-- Javascript Files
+                    ================================================== -->
+        <script src="/assets/website/js/frontend/free_clash_meta/plugins.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/designesia.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/swiper.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/custom-marquee.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/custom-swiper-1.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+</body>
+
+</html>

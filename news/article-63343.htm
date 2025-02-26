@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://free-clash-meta.github.io/news/article-63343.htm" />
+    <title>在VS2015下配置websocket++,并用C++搭建一个简单的客户端</title>
+        <meta name="description" content="最近在做一个项目，需要在C++中通过WebSocket和服务器进行通信，但我们在C++中并不能直接使用WebSocket，于是上网搜索后发现websocket++这个库很合适。 Websocket是基" />
+        <link rel="icon" href="/assets/website/img/free_clash_meta/favicon.ico" type="image/x-icon"/>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <meta name="author" content="Free Clash Meta免费节点机场官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://free-clash-meta.github.io/news/article-63343.htm" />
+    <meta property="og:site_name" content="Free Clash Meta免费节点机场官网" />
+    <meta property="og:title" content="在VS2015下配置websocket++,并用C++搭建一个简单的客户端" />
+    <meta property="og:image" content="https://free-clash-meta.github.io/uploads/20250201-2/60bcc1cb9d09dac09c8031cb0da07251.webp" />
+        <meta property="og:release_date" content="2025-02-26T08:34:33" />
+    <meta property="og:updated_time" content="2025-02-26T08:34:33" />
+        <meta property="og:description" content="最近在做一个项目，需要在C++中通过WebSocket和服务器进行通信，但我们在C++中并不能直接使用WebSocket，于是上网搜索后发现websocket++这个库很合适。 Websocket是基" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="在VS2015下配置websocket++,并用C++搭建一个简单的客户端">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+
+    <!-- CSS Files
+    ================================================== -->
+    <link href="/assets/website/css/free_clash_meta/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="/assets/website/css/free_clash_meta/plugins.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/swiper.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/style.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/coloring.css" rel="stylesheet" type="text/css">
+    <!-- color scheme -->
+    <link id="colors" href="/assets/website/css/free_clash_meta/scheme-01.css" rel="stylesheet" type="text/css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8MB0F69N3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8MB0F69N3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <div id="wrapper">
+                <!-- page preloader begin -->
+        <div id="de-loader"></div>
+        <!-- page preloader close -->
+        <!-- header begin -->
+        <header class="transparent header-light has-topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="/" class="xcblog-blog-logo">
+                                                                                <span class="text-primary m-0">Free Clash Meta</span>
+                                                                            </a>
+                                </div>
+                                <!-- logo close -->
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <ul id="mainmenu">
+                                                                        <li><a class="menu-item" href="/">首页</a></li>
+                                                                        <li><a class="menu-item" href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a class="menu-item" href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a class="menu-item" href="/client.htm">客户端</a></li>
+                                                                        <li><a class="menu-item" href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div id="content" class="no-top no-bottom">
+            <div id="top"></div>
+            <!-- section begin -->
+            <section id="de-subheader" class="mt-sm-60 pt20 pb20 bg-gradient-45-deg text-light">
+                <div class="container relative z-index-1000">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="mb-0" style="font-size: 2.5rem;">在VS2015下配置websocket++,并用C++搭建一个简单的客户端</h1>
+                        </div>
+                        <div class="col-lg-6 text-lg-end">
+                            <ul class="crumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li class="active">正文</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+            <section>
+                <div class="container relative">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> </h1> <ul> <li>最近在做一个项目，需要在C++中通过WebSocket和服务器进行通信，但我们在C++中并不能直接使用WebSocket，于是上网搜索后发现websocket++这个库很合适。</li> <li>Websocket是基于HTTP协议的，或者说借用了HTTP的协议来完成一部分握手，并且它很好的支持了长连接，相较于ajax轮询和long poll更加节省资源。</li> <li>具体关于WebSocket的相关知识，可以参考知乎上这篇文章： <br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.zhihu.com/question/20215561"  rel="nofollow">https://www.zhihu.com/question/20215561</a> </li> </ul> </h1> <ul> <li> <p>去GitHub上下载websocket++ <br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/zaphoyd/websocketpp"  rel="nofollow">https://github.com/zaphoyd/websocketpp</a></p> </li> <li> <p>搭建好Boost，直接到以下网址下载编译好的，省去自己编译了（选择自己对应的ms版本，如VS2015 64位的选择boost_1_61_0-msvc-14.0-64.exe） <br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://sourceforge.NET/projects/boost/files/boost-binaries/1.61.0/"  rel="nofollow">https://sourceforge.NET/projects/boost/files/boost-binaries/1.61.0/</a></p> </li> </ul> </h1> <ul> <li>第一步，新建一个工程 <br /> 将项目属性调整为Release x64模式，如下图所示</li> </ul> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230212/29c821194c8f647121b8715837a0739d.jpg" alt="在VS2015下配置websocket++,并用C++搭建一个简单的客户端"></p> <ul> <li>第二步，打开 项目—项目属性 窗口，选择VC++目录 <br /> 在“包含目录”下添加boost和websocket++的目录，如下图所示</li> </ul> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230212/f4f6116ea54262f96ad76ee76387fcca.jpg" alt="在VS2015下配置websocket++,并用C++搭建一个简单的客户端"></p> <ul> <li>第三步，在“库目录”下添加boost的lib包目录</li> </ul> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230212/cbd24dd58e7db7d7406858f21993d03e.jpg" alt="在VS2015下配置websocket++,并用C++搭建一个简单的客户端"></p> <ul> <li>点击“应用”，然后“确定”，OK大功告成。</li> </ul> </h1> <ul> <li>我们到下载的websocket++文件夹目录下的websocketpp-master\examples\echo_client中的C++代码文件拷贝出来，在工程里测试运行即可，顺便附上代码：</li> </ul> <pre class="prettyprint"><code class="hljs cpp"><span class="hljs-preprocessor">#include &lt;websocketpp/config/asio_no_tls_client.hpp&gt;</span> <span class="hljs-preprocessor">#include &lt;websocketpp/client.hpp&gt;</span>  <span class="hljs-preprocessor">#include &lt;iostream&gt;</span>  <span class="hljs-keyword">typedef</span> websocketpp::client&lt;websocketpp::config::asio_client&gt; client;  <span class="hljs-keyword">using</span> websocketpp::lib::placeholders::_1; <span class="hljs-keyword">using</span> websocketpp::lib::placeholders::_2; <span class="hljs-keyword">using</span> websocketpp::lib::bind;  <span class="hljs-comment">// pull out the type of messages sent by our config</span> <span class="hljs-keyword">typedef</span> websocketpp::config::asio_client::message_type::ptr message_ptr;  <span class="hljs-comment">// This message handler will be invoked once for each incoming message. It</span> <span class="hljs-comment">// prints the message and then sends a copy of the message back to the server.</span> <span class="hljs-keyword">void</span> on_message(client* c, websocketpp::connection_hdl hdl, message_ptr msg) {     <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"on_message called with hdl: "</span> &lt;&lt; hdl.lock().get()               &lt;&lt; <span class="hljs-string">" and message: "</span> &lt;&lt; msg-&gt;get_payload()               &lt;&lt; <span class="hljs-built_in">std</span>::endl;       websocketpp::lib::error_code ec;      c-&gt;send(hdl, msg-&gt;get_payload(), msg-&gt;get_opcode(), ec);     <span class="hljs-keyword">if</span> (ec) {         <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Echo failed because: "</span> &lt;&lt; ec.message() &lt;&lt; <span class="hljs-built_in">std</span>::endl;     } }  <span class="hljs-keyword">int</span> main(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span>* argv[]) {     <span class="hljs-comment">// Create a client endpoint</span>     client c;      <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> uri = <span class="hljs-string">"ws://这里附上你自己的ws地址"</span>;      <span class="hljs-keyword">try</span> {         <span class="hljs-comment">// Set logging to be pretty verbose (everything except message payloads)</span>         c.set_access_channels(websocketpp::<span class="hljs-built_in">log</span>::alevel::all);         c.clear_access_channels(websocketpp::<span class="hljs-built_in">log</span>::alevel::frame_payload);          <span class="hljs-comment">// Initialize ASIO</span>         c.init_asio();          <span class="hljs-comment">// Register our message handler</span>         c.set_message_handler(bind(&amp;on_message,&amp;c,::_1,::_2));          websocketpp::lib::error_code ec;         client::connection_ptr con = c.get_connection(uri, ec);         <span class="hljs-keyword">if</span> (ec) {             <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"could not create connection because: "</span> &lt;&lt; ec.message() &lt;&lt; <span class="hljs-built_in">std</span>::endl;             <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;         }          <span class="hljs-comment">// Note that connect here only requests a connection. No network messages are</span>         <span class="hljs-comment">// exchanged until the event loop starts running in the next line.</span>         c.connect(con);          <span class="hljs-comment">// Start the ASIO io_service run loop</span>         <span class="hljs-comment">// this will cause a single connection to be made to the server. c.run()</span>         <span class="hljs-comment">// will exit when this connection is closed.</span>         c.run();     } <span class="hljs-keyword">catch</span> (websocketpp::exception <span class="hljs-keyword">const</span> &amp; e) {         <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; e.what() &lt;&lt; <span class="hljs-built_in">std</span>::endl;     } }</code></pre> <p>至此，我们就完成了websocket++的基本配置。</p> <p>PS.如果编译器提示你 “错误：后面有::的名称一定是类名或命名空间名”或者 其他一些奇奇怪怪的错误，那多半是websocket++和boost的附加目录没有配置好</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-62748.htm">vue中巧用三元表达式解析_vue.js</a></p>
+                                        <p>下一个：<a href="/news/article-63344.htm">【Azure Developer】使用 adal4j(Azure Active Directory authentication library for Java)如何来获取Token呢 (通过用户名和密码方式获取Access Token)_在线工具</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-2-5-node-share-links.htm" title="2月5日最新Free Clash Meta订阅 | 23M/S|2025年Clash/V2ray/Shadowrocket/SSR免费节点地址链接分享">2月5日最新Free Clash Meta订阅 | 23M/S|2025年Clash/V2ray/Shadowrocket/SSR免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-4-clash-meta-github.htm" title="2月4日最新Free Clash Meta订阅 | 22.3M/S|2025年SSR/Clash/V2ray/Shadowrocket免费节点地址链接分享">2月4日最新Free Clash Meta订阅 | 22.3M/S|2025年SSR/Clash/V2ray/Shadowrocket免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/news/article-59818.htm" title="合肥宠物猫领养中心电话（合肥宠物猫领养中心电话地址）">合肥宠物猫领养中心电话（合肥宠物猫领养中心电话地址）</a></li>
+                        <li class="py-2"><a href="/news/article-54745.htm" title="免费领养宠物送到家（免费领养宠物怎么赚钱）">免费领养宠物送到家（免费领养宠物怎么赚钱）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-11-clash-meta-node-share.htm" title="2月11日最新Free Clash Meta订阅 | 21.1M/S|2025年Clash/SSR/V2ray/Shadowrocket免费节点地址链接分享">2月11日最新Free Clash Meta订阅 | 21.1M/S|2025年Clash/SSR/V2ray/Shadowrocket免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-19-clash-meta-windows.htm" title="2月19日最新Free Clash Meta订阅 | 18.9M/S|2025年SSR/Shadowrocket/V2ray/Clash免费节点地址链接分享">2月19日最新Free Clash Meta订阅 | 18.9M/S|2025年SSR/Shadowrocket/V2ray/Clash免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/news/article-60960.htm" title="襄阳流浪宠物领养中心在哪里?（最新襄阳市流浪狗救助站地址）">襄阳流浪宠物领养中心在哪里?（最新襄阳市流浪狗救助站地址）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-3-clash-meta-windows.htm" title="2月3日最新Free Clash Meta订阅 | 22.7M/S|2025年Shadowrocket/SSR/Clash/V2ray免费节点地址链接分享">2月3日最新Free Clash Meta订阅 | 22.7M/S|2025年Shadowrocket/SSR/Clash/V2ray免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/news/article-54196.htm" title="C#反射调用dll文件中的方法操作泛型与属性字段_C#教程">C#反射调用dll文件中的方法操作泛型与属性字段_C#教程</a></li>
+                        <li class="py-2"><a href="/news/article-50997.htm" title="猫咪3针疫苗一共多少元钱一针啊（猫咪3针疫苗一共多少元钱一针啊视频）">猫咪3针疫苗一共多少元钱一针啊（猫咪3针疫苗一共多少元钱一针啊视频）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">78</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- content close -->
+                <!-- footer begin -->
+        <footer class="footer-light">
+            <div class="subfooter relative z-1000">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                <a href="/">首页</a> |
+                                <a href="/free-node/">免费节点</a> |
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">Free Clash Meta免费节点机场官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+        <!-- Javascript Files
+                    ================================================== -->
+        <script src="/assets/website/js/frontend/free_clash_meta/plugins.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/designesia.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/swiper.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/custom-marquee.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/custom-swiper-1.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+</body>
+
+</html>
