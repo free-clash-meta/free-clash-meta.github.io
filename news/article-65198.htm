@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://free-clash-meta.github.io/news/article-65198.htm" />
+    <title>JavaScript将数字转换为数十，数百，数千等方法详解</title>
+        <meta name="description" content="我们需要编写一个函数，给定一个数字，例如123，它将输出一个数组- [100,20,3] 基本上，该函数应返回一个数组，该数组包含该函数作为自变量的数字中存在的所有数字的位置值。 我们可以通过使用递归" />
+        <link rel="icon" href="/assets/website/img/free_clash_meta/favicon.ico" type="image/x-icon"/>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <meta name="author" content="Free Clash Meta免费节点机场官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://free-clash-meta.github.io/news/article-65198.htm" />
+    <meta property="og:site_name" content="Free Clash Meta免费节点机场官网" />
+    <meta property="og:title" content="JavaScript将数字转换为数十，数百，数千等方法详解" />
+    <meta property="og:image" content="https://free-clash-meta.github.io/uploads/20250201-2/798d9ec40fc13b4433ead83c73074497.webp" />
+        <meta property="og:release_date" content="2025-03-01T06:59:29" />
+    <meta property="og:updated_time" content="2025-03-01T06:59:29" />
+        <meta property="og:description" content="我们需要编写一个函数，给定一个数字，例如123，它将输出一个数组- [100,20,3] 基本上，该函数应返回一个数组，该数组包含该函数作为自变量的数字中存在的所有数字的位置值。 我们可以通过使用递归" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="JavaScript将数字转换为数十，数百，数千等方法详解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+
+    <!-- CSS Files
+    ================================================== -->
+    <link href="/assets/website/css/free_clash_meta/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="/assets/website/css/free_clash_meta/plugins.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/swiper.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/style.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/coloring.css" rel="stylesheet" type="text/css">
+    <!-- color scheme -->
+    <link id="colors" href="/assets/website/css/free_clash_meta/scheme-01.css" rel="stylesheet" type="text/css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8MB0F69N3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8MB0F69N3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <div id="wrapper">
+                <!-- page preloader begin -->
+        <div id="de-loader"></div>
+        <!-- page preloader close -->
+        <!-- header begin -->
+        <header class="transparent header-light has-topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="/" class="xcblog-blog-logo">
+                                                                                <span class="text-primary m-0">Free Clash Meta</span>
+                                                                            </a>
+                                </div>
+                                <!-- logo close -->
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <ul id="mainmenu">
+                                                                        <li><a class="menu-item" href="/">首页</a></li>
+                                                                        <li><a class="menu-item" href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a class="menu-item" href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a class="menu-item" href="/client.htm">客户端</a></li>
+                                                                        <li><a class="menu-item" href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div id="content" class="no-top no-bottom">
+            <div id="top"></div>
+            <!-- section begin -->
+            <section id="de-subheader" class="mt-sm-60 pt20 pb20 bg-gradient-45-deg text-light">
+                <div class="container relative z-index-1000">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="mb-0" style="font-size: 2.5rem;">JavaScript将数字转换为数十，数百，数千等方法详解</h1>
+                        </div>
+                        <div class="col-lg-6 text-lg-end">
+                            <ul class="crumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li class="active">正文</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+            <section>
+                <div class="container relative">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<p>我们需要编写一个函数，给定一个数字，例如123，它将输出一个数组-</p> <pre>[100,20,3]</pre> <p>基本上，该函数应返回一个数组，该数组包含该函数作为自变量的数字中存在的所有数字的位置值。</p> <p>我们可以通过使用递归方法来解决此问题。</p> <h2>示例</h2> <p>以下是代码-</p> <pre>const&nbsp;num&nbsp;=&nbsp;123; const&nbsp;placeValue&nbsp;=&nbsp;(num,&nbsp;res&nbsp;=&nbsp;[],&nbsp;factor&nbsp;=&nbsp;1)&nbsp;=&gt;&nbsp;{ &nbsp;&nbsp;&nbsp;if(num){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;val&nbsp;=&nbsp;(num&nbsp;%&nbsp;10)&nbsp;*&nbsp;factor; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.unshift(val); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;placeValue(Math.floor(num&nbsp;/&nbsp;10),&nbsp;res,&nbsp;factor&nbsp;*&nbsp;10); &nbsp;&nbsp;&nbsp;}; &nbsp;&nbsp;&nbsp;return&nbsp;res; }; console.log(placeValue(num));</pre> <p>输出结果</p> <p>这将在控制台中产生以下输出-</p> <pre>[&nbsp;100,&nbsp;20,&nbsp;3&nbsp;]</pre> <div></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-64576.htm">猫疫苗三针是什么疫苗（猫疫苗三针是什么疫苗啊）</a></p>
+                                        <p>下一个：<a href="/news/article-65199.htm">领养宠物用不用钱（领养宠物要给红包吗）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-64576.htm" title="猫疫苗三针是什么疫苗（猫疫苗三针是什么疫苗啊）">猫疫苗三针是什么疫苗（猫疫苗三针是什么疫苗啊）</a></li>
+                        <li class="py-2"><a href="/news/article-49951.htm" title="python 数据加载工作">python 数据加载工作</a></li>
+                        <li class="py-2"><a href="/news/article-56393.htm" title="被猫抓伤出血要吃消炎药吗（被猫抓伤出血吃药可以吗）">被猫抓伤出血要吃消炎药吗（被猫抓伤出血吃药可以吗）</a></li>
+                        <li class="py-2"><a href="/news/article-56960.htm" title="宠物出售平台有哪些软件可以做（宠物出售平台有哪些软件可以做的）">宠物出售平台有哪些软件可以做（宠物出售平台有哪些软件可以做的）</a></li>
+                        <li class="py-2"><a href="/news/article-59818.htm" title="合肥宠物猫领养中心电话（合肥宠物猫领养中心电话地址）">合肥宠物猫领养中心电话（合肥宠物猫领养中心电话地址）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-24-free-high-speed-nodes.htm" title="2月24日最新Free Clash Meta订阅 | 22.6M/S|2025年Shadowrocket/SSR/V2ray/Clash免费节点地址链接分享">2月24日最新Free Clash Meta订阅 | 22.6M/S|2025年Shadowrocket/SSR/V2ray/Clash免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/news/article-54744.htm" title="猫驱虫要多少钱（猫驱虫多少钱宠物店）">猫驱虫要多少钱（猫驱虫多少钱宠物店）</a></li>
+                        <li class="py-2"><a href="/news/article-51541.htm" title="动物疫苗种类及研究进展情况怎么写（动物疫苗的发展现状）">动物疫苗种类及研究进展情况怎么写（动物疫苗的发展现状）</a></li>
+                        <li class="py-2"><a href="/news/article-57527.htm" title="吉泰官网（吉泰集团）">吉泰官网（吉泰集团）</a></li>
+                        <li class="py-2"><a href="/news/article-60961.htm" title="沈阳兽医学校成人培训（沈阳兽医学校成人培训多少钱）">沈阳兽医学校成人培训（沈阳兽医学校成人培训多少钱）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- content close -->
+                <!-- footer begin -->
+        <footer class="footer-light">
+            <div class="subfooter relative z-1000">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                <a href="/">首页</a> |
+                                <a href="/free-node/">免费节点</a> |
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">Free Clash Meta免费节点机场官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+        <!-- Javascript Files
+                    ================================================== -->
+        <script src="/assets/website/js/frontend/free_clash_meta/plugins.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/designesia.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/swiper.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/custom-marquee.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/custom-swiper-1.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+</body>
+
+</html>
