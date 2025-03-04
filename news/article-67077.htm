@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://free-clash-meta.github.io/news/article-67077.htm" />
+    <title>petite-vue源码剖析-沙箱模型</title>
+        <meta name="description" content="在解析v-if和v-for等指令时我们会看到通过evaluate执行指令值中的JavaScript表达式，而且能够读取当前作用域上的属性。而evaluate的实现如下： const evalCache" />
+        <link rel="icon" href="/assets/website/img/free_clash_meta/favicon.ico" type="image/x-icon"/>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <meta name="author" content="Free Clash Meta免费节点机场官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://free-clash-meta.github.io/news/article-67077.htm" />
+    <meta property="og:site_name" content="Free Clash Meta免费节点机场官网" />
+    <meta property="og:title" content="petite-vue源码剖析-沙箱模型" />
+    <meta property="og:image" content="https://free-clash-meta.github.io/uploads/20250201-2/ef6beb85f8aa555240c8856c602818b7.webp" />
+        <meta property="og:release_date" content="2025-03-04T10:14:25" />
+    <meta property="og:updated_time" content="2025-03-04T10:14:25" />
+        <meta property="og:description" content="在解析v-if和v-for等指令时我们会看到通过evaluate执行指令值中的JavaScript表达式，而且能够读取当前作用域上的属性。而evaluate的实现如下： const evalCache" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="petite-vue源码剖析-沙箱模型">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+
+    <!-- CSS Files
+    ================================================== -->
+    <link href="/assets/website/css/free_clash_meta/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="/assets/website/css/free_clash_meta/plugins.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/swiper.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/style.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/coloring.css" rel="stylesheet" type="text/css">
+    <!-- color scheme -->
+    <link id="colors" href="/assets/website/css/free_clash_meta/scheme-01.css" rel="stylesheet" type="text/css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8MB0F69N3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8MB0F69N3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <div id="wrapper">
+                <!-- page preloader begin -->
+        <div id="de-loader"></div>
+        <!-- page preloader close -->
+        <!-- header begin -->
+        <header class="transparent header-light has-topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="/" class="xcblog-blog-logo">
+                                                                                <span class="text-primary m-0">Free Clash Meta</span>
+                                                                            </a>
+                                </div>
+                                <!-- logo close -->
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <ul id="mainmenu">
+                                                                        <li><a class="menu-item" href="/">首页</a></li>
+                                                                        <li><a class="menu-item" href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a class="menu-item" href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a class="menu-item" href="/client.htm">客户端</a></li>
+                                                                        <li><a class="menu-item" href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div id="content" class="no-top no-bottom">
+            <div id="top"></div>
+            <!-- section begin -->
+            <section id="de-subheader" class="mt-sm-60 pt20 pb20 bg-gradient-45-deg text-light">
+                <div class="container relative z-index-1000">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="mb-0" style="font-size: 2.5rem;">petite-vue源码剖析-沙箱模型</h1>
+                        </div>
+                        <div class="col-lg-6 text-lg-end">
+                            <ul class="crumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li class="active">正文</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+            <section>
+                <div class="container relative">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<p>在解析<code>v-if</code>和<code>v-for</code>等指令时我们会看到通过<code>evaluate</code>执行指令值中的JavaScript表达式，而且能够读取当前作用域上的属性。而<code>evaluate</code>的实现如下：</p> <pre><code class="language-ts">const evalCache: Record&lt;string, Function&gt; = Object.create(null)  export const evaluate = (scope: any, exp: string, el?: Node) =&gt;   execute(scope, `return(${exp})`, el)  export const execute = (scope: any, exp: string, el?: Node) =&gt; {   const fn = evalCache[exp] || (evalCache[exp] = toFunction(exp))   try {     return fn(scope, el)   } catch (e) {     if (import.meta.env.DEV) {       console.warn(`Error when evaluating expression "${exp}":`)     }     console.error(e)   } }  const toFunction = (exp: string): Function =&gt; {   try {     return new Function(`$data`, `$el`, `with($data){${exp}}`)   } catch (e) {     console.error(`${(e as Error).message} in expression: ${exp}`)     return () =&gt; {}   } }</code></pre> <p>简化为如下</p> <pre><code class="language-ts">export const evaluate = (scope: any, exp: string, el?: Node) =&gt; {   return (new Function(`$data`, `$el`, `with($data){return(${exp})}`))(scope, el) }</code></pre> <p>而这里就是通过<code>with</code>+<code>new Function</code>构建一个简单的沙箱，为<code>v-if</code>和<code>v-for</code>指令提供一个可控的JavaScript表达式的执行环境。</p> <h2 id="什么是沙箱">什么是沙箱</h2> <p>沙箱(Sandbox)作为一种安全机制，用于提供一个独立的可控的执行环境供未经测试或不受信任的程序运行，并且程序运行不会影响污染外部程序的执行环境(如篡改/劫持window对象及其属性)，也不会影响外部程序的运行。</p> <p>与此同时，沙箱和外部程序可以通过预期的方式进行通信。</p> <p>更细化的功能就是:</p> <ol> <li>拥有独立的全局作用域和全局对象(<code>window</code>)</li> <li>沙箱提供启动、暂停、恢复和停机功能</li> <li>多台沙箱支持并行运行</li> <li>沙箱和主环境、沙箱和沙箱之间可实现安全通信</li> </ol> <h2 id="原生沙箱-iframe">原生沙箱-<code>iframe</code></h2> <p><code>iframe</code>拥有独立的browser context，不单单提供独立的JavaScript执行环境，甚至还拥有独立的HTML和CSS命名空间。</p> <p>通过将<code>iframe</code>的<code>src</code>设置为<code>about:blank</code>即保证同源且不会发生资源加载，那么就可以通过<code>iframe.contentWindow</code>获取与主环境独立的window对象作为沙箱的全局对象，并通过<code>with</code>将全局对象转换为全局作用域。</p> <p>而<code>iframe</code>的缺点：</p> <ol> <li>若我们只需要一个独立的JavaScript执行环境，那么其它特性则不仅仅是累赘，还会带来不必要的性能开销。而且<code>iframe</code>会导致主视窗的onload事件延迟执行；</li> <li>内部程序可以访问浏览器所有API，我们无法控制白名单。(这个可以通过Proxy处理)</li> </ol> <h2 id="沙箱的材料-withproxyevalnew-function">沙箱的材料-<code>with</code>+<code>Proxy</code>+<code>eval/new Function</code></h2> <h3 id="什么是with">什么是<code>with</code>？</h3> <p>JavaScript采用的是语法作用域（或称为静态作用域），而<code>with</code>则让JavaScript拥有部分动态作用域的特性。</p> <p><code>with(obj)</code>会将<code>obj</code>对象作为新的临时作用域添加到当前作用域链的顶端，那么<code>obj</code>的属性将作为当前作用域的绑定，但是和普通的绑定解析一样，若在当前作用域无法解析则会向父作用域查找，直到根作用域也无法解析为止。</p> <pre><code class="language-js">let foo = 'lexical scope' let bar = 'lexical scope'  ;(function() {   // 访问语句源码书写的位置决定这里访问的foo指向'lexical scope'   console.log(foo) })() // 回显 lexical scope  ;(function(dynamicScope) {   with(dynamicScope) {     /**      * 默认访问语句源码书写的位置决定这里访问的foo指向'lexical scope'，      * 但由于该语句位于with的语句体中，因此将改变解析foo绑定的作用域。      */      console.log(foo)     // 由于with创建的临时作用域中没有定义bar，因此会向父作用域查找解析绑定     console.log(bar)   } })({   foo: 'dynamic scope' }) // 回显 dynamic scope // 回显 lexical scope</code></pre> <p>注意：<code>with</code>创建的是临时作用域，和通过函数创建的作用域是不同的。具体表现为当<code>with</code>中调用外部定义的函数，那么在函数体内访问绑定时，由于由<code>with</code>创建的临时作用域将被函数作用域替代，而不是作为函数作用域的父作用域而存在，导致无法访问<code>with</code>创建的作用域中的绑定。这也是为何说<code>with</code>让JavaScript拥有部分动态作用域特性的原因了。</p> <pre><code class="language-js">let foo = 'lexical scope'  function showFoo() {   console.log(foo) }  ;(function(dynamicScope) {   with(dynamicScope) {     showFoo()   } })({   foo: 'dynamic scope' }) // 回显 lexical scope</code></pre> <p>再一次注意：若函数是在<code>with</code>创建的临时作用域内定义的，那么将以该临时作用域作为父作用域</p> <pre><code class="language-js">let foo = 'lexical scope'  ;(function(dynamicScope) {   with(dynamicScope) {     (() =&gt; {       const bar = 'bar'       console.log(bar)       // 其实这里就是采用语法作用域，谁叫函数定义的位置在临时作用域生效的地方呢。       console.log(foo)     })()   } })({   foo: 'dynamic scope' }) // 回显 bar // 回显 dynamic scope</code></pre> <p>另外，在<em>ESM模式</em>或<em>strict模式</em>(使用<code>class</code>定义类会启动启用<em>strict模式</em>)下都禁止使用<code>with</code>语句哦！</p> <ul> <li><code>Error: With statements cannot be used in an ECMAScript module</code></li> <li><code>Uncaught SyntaxError: Strict mode code may not include a with statement</code></li> </ul> <p>但无法阻止通过<code>eval</code>或<code>new Function</code>执行<code>with</code>哦！</p> <h3 id="如何利用proxy防止绑定解析逃逸">如何利用<code>Proxy</code>防止绑定解析逃逸？</h3> <p>通过前面数篇文章的介绍，我想大家对<code>Proxy</code>已经不再陌生了。不过这里我们会用到之前一笔带过的<code>has</code>拦截器，用于拦截<code>with</code>代码中任意变量的访问，也可以设置一个可正常在作用域链查找的绑定白名单，而白名单外的则必须以沙箱创建的作用域上定义维护。</p> <pre><code class="language-js">const whiteList = ['Math', 'Date', 'console'] const createContext = (ctx) =&gt; {   return new Proxy(ctx, {     has(target, key) {       // 由于代理对象作为`with`的参数成为当前作用域对象，因此若返回false则会继续往父作用域查找解析绑定       if (whiteList.includes(key)) {         return target.hasOwnProperty(key)       }        // 返回true则不会往父作用域继续查找解析绑定，但实际上没有对应的绑定，则会返回undefined，而不是报错，因此需要手动抛出异常。       if (!targe.hasOwnProperty(key)) {         throw ReferenceError(`${key} is not defined`)       }        return true     }   }) }  with(createContext({ foo: 'foo' })) {   console.log(foo)   console.log(bar) } // 回显 foo // 抛出 `Uncaught ReferenceError: bar is not defined`</code></pre> <p>到目前为止，我们虽然实现一个基本可用沙箱模型，但致命的是无法将外部程序代码传递沙箱中执行。下面我们通过<code>eval</code>和<code>new Function</code>来实现。</p> <h3 id="邪恶的eval">邪恶的<code>eval</code></h3> <p><code>eval()</code>函数可以执行字符串形式的JavaScript代码，其中代码可以访问<em>闭包作用域</em>及其<em>父作用域</em>直到<em>全局作用域</em>绑定，这会引起代码注入(code injection)的安全问题。</p> <pre><code class="language-js">const bar = 'bar'  function run(arg, script) {   ;(() =&gt; {     const foo = 'foo'     eval(script)   })() }  const script = `   console.log(arg)   console.log(bar)   console.log(foo) ` run('hi', script) // 回显 hi // 回显 bar  // 回显 foo</code></pre> <h3 id="new-function"><code>new Function</code></h3> <p>相对<code>eval</code>，<code>new Function</code>的特点是:</p> <ol> <li><code>new Funciton</code>函数体中的代码只能访问<em>函数入参</em>和<em>全局作用域</em>的绑定；</li> <li>将动态脚本程序解析并实例化为函数对象，后续不用再重新解析就可以至直接执行，性能比<code>eval</code>好。</li> </ol> <pre><code class="language-js">const bar = 'bar'  function run(arg, script) {   ;(() =&gt; {     const foo = 'foo'     ;(new Function('arg', script))(arg)   })() }  const script = `   console.log(arg)   console.log(bar)   console.log(foo) ` run('hi', script) // 回显 hi // 回显 bar  // 回显 Uncaught ReferenceError: foo is not defined</code></pre> <h2 id="沙箱逃逸sandbox-escape">沙箱逃逸(Sandbox Escape)</h2> <p>沙箱逃逸就是沙箱内运行的程序以非合法的方式访问或修改外部程序的执行环境或影响外部程序的正常执行。<br /> 虽然上面我们已经通过Proxy控制沙箱内部程序可访问的作用域链，但仍然有不少突破沙箱的漏洞。</p> <h3 id="通过原型链实现逃逸">通过原型链实现逃逸</h3> <p>JavaScript中constructor属性指向创建当前对象的构造函数，而该属性是存在于原型中，并且是不可靠的。</p> <pre><code class="language-js">function Test(){} const obj = new Test()  console.log(obj.hasOwnProperty('constructor')) // false console.log(obj.__proto__.hasOwnProperty('constructor')) // true</code></pre> <p>逃逸示例：</p> <pre><code class="language-js">// 在沙箱内执行如下代码 ({}).constructor.prototype.toString = () =&gt; {   console.log('Escape!') }  // 外部程序执行环境被污染了 console.log(({}).toString())  // 回显 Escape! // 而期待回显是 [object Object]</code></pre> <h3 id="symbolunscopables"><code>Symbol.unscopables</code></h3> <p><code>Symbol.unscopables</code>作为属性名对应的属性值表示该对象作为<code>with</code>参数时，哪些属性会被with环境排除。</p> <pre><code class="language-js">const arr = [1] console.log(arr[Symbol.unscopables]) // 回显 {"copyWithin":true,"entries":true,"fill":true,"find":true,"findIndex":true,"flat":true,"flatMap":true,"includes":true,"keys":true,"values":true,"at":true,"findLast":true,"findLastIndex":true}  with(arr) {   console.log(entries) // 抛出ReferenceError }  const includes = '成功逃逸啦' with(arr) {   console.log(includes) // 回显 成功逃逸啦 }</code></pre> <p>防范的方法就是通过Proxy的get拦截器，当访问<code>Symbol.unscopables</code>时返回undefined</p> <pre><code class="language-js">const createContext = (ctx) =&gt; {   return new Proxy(ctx, {     has(target, key) {       // 由于代理对象作为`with`的参数成为当前作用域对象，因此若返回false则会继续往父作用域查找解析绑定       if (whiteList.includes(key)) {         return target.hasOwnProperty(key)       }        // 返回true则不会往父作用域继续查找解析绑定，但实际上没有对应的绑定，则会返回undefined，而不是报错，因此需要手动抛出异常。       if (!targe.hasOwnProperty(key)) {         throw ReferenceError(`${key} is not defined`)       }        return true     },     get(target, key, receiver) {       if (key === Symbol.unscopables) {         return undefined       }        return Reflect.get(target, key, receiver)     }   }) }</code></pre> <h2 id="实现一个基本安全的沙箱">实现一个基本安全的沙箱</h2> <pre><code class="language-ts">const toFunction = (script: string): Function =&gt; {   try {     return new Function('ctx', `with(ctx){${script}}`)   } catch (e) {     console.error(`${(e as Error).message} in script: ${script}`)     return () =&gt; {}   } }  const toProxy = (ctx: object, whiteList: string[]) =&gt; {   return new Proxy(ctx, {     has(target, key) {       // 由于代理对象作为`with`的参数成为当前作用域对象，因此若返回false则会继续往父作用域查找解析绑定       if (whiteList.includes(key)) {         return target.hasOwnProperty(key)       }        // 返回true则不会往父作用域继续查找解析绑定，但实际上没有对应的绑定，则会返回undefined，而不是报错，因此需要手动抛出异常。       if (!targe.hasOwnProperty(key)) {         throw ReferenceError(`${key} is not defined`)       }        return true     },     get(target, key, receiver) {       if (key === Symbol.unscopables) {         return undefined       }        return Reflect.get(target, key, receiver)     }   }) }  class Sandbox {   private evalCache: Map&lt;string, Function&gt;   private ctxCache: WeakMap&lt;object, Proxy&gt;    constructor(private whiteList: string[] = ['Math', 'Date', 'console']) {     this.evalCache = new Map&lt;string, Function&gt;()     this.ctxCache = new WeakMap&lt;object, Proxy&gt;()   }    run(script: string, ctx: object) {     if (!this.evalCache.has(script)) {       this.evalCache.set(script, toFunction(script))     }     const fn = this.evalCache.get(script)      if (!this.ctxCache.has(ctx)) {       this.ctxCache.set(ctx, toProxy(ctx, this.whiteList))     }     const ctxProxy = this.ctxCache.get(ctx)      return fn(ctx) }</code></pre> <p>到此我们已经实现一个基本安全的沙箱模型，但远远还没达到生产环境使用的要求。</p> <h2 id="总结">总结</h2> <p>上述我们是通过Proxy阻止沙箱内的程序访问全局作用域的内容，若没有Proxy那么要怎样处理呢？另外，如何实现沙箱的启停、恢复和并行运行呢？其实这个我们可以看看蚂蚁金服的微前端框架qiankun(乾坤)是如何实现的，具体内容请期待后续的《微前端框架qiankun源码剖析》吧！</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-67075.htm">一、重写了equals为什么还要重写hashcode</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-63961.htm" title="成都宠物领养中心领养收费吗现在还收费吗（成都领养宠物吧）">成都宠物领养中心领养收费吗现在还收费吗（成都领养宠物吧）</a></li>
+                        <li class="py-2"><a href="/news/article-58758.htm" title="我需要HTML5中的客户端浏览器数据库。我有什么选择？">我需要HTML5中的客户端浏览器数据库。我有什么选择？</a></li>
+                        <li class="py-2"><a href="/news/article-65804.htm" title="python PIL Image 图像处理基本操作实例_python">python PIL Image 图像处理基本操作实例_python</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-6-free-subscribe-node.htm" title="2月6日最新Free Clash Meta订阅 | 19.7M/S|2025年SSR/Clash/V2ray/Shadowrocket免费节点地址链接分享">2月6日最新Free Clash Meta订阅 | 19.7M/S|2025年SSR/Clash/V2ray/Shadowrocket免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/news/article-56392.htm" title="啥属相不能养狗（哪个属相不能养狗）">啥属相不能养狗（哪个属相不能养狗）</a></li>
+                        <li class="py-2"><a href="/news/article-63344.htm" title="【Azure Developer】使用 adal4j(Azure Active Directory authentication library for Java)如何来获取Token呢 (通过用户名和密码方式获取Access Token)_在线工具">【Azure Developer】使用 adal4j(Azure Active Directory authentication library for Java)如何来获取Token呢 (通过用户名和密码方式获取Access Token)_在线工具</a></li>
+                        <li class="py-2"><a href="/news/article-64576.htm" title="猫疫苗三针是什么疫苗（猫疫苗三针是什么疫苗啊）">猫疫苗三针是什么疫苗（猫疫苗三针是什么疫苗啊）</a></li>
+                        <li class="py-2"><a href="/news/article-62748.htm" title="vue中巧用三元表达式解析_vue.js">vue中巧用三元表达式解析_vue.js</a></li>
+                        <li class="py-2"><a href="/news/article-58759.htm" title="猫咪三针疫苗多少钱一只猫用（宠物猫三针疫苗多少钱）">猫咪三针疫苗多少钱一只猫用（宠物猫三针疫苗多少钱）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-4-clash-meta-windows.htm" title="3月4日最新Free Clash Meta订阅 | 21.9M/S|2025年SSR/Shadowrocket/Clash/V2ray免费节点地址链接分享">3月4日最新Free Clash Meta订阅 | 21.9M/S|2025年SSR/Shadowrocket/Clash/V2ray免费节点地址链接分享</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- content close -->
+                <!-- footer begin -->
+        <footer class="footer-light">
+            <div class="subfooter relative z-1000">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                <a href="/">首页</a> |
+                                <a href="/free-node/">免费节点</a> |
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">Free Clash Meta免费节点机场官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+        <!-- Javascript Files
+                    ================================================== -->
+        <script src="/assets/website/js/frontend/free_clash_meta/plugins.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/designesia.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/swiper.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/custom-marquee.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/custom-swiper-1.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+</body>
+
+</html>
