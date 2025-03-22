@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://free-clash-meta.github.io/news/article-77651.htm" />
+    <title>使用缓存(Cache)的几种方式，回顾一下~~~</title>
+        <meta name="description" content="前言 如今缓存成为了优化网站性能的首要利器，缓存使用的好，不仅能让网站性能提升，让用户体验变好，而且还能节约成本(增加一台缓存服务器可能就节约好几台机器)；那平时小伙伴们都使用哪些缓存方式呢？这里就来" />
+        <link rel="icon" href="/assets/website/img/free_clash_meta/favicon.ico" type="image/x-icon"/>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <meta name="author" content="Free Clash Meta免费节点机场官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://free-clash-meta.github.io/news/article-77651.htm" />
+    <meta property="og:site_name" content="Free Clash Meta免费节点机场官网" />
+    <meta property="og:title" content="使用缓存(Cache)的几种方式，回顾一下~~~" />
+    <meta property="og:image" content="https://free-clash-meta.github.io/uploads/20250201-2/ed7fbe32af4ff558d2550bade0ba6280.webp" />
+        <meta property="og:release_date" content="2025-03-20T10:01:23" />
+    <meta property="og:updated_time" content="2025-03-20T10:01:23" />
+        <meta property="og:description" content="前言 如今缓存成为了优化网站性能的首要利器，缓存使用的好，不仅能让网站性能提升，让用户体验变好，而且还能节约成本(增加一台缓存服务器可能就节约好几台机器)；那平时小伙伴们都使用哪些缓存方式呢？这里就来" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="使用缓存(Cache)的几种方式，回顾一下~~~">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+
+    <!-- CSS Files
+    ================================================== -->
+    <link href="/assets/website/css/free_clash_meta/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="/assets/website/css/free_clash_meta/plugins.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/swiper.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/style.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/coloring.css" rel="stylesheet" type="text/css">
+    <!-- color scheme -->
+    <link id="colors" href="/assets/website/css/free_clash_meta/scheme-01.css" rel="stylesheet" type="text/css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8MB0F69N3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8MB0F69N3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <div id="wrapper">
+                <!-- page preloader begin -->
+        <div id="de-loader"></div>
+        <!-- page preloader close -->
+        <!-- header begin -->
+        <header class="transparent header-light has-topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="/" class="xcblog-blog-logo">
+                                                                                <span class="text-primary m-0">Free Clash Meta</span>
+                                                                            </a>
+                                </div>
+                                <!-- logo close -->
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <ul id="mainmenu">
+                                                                        <li><a class="menu-item" href="/">首页</a></li>
+                                                                        <li><a class="menu-item" href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a class="menu-item" href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a class="menu-item" href="/client.htm">客户端</a></li>
+                                                                        <li><a class="menu-item" href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div id="content" class="no-top no-bottom">
+            <div id="top"></div>
+            <!-- section begin -->
+            <section id="de-subheader" class="mt-sm-60 pt20 pb20 bg-gradient-45-deg text-light">
+                <div class="container relative z-index-1000">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="mb-0" style="font-size: 2.5rem;">使用缓存(Cache)的几种方式，回顾一下~~~</h1>
+                        </div>
+                        <div class="col-lg-6 text-lg-end">
+                            <ul class="crumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li class="active">正文</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+            <section>
+                <div class="container relative">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<h3 id="前言">前言</h3> <p>如今<strong>缓存</strong>成为了优化网站性能的首要利器，缓存使用的好，不仅能让网站性能提升，让用户体验变好，而且还能节约成本(增加一台缓存服务器可能就节约好几台机器)；那平时小伙伴们都使用哪些缓存方式呢？这里就来和小伙伴们一起来回顾一下。</p> <h3 id="正文">正文</h3> <p>缓存的作用其实很明确，如下两方面：</p> <ul> <li> <p><strong>提升数据的获取速度</strong></p> <p>通常用在获取数据速度要求比较高的场景，比如一些和设备通信的软件，对时间的要求比较高，如果每次都从数据库读数据会导致消耗多余的时间。</p> </li> <li> <p><strong>减轻后台应用或数据库服务器的负载</strong></p> <p>对于高并发场景的系统，如果每次请求都打到数据库，数据库服务器负载会变大，到达一定瓶颈之后可能让系统体验变差或不可用。</p> </li> </ul> <h4 id="1-浏览器缓存">1. 浏览器缓存</h4> <h5 id="11-简述">1.1 简述</h5> <p>通过控制响应头信息，告诉浏览器让其将对应的数据缓存到本地，在指定时间范围内，可直接从本地缓存中取即可，但浏览器方可以不选择走缓存。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/b0bae735adf4a47161389e10e6ece389.jpg" alt="使用缓存(Cache)的几种方式，回顾一下~~~"></p> <h5 id="12-案例演示">1.2 案例演示</h5> <p>本文中还是使用WebAPI项目进行演示，只是通过不同的API来区分不同案例。</p> <p>创建好项目中，在默认的WeatherForecastController中添加一个Action方法，如下：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/cafe1ae35d661ce8ee39a760230246da.jpg" alt="使用缓存(Cache)的几种方式，回顾一下~~~"></p> <p>这个时候还没有做缓存处理，所以只要访问都会调用接口获取最新的数据。</p> <p>在接口方法上只需添加<strong>ResponseCache</strong>特性就可以实现浏览器缓存，如下：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/0dd12c227f341c900c9dc183de409d08.jpg" alt="使用缓存(Cache)的几种方式，回顾一下~~~"></p> <p>这样就可以实现客户端缓存了，可能会有小伙伴<strong>会点击浏览器的刷新和F5</strong>进行测试，这个时候并没有看到缓存效果，其实这个时候浏览器是以新的请求发出的，并不会去缓存里取，但其实请求获取到的数据已经存缓存了。</p> <p>那怎么去测试呢？<strong>每次都 打开多个浏览器标签或用Swagger的形式</strong>，如下：</p> <p>第一次访问：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/963e83c9e3282aadd03b3c6e1c42462c.jpg" alt="使用缓存(Cache)的几种方式，回顾一下~~~"></p> <p>每次都打开新标签，再访问接口：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/b73bec6e274dbe18fb7badc6483978f3.jpg" alt="使用缓存(Cache)的几种方式，回顾一下~~~"></p> <p>除了根据数据没变来判定是缓存数据外，还可以通过请求确定是否从本地缓存中取数据，如下：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/24ea480a190601a75bc23eaf5880b505.jpg" alt="使用缓存(Cache)的几种方式，回顾一下~~~"></p> <p>Swagger演示，关于如何集成Swagger，之前有专门分享过(<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://mp.weixin.qq.com/s?__biz=MzU1MzYwMjQ5MQ==&amp;mid=2247484033&amp;idx=1&amp;sn=c31fbcc6d55324a4c86e1a0beb21399e&amp;chksm=fbf11e55cc8697437b58e09cd200fea4d3ae642392d2e755e66171f0b25a20b4960e2749a581#rd"  target="_blank" rel="nofollow">跟我一起学.NetCore之Swagger让前后端不再烦恼及界面自定义</a>)：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/cc1166ba75f37e8009fe38b9ede93309.jpg" alt="使用缓存(Cache)的几种方式，回顾一下~~~"></p> <p><strong>浏览器缓存的原理其实就是在响应头中增加Cache-Control(ResponseCache的方式是通过Action过滤器的形式设置的响应头)，告诉浏览器进行数据缓存，在指定时间范围内可以从缓存中取</strong>，我们也可以自己手动设置响应头信息来达到同样的效果，如下：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/e6fbdd9cb67ed45dd43261450ad4253c.jpg" alt="使用缓存(Cache)的几种方式，回顾一下~~~"></p> <p>尽管数据已经缓存，浏览器<strong>也可以选择不从缓存取</strong>，如下：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/ce1972c935f7e1e3c8424d89ef3e2cd5.jpg" alt="使用缓存(Cache)的几种方式，回顾一下~~~"></p> <h4 id="2-服务器缓存">2. 服务器缓存</h4> <h5 id="21-简述">2.1 简述</h5> <p>浏览器缓存只是将数据保存在单台电脑的不同位置，如果打开不同的浏览器或不同的电脑访问时，还是起不到缓存的效果，所以搞个服务器缓存肯定是个不错的选择。</p> <p>即<strong>将数据缓存到站点服务器中，当请求过来时，如果命中缓存，直接获取返回即可，不调用对应的后台API</strong>。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/10e0eeb291ebc8e0ae9d76870bad048f.jpg" alt="使用缓存(Cache)的几种方式，回顾一下~~~"></p> <h5 id="22-案例">2.2 案例</h5> <p>其实这只是在原来浏览器缓存的基础上增加了一个中间件的处理，如下：</p> <p>代码如下：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/f15f560569077da3e35bbaee33734b1d.jpg" alt="使用缓存(Cache)的几种方式，回顾一下~~~"></p> <p>运行效果：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/6d7e387901e52e218f43a7175b44f6b4.jpg" alt="使用缓存(Cache)的几种方式，回顾一下~~~"></p> <p>由于不同的浏览器保存的数据位置不一样，如果仅仅是本地缓存，那么两个浏览器的数据会返回不一样；另外第一个浏览器访问之后，其他浏览器在时间范围内获得结果是一样的，也不会调用后台接口。</p> <p><strong>这种服务器端的缓存在有些情况是不生效的，如：请求Method不是Get或Head的不缓存，返回状态码不是200的不缓存，请求头包含Authorization的不缓存等</strong>，所以基本很少用这种方式进行缓存操作。</p> <h4 id="3-应用内存缓存">3. 应用内存缓存</h4> <h5 id="31-简述">3.1 简述</h5> <p>对于上面说到的浏览器缓存和服务器缓存，如果是友好的用户访问，没问题，能起到一定的效果；但如果有人要使坏，不设置对应的请求头访问API(禁用缓存)，最终还是会给应用服务器和数据库服务器带来压力。所以需要一种能主动控制的缓存方式，后端程序就是下手的对象，在后端程序中写缓存逻辑，这样缓存策略就由我们自己控制了。</p> <p>虽然每次请求都会进入应用程序，但会先从缓存中进行获取数据，如果命中缓存，就不再进行数据库访问，直接将缓存数据返回。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/4f83d63d83346e02ae00d069b6c59000.jpg" alt="使用缓存(Cache)的几种方式，回顾一下~~~"></p> <h5 id="32-案例">3.2 案例</h5> <p>其实框架中针对内存缓存这块已经做好了封装，只需注册相关的服务就可以用了，如下：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/635da3a45f0ecd42292a553dca8653b6.jpg" alt="使用缓存(Cache)的几种方式，回顾一下~~~"></p> <p>注册完成之后，只需要注入就可以使用了，这里增加一个Action方法进行演示：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/7d1c432d355c9ea1f05c39639708df35.jpg" alt="使用缓存(Cache)的几种方式，回顾一下~~~"></p> <p>效果就不截图了，在20秒内，单程序部署情况下，不管怎么访问都会是一样的结果。如果想更多了解MemoryCache的使用，可以看看这篇文章《<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://mp.weixin.qq.com/s?__biz=MzU1MzYwMjQ5MQ==&amp;mid=2247484707&amp;idx=1&amp;sn=e0bdea6139ded800a700207f7ec37fe1&amp;chksm=fbf119f7cc8690e16169e863c67b13934648daff4cc97e7cfc097b8d442b0bc7418c784bb7ba#rd"  target="_blank" rel="nofollow">因MemoryCache闹了个笑话</a>》。</p> <h4 id="4-分布式缓存">4. 分布式缓存</h4> <h5 id="41-简述">4.1 简述</h5> <p>内存缓存虽然能解决浏览器和服务器缓存的缺点，但只对单体部署程序比较适用，对于需要分布式部署的程序来说，<strong>程序内存之间的缓存数据不能共享</strong>，缓存的效果肯定就没那么尽人意，所以分布式缓存就出来了，采用对应的中间件，如Memcache、Redis等，而Redis成为了缓存的首选。</p> <p>请求的逻辑和内存缓存差不多一样，只是分布式缓存会采用第三方中间件进行数据存储，保证分布式部署的程序共用一套缓存。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/d9c2b1f9a1dc844304472754afe118df.jpg" alt="使用缓存(Cache)的几种方式，回顾一下~~~"></p> <h5 id="42-案例">4.2 案例</h5> <p>这里还是用最火的Redis做演示，所以需要提前安装Redis，关于Redis系列的文章，小伙伴们可以看这《<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzU1MzYwMjQ5MQ==&amp;action=getalbum&amp;album_id=1531176237254098947#wechat_redirect"  target="_blank" rel="nofollow">给我一起学Redis</a>》。</p> <p>框架也提供了统一操作分布式缓存的接口<strong>IDistributedCache</strong>，用法和上面的内存缓存基本一样。</p> <p>这里用的是Redis，所以需要安装对应的Nuget包<strong>Microsoft.Extensions.Caching.StackExchangeRed</strong>，然后注册相关服务就可以用了，如下：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/f54aabc16fa3792163e44269687137d5.jpg" alt="使用缓存(Cache)的几种方式，回顾一下~~~"></p> <p>注册完成之后，只需要注入就可以使用了，这里也增加一个Action方法进行演示：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/619ad75bc8f0d1f9b6963827d84c0eb5.jpg" alt="使用缓存(Cache)的几种方式，回顾一下~~~"></p> <p>访问对应的接口，在设置的时间范围内从Redis中读取到的数据一致，过期之后就会清空，程序又会设置新的值，如下：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/f7b062239cddee6f41e968c4a710a8b0.jpg" alt="使用缓存(Cache)的几种方式，回顾一下~~~"></p> <p>关于缓存的几种用法就先暂时说这么多，也有小伙伴根据业务场景自己实现的。</p> <p>实例的源码：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://gitee.com/CodeZoe/dot-net-core-study-demo/tree/main/CacheDemo"  target="_blank" rel="nofollow">https://gitee.com/CodeZoe/dot-net-core-study-demo/tree/main/CacheDemo</a></p> <h3 id="总结">总结</h3> <p>缓存之所以现在这么火，其主要目的还是提升数据访问效率，缓解应用和数据库的压力，但同时也会带来一些问题，比如缓存穿透、缓存击穿、缓存雪崩及缓存数据与数据库不一致等问题，后续我们会逐个说说，关注“<strong>Code综艺圈</strong>”，和我一起学习吧。</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-77650.htm">Echarts动态数据折线图</a></p>
+                                        <p>下一个：<a href="/news/article-78330.htm">一片片枫叶随风落下好像什么（一片片枫叶随风飘）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-51540.htm" title="springboot集成swagger报404问题">springboot集成swagger报404问题</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-21-clash-meta-node-github.htm" title="2月21日最新Free Clash Meta订阅 | 21M/S|2025年Shadowrocket/SSR/Clash/V2ray免费节点地址链接分享">2月21日最新Free Clash Meta订阅 | 21M/S|2025年Shadowrocket/SSR/Clash/V2ray免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-20-clash-meta-node.htm" title="2月20日最新Free Clash Meta订阅 | 22.2M/S|2025年Shadowrocket/SSR/V2ray/Clash免费节点地址链接分享">2月20日最新Free Clash Meta订阅 | 22.2M/S|2025年Shadowrocket/SSR/V2ray/Clash免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/news/article-72266.htm" title="python sum+=i+1_1.Pydef sum(n,p=2):result">python sum+=i+1_1.Pydef sum(n,p=2):result</a></li>
+                        <li class="py-2"><a href="/news/article-53640.htm" title="Android中Handler的使用方法">Android中Handler的使用方法</a></li>
+                        <li class="py-2"><a href="/news/article-65199.htm" title="领养宠物用不用钱（领养宠物要给红包吗）">领养宠物用不用钱（领养宠物要给红包吗）</a></li>
+                        <li class="py-2"><a href="/news/article-68335.htm" title="北京给鹦鹉看病的医院（北京给鹦鹉看病的医院哪家好）">北京给鹦鹉看病的医院（北京给鹦鹉看病的医院哪家好）</a></li>
+                        <li class="py-2"><a href="/news/article-55296.htm" title="动物医院诊疗管理系统官网登录（动物医院诊疗范围）">动物医院诊疗管理系统官网登录（动物医院诊疗范围）</a></li>
+                        <li class="py-2"><a href="/news/article-73606.htm" title="厂家货源服装批发（厂家衣服货源批发）">厂家货源服装批发（厂家衣服货源批发）</a></li>
+                        <li class="py-2"><a href="/news/article-74275.htm" title="做宠物粮生意怎样做才好 做宠物粮生意怎样做才好呢">做宠物粮生意怎样做才好 做宠物粮生意怎样做才好呢</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">66</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- content close -->
+                <!-- footer begin -->
+        <footer class="footer-light">
+            <div class="subfooter relative z-1000">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                <a href="/">首页</a> |
+                                <a href="/free-node/">免费节点</a> |
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">Free Clash Meta免费节点机场官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+        <!-- Javascript Files
+                    ================================================== -->
+        <script src="/assets/website/js/frontend/free_clash_meta/plugins.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/designesia.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/swiper.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/custom-marquee.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/custom-swiper-1.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+</body>
+
+</html>
