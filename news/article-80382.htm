@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://free-clash-meta.github.io/news/article-80382.htm" />
+    <title>面试官：RabbitMQ过期时间设置、死信队列、延时队列怎么设计？</title>
+        <meta name="description" content="哈喽！大家好，我是小奇，一位不靠谱的程序员 小奇打算以轻松幽默的对话方式来分享一些技术，如果你觉得通过小奇的文章学到了东西，那就给小奇一个赞吧 文章持续更新    RabbitMQ我们经常的使用，但是" />
+        <link rel="icon" href="/assets/website/img/free_clash_meta/favicon.ico" type="image/x-icon"/>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <meta name="author" content="Free Clash Meta免费节点机场官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://free-clash-meta.github.io/news/article-80382.htm" />
+    <meta property="og:site_name" content="Free Clash Meta免费节点机场官网" />
+    <meta property="og:title" content="面试官：RabbitMQ过期时间设置、死信队列、延时队列怎么设计？" />
+    <meta property="og:image" content="https://free-clash-meta.github.io/uploads/20250201-2/88a3de44cbc8c5cabd547e91f98569a2.webp" />
+        <meta property="og:release_date" content="2025-03-24T08:20:58" />
+    <meta property="og:updated_time" content="2025-03-24T08:20:58" />
+        <meta property="og:description" content="哈喽！大家好，我是小奇，一位不靠谱的程序员 小奇打算以轻松幽默的对话方式来分享一些技术，如果你觉得通过小奇的文章学到了东西，那就给小奇一个赞吧 文章持续更新    RabbitMQ我们经常的使用，但是" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="面试官：RabbitMQ过期时间设置、死信队列、延时队列怎么设计？">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+
+    <!-- CSS Files
+    ================================================== -->
+    <link href="/assets/website/css/free_clash_meta/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="/assets/website/css/free_clash_meta/plugins.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/swiper.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/style.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/coloring.css" rel="stylesheet" type="text/css">
+    <!-- color scheme -->
+    <link id="colors" href="/assets/website/css/free_clash_meta/scheme-01.css" rel="stylesheet" type="text/css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8MB0F69N3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8MB0F69N3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <div id="wrapper">
+                <!-- page preloader begin -->
+        <div id="de-loader"></div>
+        <!-- page preloader close -->
+        <!-- header begin -->
+        <header class="transparent header-light has-topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="/" class="xcblog-blog-logo">
+                                                                                <span class="text-primary m-0">Free Clash Meta</span>
+                                                                            </a>
+                                </div>
+                                <!-- logo close -->
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <ul id="mainmenu">
+                                                                        <li><a class="menu-item" href="/">首页</a></li>
+                                                                        <li><a class="menu-item" href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a class="menu-item" href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a class="menu-item" href="/client.htm">客户端</a></li>
+                                                                        <li><a class="menu-item" href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div id="content" class="no-top no-bottom">
+            <div id="top"></div>
+            <!-- section begin -->
+            <section id="de-subheader" class="mt-sm-60 pt20 pb20 bg-gradient-45-deg text-light">
+                <div class="container relative z-index-1000">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="mb-0" style="font-size: 2.5rem;">面试官：RabbitMQ过期时间设置、死信队列、延时队列怎么设计？</h1>
+                        </div>
+                        <div class="col-lg-6 text-lg-end">
+                            <ul class="crumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li class="active">正文</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+            <section>
+                <div class="container relative">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<blockquote> <p>哈喽！大家好，我是小奇，一位不靠谱的程序员<br /> 小奇打算以轻松幽默的对话方式来分享一些技术，如果你觉得通过小奇的文章学到了东西，那就给小奇一个赞吧<br /> 文章持续更新</p> </blockquote> </h1> <blockquote> <p><strong>RabbitMQ</strong>我们经常的使用，但是它有很多高级的特性我们也需要熟练的掌握才能应对现实场景中复杂的业务逻辑。</p> </blockquote> </h1> <blockquote> <p><strong>面试官：小奇是吧，我们开始面试吧</strong></p> </blockquote> <blockquote> <p>我：快点吧，早就饥渴难耐了</p> </blockquote> <p></p> <blockquote> <p><strong>面试官：有用过RabbitMQ吗</strong></p> </blockquote> <blockquote> <p>我：用过</p> </blockquote> </h1> <blockquote> <p><strong>面试官：RabbitMQ发送消息长时间没人处理过期怎么办？</strong></p> </blockquote> <blockquote> <p>我：消息长时间没人处理过期了我们为了不影响正常的交换机使用，我们可以将过期的消息放到一个<strong>死信交换机</strong>中，然后这个交换机绑定一个队列就是<strong>死信队列</strong>，然后通过一个专门的消费者来处理这些过期的消息</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/a760c03a84166e96abbc8d1e04b306aa.jpg" alt="面试官：RabbitMQ过期时间设置、死信队列、延时队列怎么设计？"></p> <blockquote> <p><strong>面试官：只有消息到达过期时间没有被消费会进入死信交换机吗，还有其他的情况吗</strong></p> </blockquote> <blockquote> <p>我：消息成为死信一共有三种情况。<br /> 1：队列消息长度达到限制。<br /> 2：消费者拒收消息，并且不将消息放入原来的队列中让他重新发送。<br /> 3：原队列存在消息过期设置，消息达到超时时间未被消费。</p> </blockquote> <blockquote> <p><strong>面试官：我们怎么定义一个死信交换机和死信队列绑定呢？</strong></p> </blockquote> <blockquote> <p>我：我们可以通过<strong>x-dead-letter-exchange</strong>和<strong>x-dead-letter-routing-key</strong>两个参数来配置好死信交换机的名称，和死信交换机与死信队列之间的路由键名称。</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/16cfe27ca18af7169c73918bf921f40d.jpg" alt="面试官：RabbitMQ过期时间设置、死信队列、延时队列怎么设计？"></p> </h1> <blockquote> <p><strong>面试官：TTL是什么？</strong></p> </blockquote> <blockquote> <p>我：TTL全称Time To Live（存活时间/过期时间），是mq中用来设置过期时间的。</p> </blockquote> <blockquote> <p><strong>面试官：我们一般怎么设置过期时间，用哪些方式？</strong></p> </blockquote> <blockquote> <p>我：我们有两种设置过期时间的方式，一个是对单个消息设置过期时间，一个是对一个队列设置过期时间，这样的话发送到队列中的消息都遵循那个过期时间。</p> </blockquote> <blockquote> <p>1：队列设置过期时间：x-message-ttl，单位：ms（毫秒），这样的话进入队列的所有消息都遵循这个过期时间。</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/566d8196bc9a93943f2865d97d046f2b.jpg" alt="面试官：RabbitMQ过期时间设置、死信队列、延时队列怎么设计？"></p> <blockquote> <p>2：单个消息设置过期时间：expiration，单位：ms（毫秒），这样的话只有这条消息有过期时间。</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/b7231a3966dcc14ab85e8eb05906adea.jpg" alt="面试官：RabbitMQ过期时间设置、死信队列、延时队列怎么设计？"></p> <blockquote> <p><strong>面试官：那如果我即给单条消息设置了时间又给队列设置了时间会怎么样?</strong></p> </blockquote> <blockquote> <p>我：那样的话根据最短的那个时间来。</p> </blockquote> </h1> <blockquote> <p><strong>面试官：那你知道延时队列吗，一般都用来做什么场景下的需求呢？</strong></p> </blockquote> <blockquote> <p>我：知道，延时队列一般就是发送消息到MQ中后，消费者不要第一时间去处理，比如我们点外卖的时候我们下单成功了，这个时候库存已经减了，但是我们还没有支付，如果我们一直不支付的话，过30分钟订单就自动取消了，然后库存又恢复了。</p> </blockquote> <blockquote> <p><strong>面试官：那RabbitMQ有延时队列吗，如果让你自己设计一个延时队列怎么设计呢？</strong></p> </blockquote> <blockquote> <p>我：RabbitMQ中没有提供延时队列的功能，但是我们可以使用TTL+死信队列来实现延时队列的功能。</p> </blockquote> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/9e57da86cd35c83025a6a65d200ffad6.jpg" alt="面试官：RabbitMQ过期时间设置、死信队列、延时队列怎么设计？"></p> <blockquote> <p><strong>面试官：可以呀小伙子，这块掌握的不错</strong></p> </blockquote> <blockquote> <p>我：还行还行，都是日常的积累</p> </blockquote> <blockquote> <p><strong>面试官：小伙子真厉害啊，RabbitMQ掌握的非常棒，你面试通过了，明天上岗吧</strong></p> </blockquote> <blockquote> <p>我：啊，这么急吗，我后面还有好多东西没有讲呢。</p> </blockquote> <blockquote> <p><strong>面试官：不着急，进来了以后慢慢听你讲，加班让你跟我讲</strong></p> </blockquote> <blockquote> <p>我：啊。。。这也太难了吧</p> </blockquote> </h1> <blockquote> <p>这里关于RabbitMQ还没有整理完毕，文章后面持续更新，建议收藏。</p> </blockquote> <blockquote> <p>文章中涉及到的命令大家一定要像我一样每个都敲几遍，只有在敲的过程中才能发现自己对命令是否真正的掌握了。</p> </blockquote> <blockquote> <p>如果觉得我的文章还不错的话就点个赞吧</p> </blockquote> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-80381.htm">Blazor 使用拖放（drag and drop）上传文件 , 粘贴文件上传</a></p>
+                                        <p>下一个：<a href="/news/article-81099.htm">Spring Boot运行原理</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-49691.htm" title="现在宠物美容店真的前景很好吗（宠物美容现在前景好么）">现在宠物美容店真的前景很好吗（宠物美容现在前景好么）</a></li>
+                        <li class="py-2"><a href="/news/article-59242.htm" title="动物常用的免疫接种方法（动物免疫接种实验原理）">动物常用的免疫接种方法（动物免疫接种实验原理）</a></li>
+                        <li class="py-2"><a href="/news/article-62748.htm" title="vue中巧用三元表达式解析_vue.js">vue中巧用三元表达式解析_vue.js</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-5-clash-meta-github.htm" title="3月5日最新Free Clash Meta订阅 | 22M/S|2025年SSR/V2ray/Clash/Shadowrocket免费节点地址链接分享">3月5日最新Free Clash Meta订阅 | 22M/S|2025年SSR/V2ray/Clash/Shadowrocket免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-3-clash-meta-github.htm" title="3月3日最新Free Clash Meta订阅 | 23M/S|2025年Shadowrocket/V2ray/Clash/SSR免费节点地址链接分享">3月3日最新Free Clash Meta订阅 | 23M/S|2025年Shadowrocket/V2ray/Clash/SSR免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-11-clash-meta-node-share.htm" title="2月11日最新Free Clash Meta订阅 | 21.1M/S|2025年Clash/SSR/V2ray/Shadowrocket免费节点地址链接分享">2月11日最新Free Clash Meta订阅 | 21.1M/S|2025年Clash/SSR/V2ray/Shadowrocket免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/news/article-58758.htm" title="我需要HTML5中的客户端浏览器数据库。我有什么选择？">我需要HTML5中的客户端浏览器数据库。我有什么选择？</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-22-clash-meta-node.htm" title="2月22日最新Free Clash Meta订阅 | 19.1M/S|2025年Clash/Shadowrocket/V2ray/SSR免费节点地址链接分享">2月22日最新Free Clash Meta订阅 | 19.1M/S|2025年Clash/Shadowrocket/V2ray/SSR免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/news/article-50996.htm" title="Feign调用传输文件异常">Feign调用传输文件异常</a></li>
+                        <li class="py-2"><a href="/news/article-52052.htm" title="jpa 原生SQL写法">jpa 原生SQL写法</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">75</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- content close -->
+                <!-- footer begin -->
+        <footer class="footer-light">
+            <div class="subfooter relative z-1000">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                <a href="/">首页</a> |
+                                <a href="/free-node/">免费节点</a> |
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">Free Clash Meta免费节点机场官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+        <!-- Javascript Files
+                    ================================================== -->
+        <script src="/assets/website/js/frontend/free_clash_meta/plugins.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/designesia.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/swiper.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/custom-marquee.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/custom-swiper-1.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+</body>
+
+</html>
