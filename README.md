@@ -1,4 +1,4 @@
-# 3月25日最新Free Clash Meta订阅 | 22.4M/S|2025年Shadowrocket/SSR/Clash/V2ray免费节点地址链接分享  更新时间 2025-03-25 08:45:06
+# 3月28日最新Free Clash Meta订阅 | 19.5M/S|2025年Shadowrocket/V2ray/Clash/SSR免费节点地址链接分享  更新时间 2025-03-28 10:24:02
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://free-clash-meta.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### Clash订阅链接
 
-- https://free-clash-meta.github.io/uploads/2025/03/0-20250325.yaml
-- https://free-clash-meta.github.io/uploads/2025/03/1-20250325.yaml
-- https://free-clash-meta.github.io/uploads/2025/03/2-20250325.yaml
-- https://free-clash-meta.github.io/uploads/2025/03/3-20250325.yaml
-- https://free-clash-meta.github.io/uploads/2025/03/4-20250325.yaml
+- https://free-clash-meta.github.io/uploads/2025/03/0-20250328.yaml
+- https://free-clash-meta.github.io/uploads/2025/03/1-20250328.yaml
+- https://free-clash-meta.github.io/uploads/2025/03/2-20250328.yaml
+- https://free-clash-meta.github.io/uploads/2025/03/3-20250328.yaml
+- https://free-clash-meta.github.io/uploads/2025/03/4-20250328.yaml
 
 ### V2ray订阅链接
 
-- https://free-clash-meta.github.io/uploads/2025/03/0-20250325.txt
-- https://free-clash-meta.github.io/uploads/2025/03/1-20250325.txt
-- https://free-clash-meta.github.io/uploads/2025/03/2-20250325.txt
-- https://free-clash-meta.github.io/uploads/2025/03/3-20250325.txt
-- https://free-clash-meta.github.io/uploads/2025/03/4-20250325.txt
+- https://free-clash-meta.github.io/uploads/2025/03/0-20250328.txt
+- https://free-clash-meta.github.io/uploads/2025/03/1-20250328.txt
+- https://free-clash-meta.github.io/uploads/2025/03/2-20250328.txt
+- https://free-clash-meta.github.io/uploads/2025/03/3-20250328.txt
+- https://free-clash-meta.github.io/uploads/2025/03/4-20250328.txt
 
 ### Sing-box订阅链接
 
-- https://free-clash-meta.github.io/uploads/2025/03/20250325.json
+- https://free-clash-meta.github.io/uploads/2025/03/20250328.json
 
 ## 更多clash节点订阅 ：
 
