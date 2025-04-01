@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://free-clash-meta.github.io/news/article-85345.htm" />
+    <title>UVM如何处理out-of-order乱序传输</title>
+        <meta name="description" content="文章目录  前言 1、基本思路 2、支持乱序传输的sequence 3、支持乱序传输的Driver 总结     乱序传输(out-of-order)是指在协议中，后发出去的req，支持先回resp，" />
+        <link rel="icon" href="/assets/website/img/free_clash_meta/favicon.ico" type="image/x-icon"/>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <meta name="author" content="Free Clash Meta免费节点机场官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://free-clash-meta.github.io/news/article-85345.htm" />
+    <meta property="og:site_name" content="Free Clash Meta免费节点机场官网" />
+    <meta property="og:title" content="UVM如何处理out-of-order乱序传输" />
+    <meta property="og:image" content="https://free-clash-meta.github.io/uploads/20250201-2/efc212345469f7d4f6d672b6ef38d44c.webp" />
+        <meta property="og:release_date" content="2025-03-31T08:41:04" />
+    <meta property="og:updated_time" content="2025-03-31T08:41:04" />
+        <meta property="og:description" content="文章目录  前言 1、基本思路 2、支持乱序传输的sequence 3、支持乱序传输的Driver 总结     乱序传输(out-of-order)是指在协议中，后发出去的req，支持先回resp，" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="UVM如何处理out-of-order乱序传输">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+
+    <!-- CSS Files
+    ================================================== -->
+    <link href="/assets/website/css/free_clash_meta/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="/assets/website/css/free_clash_meta/plugins.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/swiper.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/style.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/coloring.css" rel="stylesheet" type="text/css">
+    <!-- color scheme -->
+    <link id="colors" href="/assets/website/css/free_clash_meta/scheme-01.css" rel="stylesheet" type="text/css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8MB0F69N3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8MB0F69N3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <div id="wrapper">
+                <!-- page preloader begin -->
+        <div id="de-loader"></div>
+        <!-- page preloader close -->
+        <!-- header begin -->
+        <header class="transparent header-light has-topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="/" class="xcblog-blog-logo">
+                                                                                <span class="text-primary m-0">Free Clash Meta</span>
+                                                                            </a>
+                                </div>
+                                <!-- logo close -->
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <ul id="mainmenu">
+                                                                        <li><a class="menu-item" href="/">首页</a></li>
+                                                                        <li><a class="menu-item" href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a class="menu-item" href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a class="menu-item" href="/client.htm">客户端</a></li>
+                                                                        <li><a class="menu-item" href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div id="content" class="no-top no-bottom">
+            <div id="top"></div>
+            <!-- section begin -->
+            <section id="de-subheader" class="mt-sm-60 pt20 pb20 bg-gradient-45-deg text-light">
+                <div class="container relative z-index-1000">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="mb-0" style="font-size: 2.5rem;">UVM如何处理out-of-order乱序传输</h1>
+                        </div>
+                        <div class="col-lg-6 text-lg-end">
+                            <ul class="crumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li class="active">正文</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+            <section>
+                <div class="container relative">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"><font color="#999AAA"></font></p> <div class="toc"> <h3>文章目录</h3> <ul> <li><a href="#_10" rel="nofollow">前言</a></li> <li><a href="#1_18" rel="nofollow">1、基本思路</a></li> <li><a href="#2sequence_25" rel="nofollow">2、支持乱序传输的sequence</a></li> <li><a href="#3Driver_39" rel="nofollow">3、支持乱序传输的Driver</a></li> <li><a href="#_54" rel="nofollow">总结</a></li> </ul> </div> <hr color="#000000" size="1&quot;"/> </h1> <p>乱序传输(out-of-order)是指在协议中，后发出去的req，支持先回resp，通常通过ID来保证req和resp之间的关系。很多协议支持乱序传输，例如AXI4。本文主要介绍，在UVM的环境中，构造支持乱序传输的验证环境的方法。</p> <hr color="#000000" size="1&quot;"/><font color="#999AAA"></font></p> </h1> <p>在uvm环境中，要实现乱序传输，主要是处理sequence和driver之间的数据交互。</p> <p>在sequence中，需要一个存储transaction和transaction ID的关联数组，当下发一个transaction时，需要将这个transaction和对应的ID存起来，然后去获取相应resp的ID，注意这个时候获取resp ID的进程不能阻塞下一个req的发送，当获取到resp时，就需要将关联数组中对应ID的transaction删除回收。</p> <p>在driver中，首先需要关闭driver自动收集transaction的功能，改为手动收集；其次需要去获取sequence通过sequencer发过来的transaction，并对其进行相应的处理，注意这里接收transaction和处理transaction需要分开并行执行，否则处理transaction的时候，有可能会因为阻塞了接收transaction，造成本应该被接收的transaction，在sequenc中被下一条transaction覆盖，从而导致丢失；最后，为了实现接收和处理transaction这两个进程之间的数据交互，需要一个存储transaction的队列。</p> </h1> <p>这里有几个关键点：<br /> 1）packet pkt_reg[int]，这里是声明存储transaction和transaction ID的关联数组。<br /> 2）wait(pkt_req.size()&lt;5)，这句话可以理解为outstanding=5，当下游的resp被阻塞时，防止上游的req一下子全部发下去了。<br /> 3）pkt_req[req.get_transaction_id()] = req，这里是利用关联数组，保存当前的transaction和ID。<br /> 4）接下来的fork - join_none主要是用来对已经收到resp的req进行回收，采用fork - join_none的目的是为了不阻塞下一次req的发送。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221117/555ae9aa3553fc20f49af0ac14197950.jpg" alt="UVM如何处理out-of-order乱序传输"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20221117/0f5c93991be3a5ff272d2197f6c3a080.jpg" alt="UVM如何处理out-of-order乱序传输"></p> </h1> <p>这里也提几个关键点：<br /> 1）seq_item_port.disable_auto_item_recording()，关闭driver中自动记录transaction的功能。<br /> 2）利用fork - join启用两个进程，分别负责接收transaction以及处理transaction。<br /> 3）在接收的进程中，接收到transaction之后，就将transaction送入队列中；在处理的进程中，一旦队列不为空，则对队列中的数据进行处理。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221117/ac2f73720063bb1febee9a3218ee9901.jpg" alt="UVM如何处理out-of-order乱序传输"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221117/866b8b68d81bce466be34ed7cc62863e.jpg" alt="UVM如何处理out-of-order乱序传输"></p> <p><font color="#999AAA"></font></p> <hr color="#000000" size="1&quot;"/> </h1> <p>本文主要总结一下，在uvm环境中，如何处理乱序的传输。首先给出整体思路，然后分别针对sequence和driver提供具体的代码实现供参考。</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-84625.htm">动物疫苗研发过程视频（动物疫苗研制）</a></p>
+                                        <p>下一个：<a href="/news/article-85346.htm">动物注射方法有哪几种 动物注射方法有哪几种类型</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-83904.htm" title="动物疫苗一般在哪里*** 动物疫苗一般在哪里***的">动物疫苗一般在哪里*** 动物疫苗一般在哪里***的</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-3-clash-meta-github.htm" title="3月3日最新Free Clash Meta订阅 | 23M/S|2025年Shadowrocket/V2ray/Clash/SSR免费节点地址链接分享">3月3日最新Free Clash Meta订阅 | 23M/S|2025年Shadowrocket/V2ray/Clash/SSR免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/news/article-70316.htm" title="动物医院手续流程图模板（动物医院手续流程图模板下载）">动物医院手续流程图模板（动物医院手续流程图模板下载）</a></li>
+                        <li class="py-2"><a href="/news/article-73607.htm" title="领养宠物用钱吗（领养宠物需要花钱吗?）">领养宠物用钱吗（领养宠物需要花钱吗?）</a></li>
+                        <li class="py-2"><a href="/news/article-75625.htm" title="南京宠物领养中心在哪（南京宠物领养中心在哪儿）">南京宠物领养中心在哪（南京宠物领养中心在哪儿）</a></li>
+                        <li class="py-2"><a href="/news/article-68335.htm" title="北京给鹦鹉看病的医院（北京给鹦鹉看病的医院哪家好）">北京给鹦鹉看病的医院（北京给鹦鹉看病的医院哪家好）</a></li>
+                        <li class="py-2"><a href="/news/article-74962.htm" title="猫三联打几针多少钱一次（猫三联要多少钱第一针）">猫三联打几针多少钱一次（猫三联要多少钱第一针）</a></li>
+                        <li class="py-2"><a href="/news/article-78331.htm" title="申请动物诊疗机构的条件和流程是什么（申请动物诊疗许可证向哪个部门）">申请动物诊疗机构的条件和流程是什么（申请动物诊疗许可证向哪个部门）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-26-free-high-speed-nodes.htm" title="3月26日最新Free Clash Meta订阅 | 18M/S|2025年SSR/Shadowrocket/V2ray/Clash免费节点地址链接分享">3月26日最新Free Clash Meta订阅 | 18M/S|2025年SSR/Shadowrocket/V2ray/Clash免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-15-free-node-subscribe.htm" title="3月15日最新Free Clash Meta订阅 | 20.6M/S|2025年V2ray/Clash/Shadowrocket/SSR免费节点地址链接分享">3月15日最新Free Clash Meta订阅 | 20.6M/S|2025年V2ray/Clash/Shadowrocket/SSR免费节点地址链接分享</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- content close -->
+                <!-- footer begin -->
+        <footer class="footer-light">
+            <div class="subfooter relative z-1000">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                <a href="/">首页</a> |
+                                <a href="/free-node/">免费节点</a> |
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">Free Clash Meta免费节点机场官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+        <!-- Javascript Files
+                    ================================================== -->
+        <script src="/assets/website/js/frontend/free_clash_meta/plugins.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/designesia.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/swiper.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/custom-marquee.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/custom-swiper-1.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+</body>
+
+</html>
