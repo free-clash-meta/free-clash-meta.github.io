@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://free-clash-meta.github.io/news/article-90433.htm" />
+    <title>浅谈c++的命名空间（namespace）</title>
+        <meta name="description" content="一、命名空间的作用 假设这样一种情况，当一个班上有两个名叫 zouxu 的学生时，为了明确区分它们，我们在使用名字之外，不得不使用一些额外的信息，比如他们的家庭住址，或者他们父母的名字等等。  同样的" />
+        <link rel="icon" href="/assets/website/img/free_clash_meta/favicon.ico" type="image/x-icon"/>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <meta name="author" content="Free Clash Meta免费节点机场官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://free-clash-meta.github.io/news/article-90433.htm" />
+    <meta property="og:site_name" content="Free Clash Meta免费节点机场官网" />
+    <meta property="og:title" content="浅谈c++的命名空间（namespace）" />
+    <meta property="og:image" content="https://free-clash-meta.github.io/uploads/20250201-2/88a3de44cbc8c5cabd547e91f98569a2.webp" />
+        <meta property="og:release_date" content="2025-04-07T09:02:24" />
+    <meta property="og:updated_time" content="2025-04-07T09:02:24" />
+        <meta property="og:description" content="一、命名空间的作用 假设这样一种情况，当一个班上有两个名叫 zouxu 的学生时，为了明确区分它们，我们在使用名字之外，不得不使用一些额外的信息，比如他们的家庭住址，或者他们父母的名字等等。  同样的" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="浅谈c++的命名空间（namespace）">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+
+    <!-- CSS Files
+    ================================================== -->
+    <link href="/assets/website/css/free_clash_meta/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="/assets/website/css/free_clash_meta/plugins.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/swiper.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/style.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/coloring.css" rel="stylesheet" type="text/css">
+    <!-- color scheme -->
+    <link id="colors" href="/assets/website/css/free_clash_meta/scheme-01.css" rel="stylesheet" type="text/css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8MB0F69N3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8MB0F69N3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <div id="wrapper">
+                <!-- page preloader begin -->
+        <div id="de-loader"></div>
+        <!-- page preloader close -->
+        <!-- header begin -->
+        <header class="transparent header-light has-topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="/" class="xcblog-blog-logo">
+                                                                                <span class="text-primary m-0">Free Clash Meta</span>
+                                                                            </a>
+                                </div>
+                                <!-- logo close -->
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <ul id="mainmenu">
+                                                                        <li><a class="menu-item" href="/">首页</a></li>
+                                                                        <li><a class="menu-item" href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a class="menu-item" href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a class="menu-item" href="/client.htm">客户端</a></li>
+                                                                        <li><a class="menu-item" href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div id="content" class="no-top no-bottom">
+            <div id="top"></div>
+            <!-- section begin -->
+            <section id="de-subheader" class="mt-sm-60 pt20 pb20 bg-gradient-45-deg text-light">
+                <div class="container relative z-index-1000">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="mb-0" style="font-size: 2.5rem;">浅谈c++的命名空间（namespace）</h1>
+                        </div>
+                        <div class="col-lg-6 text-lg-end">
+                            <ul class="crumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li class="active">正文</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+            <section>
+                <div class="container relative">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2 id="一命名空间的作用">一、命名空间的作用</h2> <p>假设这样一种情况，当一个班上有两个名叫 zouxu 的学生时，为了明确区分它们，我们在使用名字之外，不得不使用一些额外的信息，比如他们的家庭住址，或者他们父母的名字等等。 <br /> 同样的情况也出现在 C++ 应用程序中。例如，您可能会写一个名为 xyz() 的函数，在另一个可用的库中也存在一个相同的函数 xyz()。这样，编译器就无法判断您所使用的是哪一个 xyz() 函数。 <br /> 因此，引入了命名空间这个概念，专门用于解决上面的问题，它可作为附加信息来区分不同库中相同名称的函数、类、变量等。使用了命名空间即定义了上下文。本质上，命名空间就是定义了一个范围。</p> <hr/> <h2 id="二定义一个命名空间">二、定义一个命名空间</h2> <pre class="prettyprint"><code class="hljs vala"><span class="hljs-class"><span class="hljs-keyword">namespace</span> <span class="hljs-title">namespace_name</span> {<!-- --></span>    <span class="hljs-comment">// 代码声明</span> }</code></pre> <p>为了调用带有命名空间的函数或变量，需要在前面加上命名空间的名称，如下所示：</p> <pre class="prettyprint"><code class="hljs ruby"><span class="hljs-symbol">name:</span><span class="hljs-symbol">:code</span>;  <span class="hljs-regexp">//</span> code 可以是变量或函数</code></pre> <p>例子：</p> <pre class="prettyprint"><code class="hljs cpp"><span class="hljs-preprocessor">#include &lt;iostream&gt;</span> <span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;  <span class="hljs-comment">// 第一个命名空间</span> <span class="hljs-keyword">namespace</span> first_space{    <span class="hljs-keyword">void</span> func(){       <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Inside first_space"</span> &lt;&lt; endl;    } } <span class="hljs-comment">// 第二个命名空间</span> <span class="hljs-keyword">namespace</span> second_space{    <span class="hljs-keyword">void</span> func(){       <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Inside second_space"</span> &lt;&lt; endl;    } } <span class="hljs-keyword">int</span> main () {     <span class="hljs-comment">// 调用第一个命名空间中的函数</span>    first_space::func();     <span class="hljs-comment">// 调用第二个命名空间中的函数</span>    second_space::func();      <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>; }</code></pre> <hr/> <h2 id="三往一个命名空间中加入新的成员">三、往一个命名空间中加入新的成员</h2> <pre class="prettyprint"><code class="hljs vala"><span class="hljs-class"><span class="hljs-keyword">namespace</span> <span class="hljs-title">namespace_name</span>  {<!-- --></span>    <span class="hljs-comment">// 代码声明</span> }</code></pre> <p>也就是在重新写这个namespace</p> <pre class="prettyprint"><code class="hljs vala"><span class="hljs-class"><span class="hljs-keyword">namespace</span> <span class="hljs-title">A</span>  {<!-- --></span>   <span class="hljs-keyword">int</span> i;   <span class="hljs-keyword">void</span> f();  } <span class="hljs-comment">// 现在A有成员i和f()</span>  <span class="hljs-class"><span class="hljs-keyword">namespace</span> <span class="hljs-title">A</span>  {<!-- --></span>    <span class="hljs-keyword">int</span> j;    <span class="hljs-keyword">void</span> g();  } <span class="hljs-comment">// 现在A有成员i、f()、j和g()</span></code></pre> <hr/> <h2 id="四using-指令">四、using 指令</h2> <p>您可以使用 using namespace 指令，这样在使用命名空间时就可以不用在前面加上命名空间的名称。这个指令会告诉编译器，后续的代码将使用指定的命名空间中的名称。</p> <pre class="prettyprint"><code class="hljs cpp"><span class="hljs-preprocessor">#include &lt;iostream&gt;</span> <span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;  <span class="hljs-comment">// 第一个命名空间</span> <span class="hljs-keyword">namespace</span> first_space{    <span class="hljs-keyword">void</span> func(){       <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Inside first_space"</span> &lt;&lt; endl;    } } <span class="hljs-comment">// 第二个命名空间</span> <span class="hljs-keyword">namespace</span> second_space{    <span class="hljs-keyword">void</span> func(){       <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Inside second_space"</span> &lt;&lt; endl;    } } <span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> first_space; <span class="hljs-keyword">int</span> main () {     <span class="hljs-comment">// 调用第一个命名空间中的函数</span>    func();     <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>; }</code></pre> <hr/> <h2 id="五嵌套的命名空间">五、嵌套的命名空间</h2> <p>命名空间可以嵌套，您可以在一个命名空间中定义另一个命名空间，如下所示：</p> <pre class="prettyprint"><code class="hljs vala"><span class="hljs-class"><span class="hljs-keyword">namespace</span> <span class="hljs-title">namespace_name1</span> {<!-- --></span>    <span class="hljs-comment">// 代码声明</span>    <span class="hljs-class"><span class="hljs-keyword">namespace</span> <span class="hljs-title">namespace_name2</span> {<!-- --></span>       <span class="hljs-comment">// 代码声明</span>    } }</code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-89673.htm">兽药百强企业名单（兽药十大企业）</a></p>
+                                        <p>下一个：<a href="/news/article-90434.htm">农大宠物医院地址电话多少（农大宠物医院电话号码是多少）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-67694.htm" title="动物疫苗价格表图片高清大全集视频（动物疫苗接种时间表）">动物疫苗价格表图片高清大全集视频（动物疫苗接种时间表）</a></li>
+                        <li class="py-2"><a href="/news/article-91203.htm" title=""></a></li>
+                        <li class="py-2"><a href="/news/article-82494.htm" title="2022公务员国考报考条件及时间（2022公务员国考报考条件及时间表）">2022公务员国考报考条件及时间（2022公务员国考报考条件及时间表）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-20-free-high-speed-nodes.htm" title="3月20日最新Free Clash Meta订阅 | 20.6M/S|2025年V2ray/SSR/Shadowrocket/Clash免费节点地址链接分享">3月20日最新Free Clash Meta订阅 | 20.6M/S|2025年V2ray/SSR/Shadowrocket/Clash免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/news/article-67691.htm" title="重庆宠物领养微信群号（重庆宠物领养微信群号是什么）">重庆宠物领养微信群号（重庆宠物领养微信群号是什么）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-12-free-node-subscribe.htm" title="3月12日最新Free Clash Meta订阅 | 22.1M/S|2025年V2ray/SSR/Clash/Shadowrocket免费节点地址链接分享">3月12日最新Free Clash Meta订阅 | 22.1M/S|2025年V2ray/SSR/Clash/Shadowrocket免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/news/article-88226.htm" title="开个宠物店大概需要多少钱（现在开宠物店前景好吗）">开个宠物店大概需要多少钱（现在开宠物店前景好吗）</a></li>
+                        <li class="py-2"><a href="/news/article-91905.htm" title="北京正规免费领养宠物 北京正规免费领养宠物猫">北京正规免费领养宠物 北京正规免费领养宠物猫</a></li>
+                        <li class="py-2"><a href="/news/article-86780.htm" title="vue 跨组件进行传值简易方法">vue 跨组件进行传值简易方法</a></li>
+                        <li class="py-2"><a href="/news/article-91904.htm" title="长沙市宠物领养（长沙哪里有宠物领养）">长沙市宠物领养（长沙哪里有宠物领养）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- content close -->
+                <!-- footer begin -->
+        <footer class="footer-light">
+            <div class="subfooter relative z-1000">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p>
+                                <a href="/">Free Clash Meta免费节点机场官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+        <!-- Javascript Files
+                    ================================================== -->
+        <script src="/assets/website/js/frontend/free_clash_meta/plugins.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/designesia.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/swiper.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/custom-marquee.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/custom-swiper-1.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+</body>
+
+</html>

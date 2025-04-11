@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://free-clash-meta.github.io/news/article-89672.htm" />
+    <title>C# DataTable去重，根据列名去重保留其他列</title>
+        <meta name="description" content="//去掉重复行 DataView dv = table.DefaultView; table = dv.ToTable(true, new string[] { "name", "code" }); " />
+        <link rel="icon" href="/assets/website/img/free_clash_meta/favicon.ico" type="image/x-icon"/>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <meta name="author" content="Free Clash Meta免费节点机场官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://free-clash-meta.github.io/news/article-89672.htm" />
+    <meta property="og:site_name" content="Free Clash Meta免费节点机场官网" />
+    <meta property="og:title" content="C# DataTable去重，根据列名去重保留其他列" />
+    <meta property="og:image" content="https://free-clash-meta.github.io/uploads/20250201-2/09e4937d18272fc8e0a668f044806a85.webp" />
+        <meta property="og:release_date" content="2025-04-06T10:07:48" />
+    <meta property="og:updated_time" content="2025-04-06T10:07:48" />
+        <meta property="og:description" content="//去掉重复行 DataView dv = table.DefaultView; table = dv.ToTable(true, new string[] { "name", "code" }); " />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="C# DataTable去重，根据列名去重保留其他列">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+
+    <!-- CSS Files
+    ================================================== -->
+    <link href="/assets/website/css/free_clash_meta/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="/assets/website/css/free_clash_meta/plugins.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/swiper.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/style.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/coloring.css" rel="stylesheet" type="text/css">
+    <!-- color scheme -->
+    <link id="colors" href="/assets/website/css/free_clash_meta/scheme-01.css" rel="stylesheet" type="text/css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8MB0F69N3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8MB0F69N3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <div id="wrapper">
+                <!-- page preloader begin -->
+        <div id="de-loader"></div>
+        <!-- page preloader close -->
+        <!-- header begin -->
+        <header class="transparent header-light has-topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="/" class="xcblog-blog-logo">
+                                                                                <span class="text-primary m-0">Free Clash Meta</span>
+                                                                            </a>
+                                </div>
+                                <!-- logo close -->
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <ul id="mainmenu">
+                                                                        <li><a class="menu-item" href="/">首页</a></li>
+                                                                        <li><a class="menu-item" href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a class="menu-item" href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a class="menu-item" href="/client.htm">客户端</a></li>
+                                                                        <li><a class="menu-item" href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div id="content" class="no-top no-bottom">
+            <div id="top"></div>
+            <!-- section begin -->
+            <section id="de-subheader" class="mt-sm-60 pt20 pb20 bg-gradient-45-deg text-light">
+                <div class="container relative z-index-1000">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="mb-0" style="font-size: 2.5rem;">C# DataTable去重，根据列名去重保留其他列</h1>
+                        </div>
+                        <div class="col-lg-6 text-lg-end">
+                            <ul class="crumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li class="active">正文</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+            <section>
+                <div class="container relative">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-tomorrow-night"> <pre class="prettyprint"><code class="hljs lua">//去掉重复行 DataView dv = <span class="hljs-built_in">table</span>.DefaultView; <span class="hljs-built_in">table</span> = dv.ToTable(<span class="hljs-keyword">true</span>, new <span class="hljs-built_in">string</span>[] { <span class="hljs-string">"name"</span>, <span class="hljs-string">"code"</span> });  此时<span class="hljs-built_in">table</span> 就只有name、code无重复的两行了，如果还需要id值则  <span class="hljs-built_in">table</span> = dv.ToTable(<span class="hljs-keyword">true</span>, new <span class="hljs-built_in">string</span>[] { <span class="hljs-string">"id"</span>,<span class="hljs-string">"name"</span>, <span class="hljs-string">"code"</span> });//第一个参数<span class="hljs-keyword">true</span> 启用去重复，类似distinct</code></pre> <p>如果有一组数据（id不是唯一字段）</p> <pre class="prettyprint"><code class="hljs applescript"><span class="hljs-property">id</span>   <span class="hljs-property">name</span>   code    张三    <span class="hljs-number">123</span>    李四    <span class="hljs-number">456</span>    张三    <span class="hljs-number">456</span>    张三     <span class="hljs-number">123</span></code></pre> <p>通过上面的方法得到</p> <pre class="prettyprint"><code class="hljs applescript"><span class="hljs-property">id</span>   <span class="hljs-property">name</span>   code    张三    <span class="hljs-number">123</span>    李四    <span class="hljs-number">456</span>    张三    <span class="hljs-number">456</span></code></pre> <p>去重复去掉的仅仅是 id name code完全重复的行，如果想要筛选的数据仅仅是name不允许重复呢？</p> <pre class="prettyprint"><code class="hljs cs">table = dv.ToTable(<span class="hljs-keyword">true</span>, <span class="hljs-keyword">new</span> <span class="hljs-keyword">string</span>[] { <span class="hljs-string">"name"</span>});</code></pre> <p>得到：</p> <pre class="prettyprint"><code class="hljs applescript"><span class="hljs-property">name</span>   张三    李四  </code></pre> <p>但是我想要的结果是只针对其中的一列name列 去重复，还要显示其他的列</p> <p>需要的结果是：</p> <pre class="prettyprint"><code class="hljs applescript"> <span class="hljs-property">id</span>   <span class="hljs-property">name</span>   code   <span class="hljs-number">1</span>    张三    <span class="hljs-number">123</span>  <span class="hljs-number">2</span>    李四    <span class="hljs-number">456</span></code></pre> <p>该怎么实现？下面的方法就可以，也许有更好的方法，希望大家多多指教</p> <pre class="prettyprint"><code class="hljs cs"><span class="hljs-preprocessor">#<span class="hljs-keyword">region</span> 删除DataTable重复列，类似distinct</span>         <span class="hljs-comment"><span class="hljs-xmlDocTag">///</span> <span class="hljs-xmlDocTag">&lt;summary&gt;</span>   </span>         <span class="hljs-comment"><span class="hljs-xmlDocTag">///</span> 删除DataTable重复列，类似distinct   </span>         <span class="hljs-comment"><span class="hljs-xmlDocTag">///</span> <span class="hljs-xmlDocTag">&lt;/summary&gt;</span>   </span>         <span class="hljs-comment"><span class="hljs-xmlDocTag">///</span> <span class="hljs-xmlDocTag">&lt;param name="dt"&gt;</span>DataTable<span class="hljs-xmlDocTag">&lt;/param&gt;</span>   </span>         <span class="hljs-comment"><span class="hljs-xmlDocTag">///</span> <span class="hljs-xmlDocTag">&lt;param name="Field"&gt;</span>字段名<span class="hljs-xmlDocTag">&lt;/param&gt;</span>   </span>         <span class="hljs-comment"><span class="hljs-xmlDocTag">///</span> <span class="hljs-xmlDocTag">&lt;returns&gt;</span><span class="hljs-xmlDocTag">&lt;/returns&gt;</span>   </span>         <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> DataTable <span class="hljs-title">DeleteSameRow</span>(DataTable dt, <span class="hljs-keyword">string</span> Field)         {             ArrayList indexList = <span class="hljs-keyword">new</span> ArrayList();             <span class="hljs-comment">// 找出待删除的行索引   </span>             <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; dt.Rows.Count - <span class="hljs-number">1</span>; i++)             {                 <span class="hljs-keyword">if</span> (!IsContain(indexList, i))                 {                     <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i + <span class="hljs-number">1</span>; j &lt; dt.Rows.Count; j++)                     {                         <span class="hljs-keyword">if</span> (dt.Rows[i][Field].ToString() == dt.Rows[j][Field].ToString())                         {                             indexList.Add(j);                         }                     }                 }             }             indexList.Sort();  <span class="hljs-comment">// 排序</span>             <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = indexList.Count - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--)<span class="hljs-comment">// 根据待删除索引列表删除行  </span>             {                 <span class="hljs-keyword">int</span> index = Convert.ToInt32(indexList[i]);                 dt.Rows.RemoveAt(index);             }             <span class="hljs-keyword">return</span> dt;         }          <span class="hljs-comment"><span class="hljs-xmlDocTag">///</span> <span class="hljs-xmlDocTag">&lt;summary&gt;</span>   </span>         <span class="hljs-comment"><span class="hljs-xmlDocTag">///</span> 判断数组中是否存在   </span>         <span class="hljs-comment"><span class="hljs-xmlDocTag">///</span> <span class="hljs-xmlDocTag">&lt;/summary&gt;</span>   </span>         <span class="hljs-comment"><span class="hljs-xmlDocTag">///</span> <span class="hljs-xmlDocTag">&lt;param name="indexList"&gt;</span>数组<span class="hljs-xmlDocTag">&lt;/param&gt;</span>   </span>         <span class="hljs-comment"><span class="hljs-xmlDocTag">///</span> <span class="hljs-xmlDocTag">&lt;param name="index"&gt;</span>索引<span class="hljs-xmlDocTag">&lt;/param&gt;</span>   </span>         <span class="hljs-comment"><span class="hljs-xmlDocTag">///</span> <span class="hljs-xmlDocTag">&lt;returns&gt;</span><span class="hljs-xmlDocTag">&lt;/returns&gt;</span>   </span>         <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">bool</span> <span class="hljs-title">IsContain</span>(ArrayList indexList, <span class="hljs-keyword">int</span> index)         {             <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; indexList.Count; i++)             {                 <span class="hljs-keyword">int</span> tempIndex = Convert.ToInt32(indexList[i]);                 <span class="hljs-keyword">if</span> (tempIndex == index)                 {                     <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;                 }             }             <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;         }         <span class="hljs-preprocessor">#<span class="hljs-keyword">endregion</span></span></code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-88961.htm">开一个宠物用品店赚钱吗（开宠物用品店利润大吗）</a></p>
+                                        <p>下一个：<a href="/news/article-89673.htm">兽药百强企业名单（兽药十大企业）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-5-clash-meta-github.htm" title="3月5日最新Free Clash Meta订阅 | 22M/S|2025年SSR/V2ray/Clash/Shadowrocket免费节点地址链接分享">3月5日最新Free Clash Meta订阅 | 22M/S|2025年SSR/V2ray/Clash/Shadowrocket免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-6-clash-meta-node-share.htm" title="3月6日最新Free Clash Meta订阅 | 19.9M/S|2025年SSR/Clash/Shadowrocket/V2ray免费节点地址链接分享">3月6日最新Free Clash Meta订阅 | 19.9M/S|2025年SSR/Clash/Shadowrocket/V2ray免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-29-free-node-subscribe.htm" title="3月29日最新Free Clash Meta订阅 | 21.8M/S|2025年Clash/V2ray/Shadowrocket/SSR免费节点地址链接分享">3月29日最新Free Clash Meta订阅 | 21.8M/S|2025年Clash/V2ray/Shadowrocket/SSR免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/news/article-68335.htm" title="北京给鹦鹉看病的医院（北京给鹦鹉看病的医院哪家好）">北京给鹦鹉看病的医院（北京给鹦鹉看病的医院哪家好）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-13-latest-clash-meta-node.htm" title="3月13日最新Free Clash Meta订阅 | 18.7M/S|2025年Shadowrocket/Clash/SSR/V2ray免费节点地址链接分享">3月13日最新Free Clash Meta订阅 | 18.7M/S|2025年Shadowrocket/Clash/SSR/V2ray免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/news/article-80382.htm" title="面试官：RabbitMQ过期时间设置、死信队列、延时队列怎么设计？">面试官：RabbitMQ过期时间设置、死信队列、延时队列怎么设计？</a></li>
+                        <li class="py-2"><a href="/news/article-74963.htm" title="中国最大猫粮生产基地在哪里 中国最大猫粮生产基地在哪里啊">中国最大猫粮生产基地在哪里 中国最大猫粮生产基地在哪里啊</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-27-clash-meta-windows.htm" title="3月27日最新Free Clash Meta订阅 | 18.6M/S|2025年Shadowrocket/V2ray/SSR/Clash免费节点地址链接分享">3月27日最新Free Clash Meta订阅 | 18.6M/S|2025年Shadowrocket/V2ray/SSR/Clash免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/news/article-87488.htm" title="windows 平台下编译openssl 最新版本-3.0.5">windows 平台下编译openssl 最新版本-3.0.5</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-9-latest-clash-meta-node.htm" title="3月9日最新Free Clash Meta订阅 | 23M/S|2025年Shadowrocket/V2ray/Clash/SSR免费节点地址链接分享">3月9日最新Free Clash Meta订阅 | 23M/S|2025年Shadowrocket/V2ray/Clash/SSR免费节点地址链接分享</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">24</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- content close -->
+                <!-- footer begin -->
+        <footer class="footer-light">
+            <div class="subfooter relative z-1000">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p>
+                                <a href="/">Free Clash Meta免费节点机场官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+        <!-- Javascript Files
+                    ================================================== -->
+        <script src="/assets/website/js/frontend/free_clash_meta/plugins.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/designesia.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/swiper.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/custom-marquee.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/custom-swiper-1.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+</body>
+
+</html>
