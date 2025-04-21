@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://free-clash-meta.github.io/news/article-99321.htm" />
+    <title>C/C++编程：异常处理(exception handling)的原理</title>
+        <meta name="description" content="问题：很久之前，C程序是使用错误码来处理错误的，那为什么C++还要引入异常呢？  回答：异常不能被忽略。  如果一个函数通过设置一个状态变量来返回错误码来表示一个异常状态，没有办法保证函数调用将一定检" />
+        <link rel="icon" href="/assets/website/img/free_clash_meta/favicon.ico" type="image/x-icon"/>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <meta name="author" content="Free Clash Meta免费节点机场官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://free-clash-meta.github.io/news/article-99321.htm" />
+    <meta property="og:site_name" content="Free Clash Meta免费节点机场官网" />
+    <meta property="og:title" content="C/C++编程：异常处理(exception handling)的原理" />
+    <meta property="og:image" content="https://free-clash-meta.github.io/uploads/20250201-2/bced3fd052bf3f51db918b6ef3fc1145.webp" />
+        <meta property="og:release_date" content="2025-04-19T08:57:43" />
+    <meta property="og:updated_time" content="2025-04-19T08:57:43" />
+        <meta property="og:description" content="问题：很久之前，C程序是使用错误码来处理错误的，那为什么C++还要引入异常呢？  回答：异常不能被忽略。  如果一个函数通过设置一个状态变量来返回错误码来表示一个异常状态，没有办法保证函数调用将一定检" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="C/C++编程：异常处理(exception handling)的原理">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+
+    <!-- CSS Files
+    ================================================== -->
+    <link href="/assets/website/css/free_clash_meta/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="/assets/website/css/free_clash_meta/plugins.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/swiper.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/style.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/coloring.css" rel="stylesheet" type="text/css">
+    <!-- color scheme -->
+    <link id="colors" href="/assets/website/css/free_clash_meta/scheme-01.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8MB0F69N3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8MB0F69N3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <div id="wrapper">
+                <!-- page preloader begin -->
+        <div id="de-loader"></div>
+        <!-- page preloader close -->
+        <!-- header begin -->
+        <header class="transparent header-light has-topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="/" class="xcblog-blog-logo">
+                                                                                <span class="text-primary m-0">Free Clash Meta</span>
+                                                                            </a>
+                                </div>
+                                <!-- logo close -->
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <ul id="mainmenu">
+                                                                        <li><a class="menu-item" href="/">首页</a></li>
+                                                                        <li><a class="menu-item" href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a class="menu-item" href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a class="menu-item" href="/client.htm">客户端</a></li>
+                                                                        <li><a class="menu-item" href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div id="content" class="no-top no-bottom">
+            <div id="top"></div>
+            <!-- section begin -->
+            <section id="de-subheader" class="mt-sm-60 pt20 pb20 bg-gradient-45-deg text-light">
+                <div class="container relative z-index-1000">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="mb-0" style="font-size: 2.5rem;">C/C++编程：异常处理(exception handling)的原理</h1>
+                        </div>
+                        <div class="col-lg-6 text-lg-end">
+                            <ul class="crumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li class="active">正文</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+            <section>
+                <div class="container relative">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                <div class="xcblog-blog-detail">
+                      				  				  				<div id="content_views" class="markdown_views prism-dracula"> </h1> <blockquote> <p>问题：很久之前，C程序是使用错误码来处理错误的，那为什么C++还要引入异常呢？</p> </blockquote> <p>回答：异常不能被忽略。</p> <ul> <li>如果一个函数通过设置一个状态变量来返回错误码来表示一个异常状态，没有办法保证函数调用将一定检测变量或者测试错误代码。结果程序会从它遇到的异常状态继续运行，异常没有被捕获，程序立即会终止执行。</li> <li>C程序员能够仅通过setjmp和longjmp来完成与异常处理相似的功能，但是当longjmp在C++中使用时，它存在一些缺陷，当它调整堆栈时不能堆局部对象调用析构函数。而C++程序员一来这些析构函数的调用，所以setjmp和longjmp不能替换异常处理。如果你需要一个方法，能够通知不可忽视的异常状态，并且搜索栈空间以便找到异常处理代码时，还需要确保局部对象的析构函数必须被调用，这时你就需要使用C++异常处理。</li> </ul> </h1> <p>欲支持异常处理，编译器的主要工作就是找出catch子句，以处理被丢出来的exception。</p> <ul> <li>这多少需要追踪程序堆栈中的每一个函数的当前作用区域(包括追踪函数中的local class objects当前的情况)</li> <li>同时，编译器必须提供某种查询exception objects的方法，以知道其实际类型(这直接导致某种形式的执行期类型识别，也就是RTTI)。</li> <li>最后，还需要某种机制用以管理被丢出的object，包括它的产生、存储、可能的析构(如果有相关的析构)、清理(clean up)，以及一般存取。</li> </ul> <p>也可能有一个以上的objects同时起作用。一般而言，异常处理机制需要与编译器所产生的数据结构以及执行期的一个异常库紧密合作。在程序大小和执行速度之间，编译器必须有所抉择：</p> <ul> <li>为了维持执行速度，编译器可以在编译时期建立起用于支持的数据结构。这会导致程序膨胀的大小，但编译器可以几乎忽略这些结构，直到有异常被丢出来</li> <li>为了维护程序大小，编译器可以在执行期建立其用于支持的数据结构。这会影响程序的执行速度，但意味着编译器只有在必要的时候才建立那些数据结构（并且可以抛弃之）</li> </ul> </h1> <p>C++的异常处理由三个主要的词汇组件构成：</p> <ul> <li>一个throw子句。它在程序某处抛出一个异常。被抛出的异常可以时内建类型，也可以是使用者自定义类型</li> <li>一个或者多个catch子句。每一个catch子句都是一个exception handling。它用来表示说，这个子句准备处理某种类型的异常，并且在封闭的大括号区段中提供实际的处理程序</li> <li>一个try区段。它被围绕以一系列的statements，这些statements可能会引发catch子句起作用</li> </ul> <p>抛出一个异常时，控制权会从函数调用中被释放出来，并寻找一个吻合的catch子句。如果没有找到，那么调用默认处理terminate()。当控制权被放弃后，堆栈中的每一个函数调用也就被popped up。这个程序称为unwinding the stack。在每一个函数被poped up堆栈之前，函数的local class object的析构函数会被调用。</p> <p>异常处理比较不那么直观的是它对那些似乎没什么事做的函数所带来的影响。比如下面这个函数：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220902/e848ebacd8edc4898e59ff09e44a8dda.jpg" alt="C/C++编程：异常处理(exception handling)的原理"></p> <ul> <li>如果有一个异常在第一个调用foo() (L5)时抛出，那么这个mumble()函数会被pop出程序堆栈。由于调用foo()的操作并不在一个try区段之内，也就是不需要尝试和一个catch子句吻合。这里没有任何local clas object需要析构。</li> <li>然而如果异常在第二个调用foo()(L11)时抛出，异常处理机制就必须在"从程序堆栈中unwinding这个函数"之前，先调用p的析构函数</li> <li>在异常处理之下，L4-L8和L9-L16被视为两块语意不同的区域，因为当异常被丢出来时，这两块区域由不同的执行期语意。而且，欲支持异常处理，需要额外的一些"登记"操作与数据。编译器的做法有两种，一种是把两个区域以个别的"将被摧毁的local objects"链表(已在编译时备妥)联合起来。另一种做法是让两块区域共享同一个链表，该链表会在执行期扩大或缩小</li> </ul> </h1> <p>当一个异常发生时，编译系统必须完成以下事情：</p> <ul> <li>检验发生throw操作的函数</li> <li>决定throw操作是否发生在try区段中 <ul> <li>如果是，编译系统必须把exception type拿来和每一个catch子句比较</li> <li>如果比较吻合，流程控制应该交给catch子句</li> </ul> </li> <li>如果throw的发生并不在try区段中，或者没有catch子句吻合，那么系统就必须： <ul> <li>销毁所有的active local objects</li> <li>从堆栈中将当前的函数unwind掉</li> <li>进行到程序堆栈中的下一个函数中去，然后重复上面</li> </ul> </li> </ul> <h2><a id="throwtry_42" rel="nofollow"></a>决定throw操作是否发生在try区段中</h2> <p>一个函数可以被想象成好几个区域：</p> <ul> <li>try区段以外的区域，而且没有active local objects</li> <li>try区段以外的区域，但是有一个(以上)的ctive local objects需要解构</li> <li>try区段以内的区域</li> </ul> <p>编译器必须标示出以上各区域，并使它们对执行期的异常处理系统有所作用。有一个策略是构造出program counter-range表格</p> <p>program counter内含下一个即将执行的指令。为了在一个内含try区段的函数中标识出某个区域，可以把program counter的起始值和结束值存储在一个表格中。</p> <p>当throw操作发生时，当前的program counter值被拿出来与对应的范围表格进行比较，以决定当前作用域中的区域是否在一个try区段中。如果是，就需要找出相关的catch子句。如果这个异常无法被处理(或者它继续抛出)，当前的这个函数会从程序堆栈中被poped，而program counter会被设定为调用端地址，然后这样的循环再重新开始。</p> <h2><a id="exception_typecatch_55" rel="nofollow"></a>将exception type和每一个catch子句的类型比较</h2> <p>对于每一个被抛出的异常，编译器必须产生一个类型描述器，对异常的类型进行编码。如果那是一个derived type，则编码内容必须包括其所有基类的类型信息。只编进public base class的类型是不够的，因为这个异常可能被一个成员函数捕捉，而一个成员函数的作用域中，在派生类和nonpublic base class之间可以转换。</p> <p>类型描述器是必要的，因为真正的异常是在执行期被处理，其对象必须有自己的类型信息。RTTI正是因为支持EH而获得的副产品。</p> <p>编译器必须为每一个catch子句产生一个类型描述器。执行期的异常处理会对"被抛出的类型描述器"和"每一个catch子句的类型描述器"继续比较，直到找到吻合的一个，或者直到堆栈已经被"unwound"而terminate()已经被调用</p> <p>每一个函数会产生一个异常表格，它描述与函数相关的各区域，任何必要的善后码(cleanup code，被local clas object析构函数调用)，以及catch子句的位置(如果某个区域是在try区段中)</p> <h2><a id="_64" rel="nofollow"></a>当一个实际对象在程序执行时被抛出，会发生什么事</h2> <p>当一个异常被抛出时，exception object会被产生出来并通常放置在相同形式的exception数据堆栈中。从throw段传染给catch子句的是exception object的地址、类型描述器(或是一个函数指针，该函数会传回与该exception type有关的类型描述器对象)，以及可能会有的exception object描述器(如果有人定义它的话)</p> <p>如果有</p> <pre><code class="prism language-cpp"><span class="token keyword">catch</span><span class="token punctuation">(</span>exPoint p<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">throw</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre> <p>以及一个exception object，类型为exVertex，派生自exPoint。这两种类型都吻合，于是catch子句会作用起来，那么p会发生什么事情呢？</p> <ul> <li>p将以exception object作为初值，就像是一个函数参数一样。这意味着如果定义有(或者由编译器合成出)一个拷贝构造函数和一个析构函数的话，它们会被实施于local copy上</li> <li>由于p是一个object而不是一个reference，当其内容被拷贝的时候，这个exception object的non-exPoint部分会被切掉。此外，如果为了exception的继承而提供有virtual function，那么p的vptr会被设为exPoint的虚函数表；exception object的vptr不会被拷贝</li> </ul> <p>当这个异常再被抛出一次时，会发生什么事情呢？p现在是繁殖出来的object？还是从throw端产生的原始exception object？p是一个本地对象，在catch子句的末端被销毁。丢出p需要产生另一个临时对象。原来的exception object被再一次抛出，任何对p的丢个都会被抛弃。</p> <p>而：</p> <pre><code class="prism language-cpp"><span class="token keyword">catch</span><span class="token punctuation">(</span>exPoint<span class="token operator">&amp;</span>p<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">throw</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre> <p>任何对此object的改变都会被繁殖到下一个catch子句中</p> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-98519.htm">中国兽药厂家排名前100强电话号码（全国兽药厂家排名）</a></p>
+                                        <p>下一个：<a href="/news/article-99323.htm">宠物粮食加工厂设备生产厂家排名榜名单 宠物粮食加工厂设备生产厂家排名榜名单最新</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-81100.htm" title="中国兽药十大名牌厂家排名百度百科图片（国内排名前十的兽药厂家）">中国兽药十大名牌厂家排名百度百科图片（国内排名前十的兽药厂家）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-27-clash-meta-windows.htm" title="3月27日最新Free Clash Meta订阅 | 18.6M/S|2025年Shadowrocket/V2ray/SSR/Clash免费节点地址链接分享">3月27日最新Free Clash Meta订阅 | 18.6M/S|2025年Shadowrocket/V2ray/SSR/Clash免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-19-clash-meta-node-github.htm" title="4月19日最新Free Clash Meta订阅 | 19.8M/S|2025年SSR/V2ray/Clash/Shadowrocket免费节点地址链接分享">4月19日最新Free Clash Meta订阅 | 19.8M/S|2025年SSR/V2ray/Clash/Shadowrocket免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/news/article-68989.htm" title="小型宠物食品加工厂需要多少资金呢 小型宠物食品加工厂需要多少资金呢英语">小型宠物食品加工厂需要多少资金呢 小型宠物食品加工厂需要多少资金呢英语</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-30-clash-meta-node-github.htm" title="3月30日最新Free Clash Meta订阅 | 20.4M/S|2025年Shadowrocket/Clash/SSR/V2ray免费节点地址链接分享">3月30日最新Free Clash Meta订阅 | 20.4M/S|2025年Shadowrocket/Clash/SSR/V2ray免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/news/article-72937.htm" title="机器学习系列：LightGBM 可视化调参">机器学习系列：LightGBM 可视化调参</a></li>
+                        <li class="py-2"><a href="/news/article-94302.htm" title="Python里的引用与拷贝规律">Python里的引用与拷贝规律</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-19-free-high-speed-nodes.htm" title="3月19日最新Free Clash Meta订阅 | 19.6M/S|2025年Shadowrocket/SSR/Clash/V2ray免费节点地址链接分享">3月19日最新Free Clash Meta订阅 | 19.6M/S|2025年Shadowrocket/SSR/Clash/V2ray免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-11-clash-meta-node-github.htm" title="3月11日最新Free Clash Meta订阅 | 18.7M/S|2025年SSR/Shadowrocket/V2ray/Clash免费节点地址链接分享">3月11日最新Free Clash Meta订阅 | 18.7M/S|2025年SSR/Shadowrocket/V2ray/Clash免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/news/article-82493.htm" title="Linux服务器执行命令报 nohup: redirecting stderr to stdout 错误">Linux服务器执行命令报 nohup: redirecting stderr to stdout 错误</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- content close -->
+                <!-- footer begin -->
+        <footer class="footer-light">
+            <div class="subfooter relative z-1000">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p>
+                                <a href="/">Free Clash Meta免费节点机场官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+        <!-- Javascript Files
+                    ================================================== -->
+        <script src="/assets/website/js/frontend/free_clash_meta/plugins.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/designesia.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/swiper.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/custom-marquee.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/custom-swiper-1.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+</body>
+
+</html>

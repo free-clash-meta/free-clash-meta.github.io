@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://free-clash-meta.github.io/news/article-98518.htm" />
+    <title>java高级用法之:在JNA中将本地方法映射到JAVA代码中</title>
+        <meta name="description" content="简介  不管是JNI还是JNA，最终调用的都是native的方法，但是对于JAVA程序来说，一定需要一个调用native方法的入口，也就是说我们需要在JAVA方法中定义需要调用的native方法。 对" />
+        <link rel="icon" href="/assets/website/img/free_clash_meta/favicon.ico" type="image/x-icon"/>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <meta name="author" content="Free Clash Meta免费节点机场官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://free-clash-meta.github.io/news/article-98518.htm" />
+    <meta property="og:site_name" content="Free Clash Meta免费节点机场官网" />
+    <meta property="og:title" content="java高级用法之:在JNA中将本地方法映射到JAVA代码中" />
+    <meta property="og:image" content="https://free-clash-meta.github.io/uploads/20250201-2/76db36142a8e81cfd28b409e58510df3.webp" />
+        <meta property="og:release_date" content="2025-04-18T09:39:13" />
+    <meta property="og:updated_time" content="2025-04-18T09:39:13" />
+        <meta property="og:description" content="简介  不管是JNI还是JNA，最终调用的都是native的方法，但是对于JAVA程序来说，一定需要一个调用native方法的入口，也就是说我们需要在JAVA方法中定义需要调用的native方法。 对" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="java高级用法之:在JNA中将本地方法映射到JAVA代码中">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+
+    <!-- CSS Files
+    ================================================== -->
+    <link href="/assets/website/css/free_clash_meta/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="/assets/website/css/free_clash_meta/plugins.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/swiper.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/style.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/coloring.css" rel="stylesheet" type="text/css">
+    <!-- color scheme -->
+    <link id="colors" href="/assets/website/css/free_clash_meta/scheme-01.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8MB0F69N3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8MB0F69N3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <div id="wrapper">
+                <!-- page preloader begin -->
+        <div id="de-loader"></div>
+        <!-- page preloader close -->
+        <!-- header begin -->
+        <header class="transparent header-light has-topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="/" class="xcblog-blog-logo">
+                                                                                <span class="text-primary m-0">Free Clash Meta</span>
+                                                                            </a>
+                                </div>
+                                <!-- logo close -->
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <ul id="mainmenu">
+                                                                        <li><a class="menu-item" href="/">首页</a></li>
+                                                                        <li><a class="menu-item" href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a class="menu-item" href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a class="menu-item" href="/client.htm">客户端</a></li>
+                                                                        <li><a class="menu-item" href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div id="content" class="no-top no-bottom">
+            <div id="top"></div>
+            <!-- section begin -->
+            <section id="de-subheader" class="mt-sm-60 pt20 pb20 bg-gradient-45-deg text-light">
+                <div class="container relative z-index-1000">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="mb-0" style="font-size: 2.5rem;">java高级用法之:在JNA中将本地方法映射到JAVA代码中</h1>
+                        </div>
+                        <div class="col-lg-6 text-lg-end">
+                            <ul class="crumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li class="active">正文</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+            <section>
+                <div class="container relative">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                <div class="xcblog-blog-detail">
+                      				  				  				<div class="toc"> <div class="toc-container-header"><span style="font-size: 2em;">简介</span></div> </div> <p>不管是JNI还是JNA，最终调用的都是native的方法，但是对于JAVA程序来说，一定需要一个调用native方法的入口，也就是说我们需要在JAVA方法中定义需要调用的native方法。</p> <p>对于JNI来说，我们可以使用native关键字来定义本地方法。那么在JNA中有那些在JAVA代码中定义本地方法的方式呢？</p> </h1> <p>要想调用本地的native方法，首选需要做的事情就是加载native的lib文件。我们把这个过程叫做Library Mapping，也就是说把native的library 映射到java代码中。</p> <p>JNA中有两种Library 映射的方法，分别是interface和direct mapping。</p> <p>先看下interface mapping，假如我们要加载 C library, 如果使用interface mapping的方式，我们需要创建一个interface继承Library:</p> <pre><code>public interface CLibrary extends Library {     CLibrary INSTANCE = (CLibrary)Native.load("c", CLibrary.class); }</code></pre> <p>上面代码中Library是一个interface，所有的interface mapping都需要继承这个Library。</p> <p>然后在interface内部，通过使用Native.load方法来加载要使用的c library。</p> <p>上面的代码中，load方法传入两个参数，第一个参数是library的name，第二个参数是interfaceClass.</p> <p>下面的表格展示了Library Name和传入的name之间的映射关系：</p> <table> <thead> <tr> <th>OS</th> <th>Library Name</th> <th>String</th> </tr> </thead> <tbody> <tr> <td>Windows</td> <td>user32.dll</td> <td>user32</td> </tr> <tr> <td>Linux</td> <td>libX11.so</td> <td>X11</td> </tr> <tr> <td>Mac OS X</td> <td>libm.dylib</td> <td>m</td> </tr> <tr> <td>Mac OS X Framework</td> <td>/System/Library/Frameworks/Carbon.framework/Carbon</td> <td>Carbon</td> </tr> <tr> <td>Any Platform</td> <td>current process</td> <td>null</td> </tr> </tbody> </table> <p>事实上，load还可以接受一个options的Map参数。默认情况下JAVA interface中要调用的方法名称就是native library中定义的方法名称，但是有些情况下我们可能需要在JAVA代码中使用不同的名字，在这种情况下，可以传入第三个参数map，map的key可以是 OPTION_FUNCTION_MAPPER,而它的value则是一个 FunctionMapper ，用来将JAVA中的方法名称映射到native library中。</p> <p>传入的每一个native library都可以用一个NativeLibrary的实例来表示。这个NativeLibrary的实例也可以通过调用NativeLibrary.getInstance(String)来获得。</p> <p>另外一种加载native libary的方式就是direct mapping，direct mapping使用的是在static block中调用Native.register方式来加载本地库，如下所示：</p> <pre><code>public class CLibrary {     static {         Native.register("c");     } }</code></pre> </h1> <p>当我们加载完native library之后，接下来就是定义需要调用的函数了。实际上就是做一个从JAVA代码到native lib中函数的一个映射，我们将其称为Function Mapping。</p> <p>和Library Mapping一样，Function Mapping也有两种方式。分别是interface mapping和direct mapping。</p> <p>在interface mapping中，我们只需要按照native library中的方法名称定义一个一样的方法即可，这个方法不用实现，也不需要像JNI一样使用native来修饰，如下所示：</p> <pre><code>public interface CLibrary extends Library {     int atol(String s); }</code></pre> <blockquote> <p>注意，上面我们提到了JAVA中的方法名称不一定必须和native library中的方法名称一致，你可以通过给Native.load方法传入一个FunctionMapper来实现。</p> </blockquote> <p>或者，你可以使用direct mapping的方式，通过给方法添加一个native修饰符：</p> <pre><code> public class HelloWorld {                  public static native double cos(double x);     public static native double sin(double x);          static {         Native.register(Platform.C_LIBRARY_NAME);     }      public static void main(String[] args) {         System.out.println("cos(0)=" + cos(0));         System.out.println("sin(0)=" + sin(0));     } }</code></pre> <p>对于direct mapping来说，JAVA方法可以映射到native library中的任何static或者对象方法。</p> <p>虽然direct mapping和我们常用的java JNI有些类似，但是direct mapping存在着一些限制。</p> <p>大部分情况下，direct mapping和interface mapping具有相同的映射类型，但是不支持Pointer/Structure/String/WString/NativeMapped数组作为函数参数值。</p> <p>在使用TypeMapper或者NativeMapped的情况下，direct mapping不支持 NIO Buffers 或者基本类型的数组作为返回值。</p> <p>如果要使用基础类型的包装类，则必须使用自定义的TypeMapper.</p> <p>对象JAVA中的方法映射来说，该映射最终会创建一个Function对象。</p> </h1> <p>讲完library mapping和function mapping之后，我们接下来讲解一下Invocation Mapping。</p> <p>Invocation Mapping代表的是Library中的OPTION_INVOCATION_MAPPER,它对应的值是一个InvocationMapper。</p> <p>之前我们提到了FunctionMapper，可以实现JAVA中定义的方法名和native lib中的方法名不同，但是不能修改方法调用的状态或者过程。</p> <p>而InvocationMapper则更进一步， 允许您任意重新配置函数调用，包括更改方法名称以及重新排序、添加或删除参数。</p> <p>下面举个例子:</p> <pre><code>   new InvocationMapper() {        public InvocationHandler getInvocationHandler(NativeLibrary lib, Method m) {            if (m.getName().equals("stat")) {                final Function f = lib.getFunction("_xstat");                return new InvocationHandler() {                    public Object invoke(Object proxy, Method method, Object[] args) {                        Object[] newArgs = new Object[args.length+1];                        System.arraycopy(args, 0, newArgs, 1, args.length);                        newArgs[0] = Integer.valueOf(3); // _xstat version                        return f.invoke(newArgs);                    }                };            }            return null;        }    }</code></pre> <p>看上面的调用例子，感觉有点像是反射调用，我们在InvocationMapper中实现了getInvocationHandler方法，根据给定的JAVA代码中的method去查找具体的native lib，然后获取到lib中的function，最后调用function的invoke方法实现方法的最终调用。</p> <p>在这个过程中，我们可以修改方传入的参数，或者做任何我们想做的事情。</p> <p>还有一种情况是c语言中的内联函数或者预处理宏，如下所示：</p> <pre><code>// Original C code (macro and inline variations)    #define allocblock(x) malloc(x * 1024)    static inline void* allocblock(size_t x) { return malloc(x * 1024); }</code></pre> <p>上面的代码中定义了一个allocblock(x)宏，它实际上等于malloc(x * 1024)，这种情况就可以使用InvocationMapper，将allocblock使用具体的malloc来替换：</p> <pre><code>   // Invocation mapping    new InvocationMapper() {        public InvocationHandler getInvocationHandler(NativeLibrary lib, Method m) {            if (m.getName().equals("allocblock")) {                final Function f = lib.getFunction("malloc");                return new InvocationHandler() {                    public Object invoke(Object proxy, Method method, Object[] args) {                        args[0] = ((Integer)args[0]).intValue() * 1024;                        return f.invoke(newArgs);                    }                };            }            return null;        }    }</code></pre> </h1> <p>JAVA方法和native方法映射肯定会出现一些问题，如果映射方法不对或者参数不匹配的话，很有可能出现memory access errors,并且可能会导致VM崩溃。</p> <p>通过调用Native.setProtected(true)，可以将VM崩溃转换成为对应的JAVA异常，当然，并不是所有的平台都支持protection,如果平台不支持protection，那么Native.isProtected()会返回false。</p> <blockquote> <p>如果要使用protection,还要同时使用 jsig library，以防止信号和JVM的信号冲突。libjsig.so一般存放在JRE的lib目录下，<span class="math inline">\({java.home}/lib/\)</span>{os.arch}/libjsig.so, 可以通过将环境变量设置为LD_PRELOAD (或者LD_PRELOAD_64)来使用。</p> </blockquote> </h1> <p>上面我们提到了JNA的两种mapping方式，分别是interface mapping和direct mapping。相较而言，direct mapping的效率更高，因为direct mapping调用native方法更加高效。</p> <p>但是上面我们也提到了direct mapping在使用上有一些限制，所以我们在使用的时候需要进行权衡。</p> <p>另外，我们需要避免使用基础类型的封装类，因为对于native方法来说，只有基础类型的匹配，如果要使用封装类，则必须使用Type mapping，从而造成性能损失。</p> </h1> <p>JNA是调用native方法的利器，如果数量掌握的话，肯定是如虎添翼。</p> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-97832.htm">瑞派宠物医院招聘电话（瑞派宠物医院招聘信息）</a></p>
+                                        <p>下一个：<a href="/news/article-98519.htm">中国兽药厂家排名前100强电话号码（全国兽药厂家排名）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-74962.htm" title="猫三联打几针多少钱一次（猫三联要多少钱第一针）">猫三联打几针多少钱一次（猫三联要多少钱第一针）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-25-latest-clash-meta-node.htm" title="3月25日最新Free Clash Meta订阅 | 22M/S|2025年Shadowrocket/SSR/Clash/V2ray免费节点地址链接分享">3月25日最新Free Clash Meta订阅 | 22M/S|2025年Shadowrocket/SSR/Clash/V2ray免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/news/article-81100.htm" title="中国兽药十大名牌厂家排名百度百科图片（国内排名前十的兽药厂家）">中国兽药十大名牌厂家排名百度百科图片（国内排名前十的兽药厂家）</a></li>
+                        <li class="py-2"><a href="/news/article-80381.htm" title="Blazor 使用拖放（drag and drop）上传文件 , 粘贴文件上传">Blazor 使用拖放（drag and drop）上传文件 , 粘贴文件上传</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-2-clash-meta-node-share.htm" title="3月2日最新Free Clash Meta订阅 | 22.4M/S|2025年SSR/Clash/V2ray/Shadowrocket免费节点地址链接分享">3月2日最新Free Clash Meta订阅 | 22.4M/S|2025年SSR/Clash/V2ray/Shadowrocket免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-5-clash-meta-github.htm" title="3月5日最新Free Clash Meta订阅 | 22M/S|2025年SSR/V2ray/Clash/Shadowrocket免费节点地址链接分享">3月5日最新Free Clash Meta订阅 | 22M/S|2025年SSR/V2ray/Clash/Shadowrocket免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/news/article-68991.htm" title="我所在的城市有一家宠物医院英文翻译 我所在的城市有一家宠物医院英文翻译">我所在的城市有一家宠物医院英文翻译 我所在的城市有一家宠物医院英文翻译</a></li>
+                        <li class="py-2"><a href="/news/article-88227.htm" title="动物疫苗新法案例分析报告（动物疫苗市场分析）">动物疫苗新法案例分析报告（动物疫苗市场分析）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-29-free-node-subscribe.htm" title="3月29日最新Free Clash Meta订阅 | 21.8M/S|2025年Clash/V2ray/Shadowrocket/SSR免费节点地址链接分享">3月29日最新Free Clash Meta订阅 | 21.8M/S|2025年Clash/V2ray/Shadowrocket/SSR免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-28-node-share-links.htm" title="3月28日最新Free Clash Meta订阅 | 20.8M/S|2025年SSR/V2ray/Clash/Shadowrocket免费节点地址链接分享">3月28日最新Free Clash Meta订阅 | 20.8M/S|2025年SSR/V2ray/Clash/Shadowrocket免费节点地址链接分享</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- content close -->
+                <!-- footer begin -->
+        <footer class="footer-light">
+            <div class="subfooter relative z-1000">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p>
+                                <a href="/">Free Clash Meta免费节点机场官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+        <!-- Javascript Files
+                    ================================================== -->
+        <script src="/assets/website/js/frontend/free_clash_meta/plugins.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/designesia.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/swiper.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/custom-marquee.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/custom-swiper-1.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+</body>
+
+</html>
