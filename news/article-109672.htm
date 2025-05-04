@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://free-clash-meta.github.io/news/article-109672.htm" />
+    <title>[Java]如何获取指定日期一天的开始时间和结束时间</title>
+        <meta name="description" content="背景 在数据查询中，我们经常需要查询某段时间内的数据，而前端传入参数一般来说是不会指定小时，分钟，秒，甚至毫秒级别的，所以就需要后端进行时间处理；例如：查询2020-02-17 - 2020-02-1" />
+        <link rel="icon" href="/assets/website/img/free_clash_meta/favicon.ico" type="image/x-icon"/>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <meta name="author" content="Free Clash Meta免费节点机场官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://free-clash-meta.github.io/news/article-109672.htm" />
+    <meta property="og:site_name" content="Free Clash Meta免费节点机场官网" />
+    <meta property="og:title" content="[Java]如何获取指定日期一天的开始时间和结束时间" />
+    <meta property="og:image" content="https://free-clash-meta.github.io/uploads/20250201-2/efc212345469f7d4f6d672b6ef38d44c.webp" />
+        <meta property="og:release_date" content="2025-05-02T09:23:08" />
+    <meta property="og:updated_time" content="2025-05-02T09:23:08" />
+        <meta property="og:description" content="背景 在数据查询中，我们经常需要查询某段时间内的数据，而前端传入参数一般来说是不会指定小时，分钟，秒，甚至毫秒级别的，所以就需要后端进行时间处理；例如：查询2020-02-17 - 2020-02-1" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="[Java]如何获取指定日期一天的开始时间和结束时间">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+
+    <!-- CSS Files
+    ================================================== -->
+    <link href="/assets/website/css/free_clash_meta/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="/assets/website/css/free_clash_meta/plugins.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/swiper.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/style.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/coloring.css" rel="stylesheet" type="text/css">
+    <!-- color scheme -->
+    <link id="colors" href="/assets/website/css/free_clash_meta/scheme-01.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8MB0F69N3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8MB0F69N3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <div id="wrapper">
+                <!-- page preloader begin -->
+        <div id="de-loader"></div>
+        <!-- page preloader close -->
+        <!-- header begin -->
+        <header class="transparent header-light has-topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="/" class="xcblog-blog-logo">
+                                                                                <span class="text-primary m-0">Free Clash Meta</span>
+                                                                            </a>
+                                </div>
+                                <!-- logo close -->
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <ul id="mainmenu">
+                                                                        <li><a class="menu-item" href="/">首页</a></li>
+                                                                        <li><a class="menu-item" href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a class="menu-item" href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a class="menu-item" href="/client.htm">客户端</a></li>
+                                                                        <li><a class="menu-item" href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div id="content" class="no-top no-bottom">
+            <div id="top"></div>
+            <!-- section begin -->
+            <section id="de-subheader" class="mt-sm-60 pt20 pb20 bg-gradient-45-deg text-light">
+                <div class="container relative z-index-1000">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="mb-0" style="font-size: 2.5rem;">[Java]如何获取指定日期一天的开始时间和结束时间</h1>
+                        </div>
+                        <div class="col-lg-6 text-lg-end">
+                            <ul class="crumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li class="active">正文</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+            <section>
+                <div class="container relative">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h3><a id="_0" rel="nofollow"></a>背景</h3> <p>在数据查询中，我们经常需要查询某段时间内的数据，而前端传入参数一般来说是不会指定小时，分钟，秒，甚至毫秒级别的，所以就需要后端进行时间处理；例如：查询2020-02-17 - 2020-02-19 的数据；</p> <h3><a id="1_2" rel="nofollow"></a>方案1</h3> <pre><code class="prism language-java"><span class="token comment">// 返回时间格式如：2020-02-17 00:00:00</span><span class="token keyword">public</span><span class="token keyword">static</span> String<span class="token function">getStartOfDay</span><span class="token punctuation">(</span>Date time<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>         Calendar calendar<span class="token operator">=</span> Calendar<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         calendar<span class="token punctuation">.</span><span class="token function">setTime</span><span class="token punctuation">(</span>time<span class="token punctuation">)</span><span class="token punctuation">;</span>         calendar<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>Calendar<span class="token punctuation">.</span>HOUR_OF_DAY<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         calendar<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>Calendar<span class="token punctuation">.</span>MINUTE<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         calendar<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>Calendar<span class="token punctuation">.</span>SECOND<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         calendar<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>Calendar<span class="token punctuation">.</span>MILLISECOND<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">return</span><span class="token keyword">new</span><span class="token class-name">SimpleDateFormat</span><span class="token punctuation">(</span><span class="token string">"yyyy-MM-dd HH:mm:ss"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>calendar<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment">// 返回时间格式如：2020-02-19 23:59:59</span><span class="token keyword">public</span><span class="token keyword">static</span> String<span class="token function">getEndOfDay</span><span class="token punctuation">(</span>Date time<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>         Calendar calendar<span class="token operator">=</span> Calendar<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         calendar<span class="token punctuation">.</span><span class="token function">setTime</span><span class="token punctuation">(</span>time<span class="token punctuation">)</span><span class="token punctuation">;</span>         calendar<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>Calendar<span class="token punctuation">.</span>HOUR_OF_DAY<span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         calendar<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>Calendar<span class="token punctuation">.</span>MINUTE<span class="token punctuation">,</span><span class="token number">59</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         calendar<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>Calendar<span class="token punctuation">.</span>SECOND<span class="token punctuation">,</span><span class="token number">59</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         calendar<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>Calendar<span class="token punctuation">.</span>MILLISECOND<span class="token punctuation">,</span><span class="token number">999</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">return</span><span class="token keyword">new</span><span class="token class-name">SimpleDateFormat</span><span class="token punctuation">(</span><span class="token string">"yyyy-MM-dd HH:mm:ss"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>calendar<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment">// 获取30天以前的时间，同样是比较常用的</span><span class="token keyword">public</span><span class="token keyword">static</span> String<span class="token function">getThirtyDaysAgo</span><span class="token punctuation">(</span>Date time<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>         Calendar calendar<span class="token operator">=</span> Calendar<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         calendar<span class="token punctuation">.</span><span class="token function">setTime</span><span class="token punctuation">(</span>time<span class="token punctuation">)</span><span class="token punctuation">;</span>         calendar<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>calendar<span class="token punctuation">.</span>DATE<span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         calendar<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>Calendar<span class="token punctuation">.</span>HOUR_OF_DAY<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         calendar<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>Calendar<span class="token punctuation">.</span>MINUTE<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         calendar<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>Calendar<span class="token punctuation">.</span>SECOND<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         calendar<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>Calendar<span class="token punctuation">.</span>MILLISECOND<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">return</span><span class="token keyword">new</span><span class="token class-name">SimpleDateFormat</span><span class="token punctuation">(</span><span class="token string">"yyyy-MM-dd HH:mm:ss"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>calendar<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre> <h3><a id="2_38" rel="nofollow"></a>方案2</h3> <p>在java8中有更为简洁的代码。</p> <pre><code class="prism language-java"><span class="token comment">// 获得某天最大时间 2020-02-19 23:59:59</span><span class="token keyword">public</span><span class="token keyword">static</span> Date<span class="token function">getEndOfDay</span><span class="token punctuation">(</span>Date date<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>         LocalDateTime localDateTime<span class="token operator">=</span> LocalDateTime<span class="token punctuation">.</span><span class="token function">ofInstant</span><span class="token punctuation">(</span>Instant<span class="token punctuation">.</span><span class="token function">ofEpochMilli</span><span class="token punctuation">(</span>date<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> ZoneId<span class="token punctuation">.</span><span class="token function">systemDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">;</span>         LocalDateTime endOfDay<span class="token operator">=</span> localDateTime<span class="token punctuation">.</span><span class="token function">with</span><span class="token punctuation">(</span>LocalTime<span class="token punctuation">.</span>MAX<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">return</span> Date<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>endOfDay<span class="token punctuation">.</span><span class="token function">atZone</span><span class="token punctuation">(</span>ZoneId<span class="token punctuation">.</span><span class="token function">systemDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toInstant</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment">// 获得某天最小时间 2020-02-17 00:00:00</span><span class="token keyword">public</span><span class="token keyword">static</span> Date<span class="token function">getStartOfDay</span><span class="token punctuation">(</span>Date date<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>         LocalDateTime localDateTime<span class="token operator">=</span> LocalDateTime<span class="token punctuation">.</span><span class="token function">ofInstant</span><span class="token punctuation">(</span>Instant<span class="token punctuation">.</span><span class="token function">ofEpochMilli</span><span class="token punctuation">(</span>date<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> ZoneId<span class="token punctuation">.</span><span class="token function">systemDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>         LocalDateTime startOfDay<span class="token operator">=</span> localDateTime<span class="token punctuation">.</span><span class="token function">with</span><span class="token punctuation">(</span>LocalTime<span class="token punctuation">.</span>MIN<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">return</span> Date<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>startOfDay<span class="token punctuation">.</span><span class="token function">atZone</span><span class="token punctuation">(</span>ZoneId<span class="token punctuation">.</span><span class="token function">systemDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toInstant</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre> <h3><a id="_56" rel="nofollow"></a>总结</h3> <p>在查询数据的sql中，通常使用的是字符串，所以一般在处理时间的函数中设定返回值为字符串类型即可；</p> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-108845.htm">宠物美容工资多少钱一个月（宠物美容师基本工资）</a></p>
+                                        <p>下一个：<a href="/news/article-109677.htm">什么生肖适宜养猫旺财的动物（什么生肖可以养狗猫）</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-4-11-clash-meta-node-github.htm" title="4月11日最新Free Clash Meta订阅 | 19.8M/S|2025年Shadowrocket/Clash/V2ray/SSR免费节点地址链接分享">4月11日最新Free Clash Meta订阅 | 19.8M/S|2025年Shadowrocket/Clash/V2ray/SSR免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/news/article-102258.htm" title="动物打的疫苗是什么药名（动物用疫苗有哪些类型）">动物打的疫苗是什么药名（动物用疫苗有哪些类型）</a></li>
+                        <li class="py-2"><a href="/news/article-95643.htm" title="宠物领养市场前景如何（宠物领养平台如何盈利）">宠物领养市场前景如何（宠物领养平台如何盈利）</a></li>
+                        <li class="py-2"><a href="/news/article-88960.htm" title="C/C++程序的内存布局">C/C++程序的内存布局</a></li>
+                        <li class="py-2"><a href="/news/article-102257.htm" title="动物医院儿童画 动物医院怎么画">动物医院儿童画 动物医院怎么画</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-8-clash-meta-node-share.htm" title="4月8日最新Free Clash Meta订阅 | 21.4M/S|2025年Shadowrocket/SSR/Clash/V2ray免费节点地址链接分享">4月8日最新Free Clash Meta订阅 | 21.4M/S|2025年Shadowrocket/SSR/Clash/V2ray免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/news/article-91904.htm" title="长沙市宠物领养（长沙哪里有宠物领养）">长沙市宠物领养（长沙哪里有宠物领养）</a></li>
+                        <li class="py-2"><a href="/news/article-110541.htm" title="HCNP Routing&amp;Switching之MUX VLAN">HCNP Routing&amp;Switching之MUX VLAN</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-5-3-free-node-subscribe.htm" title="5月3日最新Free Clash Meta订阅 | 20.2M/S|2025年Clash/V2ray/SSR/Shadowrocket免费节点地址链接分享">5月3日最新Free Clash Meta订阅 | 20.2M/S|2025年Clash/V2ray/SSR/Shadowrocket免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/news/article-93379.htm" title="pandas apply() 函数用法">pandas apply() 函数用法</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-05/" title="2025-05 归档">2025-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">89</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- content close -->
+                <!-- footer begin -->
+        <footer class="footer-light">
+            <div class="subfooter relative z-1000">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p>
+                                <a href="/">Free Clash Meta免费节点机场官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+        <!-- Javascript Files
+                    ================================================== -->
+        <script src="/assets/website/js/frontend/free_clash_meta/plugins.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/designesia.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/swiper.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/custom-marquee.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/custom-swiper-1.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+</body>
+
+</html>

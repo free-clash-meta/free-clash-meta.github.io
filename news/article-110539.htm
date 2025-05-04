@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://free-clash-meta.github.io/news/article-110539.htm" />
+    <title>聊下 git remote prune origin</title>
+        <meta name="description" content="在你经常使用的命令当中有一个git branch –a 用来查看所有的分支，包括本地和远程的。但是时间长了你会发现有些分支在远程其实早就被删除了，但是在你本地依然可以看见这些被删除的分支。 你可以通过" />
+        <link rel="icon" href="/assets/website/img/free_clash_meta/favicon.ico" type="image/x-icon"/>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <meta name="author" content="Free Clash Meta免费节点机场官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://free-clash-meta.github.io/news/article-110539.htm" />
+    <meta property="og:site_name" content="Free Clash Meta免费节点机场官网" />
+    <meta property="og:title" content="聊下 git remote prune origin" />
+    <meta property="og:image" content="https://free-clash-meta.github.io/uploads/20250201-2/bced3fd052bf3f51db918b6ef3fc1145.webp" />
+        <meta property="og:release_date" content="2025-05-03T10:28:48" />
+    <meta property="og:updated_time" content="2025-05-03T10:28:48" />
+        <meta property="og:description" content="在你经常使用的命令当中有一个git branch –a 用来查看所有的分支，包括本地和远程的。但是时间长了你会发现有些分支在远程其实早就被删除了，但是在你本地依然可以看见这些被删除的分支。 你可以通过" />
+    
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="聊下 git remote prune origin">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+
+    <!-- CSS Files
+    ================================================== -->
+    <link href="/assets/website/css/free_clash_meta/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="/assets/website/css/free_clash_meta/plugins.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/swiper.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/style.css" rel="stylesheet" type="text/css">
+    <link href="/assets/website/css/free_clash_meta/coloring.css" rel="stylesheet" type="text/css">
+    <!-- color scheme -->
+    <link id="colors" href="/assets/website/css/free_clash_meta/scheme-01.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8MB0F69N3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8MB0F69N3T');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+    
+</head>
+
+<body data-page="detail">
+    <div id="wrapper">
+                <!-- page preloader begin -->
+        <div id="de-loader"></div>
+        <!-- page preloader close -->
+        <!-- header begin -->
+        <header class="transparent header-light has-topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="de-flex sm-pt10">
+                            <div class="de-flex-col">
+                                <!-- logo begin -->
+                                <div id="logo">
+                                    <a href="/" class="xcblog-blog-logo">
+                                                                                <span class="text-primary m-0">Free Clash Meta</span>
+                                                                            </a>
+                                </div>
+                                <!-- logo close -->
+                            </div>
+                            <div class="de-flex-col header-col-mid">
+                                <ul id="mainmenu">
+                                                                        <li><a class="menu-item" href="/">首页</a></li>
+                                                                        <li><a class="menu-item" href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a class="menu-item" href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a class="menu-item" href="/client.htm">客户端</a></li>
+                                                                        <li><a class="menu-item" href="/news/">新闻资讯</a></li>
+                                                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header close -->
+        <!-- content begin -->
+        <div id="content" class="no-top no-bottom">
+            <div id="top"></div>
+            <!-- section begin -->
+            <section id="de-subheader" class="mt-sm-60 pt20 pb20 bg-gradient-45-deg text-light">
+                <div class="container relative z-index-1000">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="mb-0" style="font-size: 2.5rem;">聊下 git remote prune origin</h1>
+                        </div>
+                        <div class="col-lg-6 text-lg-end">
+                            <ul class="crumb">
+                                <li><a href="/">首页</a></li>
+                                <li><a href="/news/">新闻资讯</a></li>
+                                <li class="active">正文</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section close -->
+            <section>
+                <div class="container relative">
+                    <div class="row">
+                        <div class="col-md-9">
+                                            <input type="hidden" id="share-website-info" data-name="Clash Meta免费节点订阅站" data-url="https://clash-meta.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<div id="content_views" class="htmledit_views"> <div id="cnblogs_post_body" class="blogpost-body"> <p>在你经常使用的命令当中有一个git branch –a 用来查看所有的分支，包括本地和远程的。但是时间长了你会发现有些分支在远程其实早就被删除了，但是在你本地依然可以看见这些被删除的分支。</p> <p>你可以通过命令，git remote show origin 来查看有关于origin的一些信息，包括分支是否tracking。</p> <p><img fetchpriority="high" decoding="async" style="background-image:none;border:0px;" title="1" src="http://img.555519.xyz/uploads3/20220707/1eecadd50e2eb38e5e9d489ab83abbee.jpg" alt="聊下 git remote prune origin"></p> <p>Local refs configured for ‘git push’，这一栏说明你push了哪些分支上origin。</p> <p><img decoding="async" style="background-image:none;border:0px;" title="2" src="http://img.555519.xyz/uploads3/20220707/9d16000f89059027c7b51d1572442559.jpg" alt="聊下 git remote prune origin"></p> <p>develop_newfeature_apiwrapper，分支在远程，我们现在去把他删除掉。</p> <p><img decoding="async" style="background-image:none;border:0px;" title="3" src="http://img.555519.xyz/uploads3/20220707/ce74ae58d6803a1a72d195020c4e060a.jpg" alt="聊下 git remote prune origin"></p> <p>点击垃圾桶，将其删除。再回到本地来查看所有分支。</p> <p><img loading="lazy" decoding="async" style="background-image:none;border:0px;" title="4" src="http://img.555519.xyz/uploads3/20220707/0d44449f983e244f5e556fff8eaa6080.jpg" alt="聊下 git remote prune origin"></p> <p>它依然存在。但是你再通过 git remote show origin，来查看就会发现问题。</p> <p><img loading="lazy" decoding="async" style="background-image:none;border:0px;" title="5" src="http://img.555519.xyz/uploads3/20220707/ab342fdbe662fa7dd95166b27d81f861.jpg" alt="聊下 git remote prune origin"></p> <p>提示你可以通过git remote prune 移除这个分支。（也就是说你可以刷新本地仓库与远程仓库的保持这些改动的同步）</p> <p><img loading="lazy" decoding="async" style="background-image:none;border:0px;" title="6" src="http://img.555519.xyz/uploads3/20220707/95a127a8cc9d1392a7452a7d4251f167.jpg" alt="聊下 git remote prune origin"></p> <p>这个在远程删除的分支在你本地仓库也将被删除。再通过git branch –a 来查看。</p> <p><img loading="lazy" decoding="async" style="background-image:none;border:0px;" title="7" src="http://img.555519.xyz/uploads3/20220707/e8f9c222fd847cb986110b891565dd82.jpg" alt="聊下 git remote prune origin"></p> <p>已经不存在了。</p> <p>作者：王清培</p> <p>出处：http://www.cnblogs.com/wangiqngpei557/</p> <p>本文版权归作者和博客园共有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面</p> </div> <p>转载于:https://www.cnblogs.com/wangiqngpei557/p/6058115.html</p> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-109677.htm">什么生肖适宜养猫旺财的动物（什么生肖可以养狗猫）</a></p>
+                                        <p>下一个：<a href="/news/article-110541.htm">HCNP Routing&amp;Switching之MUX VLAN</a></p>
+                                    </div>
+                                        </div>
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-4-5-clash-meta-node-github.htm" title="4月5日最新Free Clash Meta订阅 | 19.9M/S|2025年SSR/V2ray/Shadowrocket/Clash免费节点地址链接分享">4月5日最新Free Clash Meta订阅 | 19.9M/S|2025年SSR/V2ray/Shadowrocket/Clash免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/news/article-107227.htm" title="C++标准异常处理 三角形面积">C++标准异常处理 三角形面积</a></li>
+                        <li class="py-2"><a href="/news/article-106256.htm" title="凌晨3一4点狗叫要警惕（凌晨三点狗叫）">凌晨3一4点狗叫要警惕（凌晨三点狗叫）</a></li>
+                        <li class="py-2"><a href="/news/article-94304.htm" title="我想开一家宠物店大概需要多少钱?（开一个宠物店大概要多少钱）">我想开一家宠物店大概需要多少钱?（开一个宠物店大概要多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-103074.htm" title="动物疫苗多少钱一支啊图片大全（动物疫苗包括哪些）">动物疫苗多少钱一支啊图片大全（动物疫苗包括哪些）</a></li>
+                        <li class="py-2"><a href="/news/article-99321.htm" title="C/C++编程：异常处理(exception handling)的原理">C/C++编程：异常处理(exception handling)的原理</a></li>
+                        <li class="py-2"><a href="/news/article-86780.htm" title="vue 跨组件进行传值简易方法">vue 跨组件进行传值简易方法</a></li>
+                        <li class="py-2"><a href="/news/article-98519.htm" title="中国兽药厂家排名前100强电话号码（全国兽药厂家排名）">中国兽药厂家排名前100强电话号码（全国兽药厂家排名）</a></li>
+                        <li class="py-2"><a href="/news/article-102258.htm" title="动物打的疫苗是什么药名（动物用疫苗有哪些类型）">动物打的疫苗是什么药名（动物用疫苗有哪些类型）</a></li>
+                        <li class="py-2"><a href="/news/article-96381.htm" title="动物疫苗和人体疫苗生产有什么区别呢 动物疫苗和人体疫苗生产有什么区别呢视频">动物疫苗和人体疫苗生产有什么区别呢 动物疫苗和人体疫苗生产有什么区别呢视频</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2025-05/" title="2025-05 归档">2025-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">89</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- content close -->
+                <!-- footer begin -->
+        <footer class="footer-light">
+            <div class="subfooter relative z-1000">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p>
+                                <a href="/">Free Clash Meta免费节点机场官网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer close -->
+        <!-- Javascript Files
+                    ================================================== -->
+        <script src="/assets/website/js/frontend/free_clash_meta/plugins.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/designesia.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/swiper.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/custom-marquee.js"></script>
+        <script src="/assets/website/js/frontend/free_clash_meta/custom-swiper-1.js"></script>
+        <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+        <script src="/assets/website/js/frontend/G.js"></script>
+    </div>
+</body>
+
+</html>
