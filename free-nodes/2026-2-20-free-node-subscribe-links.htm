@@ -279,6 +279,21 @@ A4：在应用内进入“帮助与反馈”，选择在线客服或提交问题
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Matsuri 的多节点测速机制是怎样的？</h5></div>
+    <div class="panel-body">
+        Matsuri 使用并发测速机制，可同时对多个节点进行延迟与带宽测试。测试结果会自动排序，并可根据延迟或速度自动切换最优节点，提升连接体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 的策略组如何提升分流效率？</h5></div>
+    <div class="panel-body">
+        策略组可以将多个节点或规则组合在一起，实现按条件自动选择最佳节点。通过策略组，用户无需手动切换节点即可根据延迟、地理位置或流量类型自动分流，提高网络效率。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Netch 可以做什么？</h5></div>
+    <div class="panel-body">
+        Netch 是一款 Windows 平台的网络加速工具，支持基于 V2Ray、Socks5、Shadowsocks 等协议的代理。它可用于加速游戏、视频或网站访问，并能通过 TAP 模式实现系统级代理，广受游戏玩家喜爱。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Matsuri 节点延迟排序如何优化网络体验？</h5></div>
     <div class="panel-body">
         Matsuri 会定期测速节点延迟，并结合策略组自动选择低延迟节点。无需手动切换，确保网页、视频和游戏流量通过最优节点，提高访问速度和网络稳定性。<hr />    </div>
@@ -289,29 +304,19 @@ A4：在应用内进入“帮助与反馈”，选择在线客服或提交问题
         支持。Mellow 的配置文件中可设置 DNS 服务器地址及模式（如 DoH、DoT）。用户可使用安全 DNS，如 Cloudflare 1.1.1.1 或 Google DNS，以减少污染风险。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Hysteria2 多路复用对短连接性能有何提升？</h5></div>
-    <div class="panel-body">
-        多路复用允许多个短连接共享同一通道，减少握手延迟和资源消耗。适合高频短连接场景，如游戏和即时通讯，可提高吞吐量和连接稳定性，优化整体网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 的混淆插件如何增强隐蔽性？</h5></div>
     <div class="panel-body">
         混淆插件可模拟正常协议特征，如 HTTP 或 TLS 流量，使 SSR 流量难以被检测。合理选择混淆方式和协议，可提升在高封锁环境下的长期稳定性和安全性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Matsuri 的多节点测速机制是怎样的？</h5></div>
+    <div class="panel-heading"><h5>Hysteria2 多路复用对短连接性能有何提升？</h5></div>
     <div class="panel-body">
-        Matsuri 使用并发测速机制，可同时对多个节点进行延迟与带宽测试。测试结果会自动排序，并可根据延迟或速度自动切换最优节点，提升连接体验。<hr />    </div>
+        多路复用允许多个短连接共享同一通道，减少握手延迟和资源消耗。适合高频短连接场景，如游戏和即时通讯，可提高吞吐量和连接稳定性，优化整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 是否支持多订阅源？</h5></div>
+    <div class="panel-heading"><h5>WinXray 支持测速功能吗？</h5></div>
     <div class="panel-body">
-        支持。用户可导入多个订阅 URL，每个订阅源独立管理。通过切换订阅源或合并策略组，可灵活管理节点，实现不同地区或用途的线路分配。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 的策略组如何提升分流效率？</h5></div>
-    <div class="panel-body">
-        策略组可以将多个节点或规则组合在一起，实现按条件自动选择最佳节点。通过策略组，用户无需手动切换节点即可根据延迟、地理位置或流量类型自动分流，提高网络效率。<hr />    </div>
+        支持。WinXray 提供节点延迟测速功能，可检测每个节点的响应时间与可用性。测速结果能帮助用户选择最快线路，也能排除无效或不稳定的节点，提高整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>VLESS + Reality 模式与 TLS 模式有何不同？</h5></div>
@@ -319,14 +324,9 @@ A4：在应用内进入“帮助与反馈”，选择在线客服或提交问题
         Reality 模式通过伪造握手和真实网站特征提升隐蔽性，TLS 模式侧重加密和传输效率。Reality 更难被 DPI 检测，适合高封锁环境，TLS 模式在稳定性和速度上更优。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 可以做什么？</h5></div>
+    <div class="panel-heading"><h5>WinXray 是否支持多订阅源？</h5></div>
     <div class="panel-body">
-        Netch 是一款 Windows 平台的网络加速工具，支持基于 V2Ray、Socks5、Shadowsocks 等协议的代理。它可用于加速游戏、视频或网站访问，并能通过 TAP 模式实现系统级代理，广受游戏玩家喜爱。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 支持测速功能吗？</h5></div>
-    <div class="panel-body">
-        支持。WinXray 提供节点延迟测速功能，可检测每个节点的响应时间与可用性。测速结果能帮助用户选择最快线路，也能排除无效或不稳定的节点，提高整体网络体验。    </div>
+        支持。用户可导入多个订阅 URL，每个订阅源独立管理。通过切换订阅源或合并策略组，可灵活管理节点，实现不同地区或用途的线路分配。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -355,16 +355,16 @@ A4：在应用内进入“帮助与反馈”，选择在线客服或提交问题
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-1-30-free-high-speed-nodes.htm" title="1月30日最新Free Clash Meta订阅 | 19.2M/S|2025年Singbox节点/Trojan节点/Clash节点/Shadowrocket节点/SSR节点/V2ray节点免费节点地址链接分享">1月30日最新Free Clash Meta订阅 | 19.2M/S|2025年Singbox节点/Trojan节点/Clash节点/Shadowrocket节点/SSR节点/V2ray节点免费节点地址链接分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-2-2-free-subscribe-node.htm" title="2月2日最新Free Clash Meta订阅 | 19.6M/S|2025年V2ray节点/Clash节点/Singbox节点/Shadowrocket节点/Trojan节点/SSR节点免费节点地址链接分享">2月2日最新Free Clash Meta订阅 | 19.6M/S|2025年V2ray节点/Clash节点/Singbox节点/Shadowrocket节点/Trojan节点/SSR节点免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-17-node-share-links.htm" title="2月17日最新Free Clash Meta订阅 | 18M/S|2025年Trojan节点/Shadowrocket节点/V2ray节点/SSR节点/Clash节点/Singbox节点免费节点地址链接分享">2月17日最新Free Clash Meta订阅 | 18M/S|2025年Trojan节点/Shadowrocket节点/V2ray节点/SSR节点/Clash节点/Singbox节点免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-1-29-free-node-subscribe-links.htm" title="1月29日最新Free Clash Meta订阅 | 19.8M/S|2025年Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/Trojan节点/SSR节点免费节点地址链接分享">1月29日最新Free Clash Meta订阅 | 19.8M/S|2025年Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/Trojan节点/SSR节点免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-5-clash-meta-windows.htm" title="2月5日最新Free Clash Meta订阅 | 18.1M/S|2025年SSR节点/V2ray节点/Shadowrocket节点/Clash节点/Singbox节点/Trojan节点免费节点地址链接分享">2月5日最新Free Clash Meta订阅 | 18.1M/S|2025年SSR节点/V2ray节点/Shadowrocket节点/Clash节点/Singbox节点/Trojan节点免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-25-today-clash-meta-node.htm" title="2月25日最新Free Clash Meta订阅 | 20.3M/S|2025年Trojan节点/Clash节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点免费节点地址链接分享">2月25日最新Free Clash Meta订阅 | 20.3M/S|2025年Trojan节点/Clash节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点免费节点地址链接分享</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-2-14-clash-meta-node-github.htm" title="2月14日最新Free Clash Meta订阅 | 22.8M/S|2025年V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Clash节点/Trojan节点免费节点地址链接分享">2月14日最新Free Clash Meta订阅 | 22.8M/S|2025年V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Clash节点/Trojan节点免费节点地址链接分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-1-15-latest-clash-meta-node.htm" title="1月15日最新Free Clash Meta订阅 | 18M/S|2025年SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点免费节点地址链接分享">1月15日最新Free Clash Meta订阅 | 18M/S|2025年SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点免费节点地址链接分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-2-18-latest-clash-meta-node.htm" title="2月18日最新Free Clash Meta订阅 | 19M/S|2025年Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点/Trojan节点免费节点地址链接分享">2月18日最新Free Clash Meta订阅 | 19M/S|2025年Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点/Trojan节点免费节点地址链接分享</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-1-28-clash-meta-node.htm" title="1月28日最新Free Clash Meta订阅 | 22.7M/S|2025年Trojan节点/Clash节点/Shadowrocket节点/SSR节点/V2ray节点/Singbox节点免费节点地址链接分享">1月28日最新Free Clash Meta订阅 | 22.7M/S|2025年Trojan节点/Clash节点/Shadowrocket节点/SSR节点/V2ray节点/Singbox节点免费节点地址链接分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-2-16-free-node-subscribe.htm" title="2月16日最新Free Clash Meta订阅 | 19.4M/S|2025年SSR节点/Clash节点/V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点免费节点地址链接分享">2月16日最新Free Clash Meta订阅 | 19.4M/S|2025年SSR节点/Clash节点/V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点免费节点地址链接分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-2-6-node-share.htm" title="2月6日最新Free Clash Meta订阅 | 21.8M/S|2025年Shadowrocket节点/V2ray节点/Clash节点/Trojan节点/Singbox节点/SSR节点免费节点地址链接分享">2月6日最新Free Clash Meta订阅 | 21.8M/S|2025年Shadowrocket节点/V2ray节点/Clash节点/Trojan节点/Singbox节点/SSR节点免费节点地址链接分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-2-10-free-node-subscribe.htm" title="2月10日最新Free Clash Meta订阅 | 20.8M/S|2025年Shadowrocket节点/Trojan节点/SSR节点/Clash节点/V2ray节点/Singbox节点免费节点地址链接分享">2月10日最新Free Clash Meta订阅 | 20.8M/S|2025年Shadowrocket节点/Trojan节点/SSR节点/Clash节点/V2ray节点/Singbox节点免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-1-16-clash-meta-node-share.htm" title="1月16日最新Free Clash Meta订阅 | 20.7M/S|2025年Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点免费节点地址链接分享">1月16日最新Free Clash Meta订阅 | 20.7M/S|2025年Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点免费节点地址链接分享</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-2-3-free-high-speed-nodes.htm" title="2月3日最新Free Clash Meta订阅 | 19.3M/S|2025年Singbox节点/SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Trojan节点免费节点地址链接分享">2月3日最新Free Clash Meta订阅 | 19.3M/S|2025年Singbox节点/SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Trojan节点免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-12-today-clash-meta-node.htm" title="2月12日最新Free Clash Meta订阅 | 21.1M/S|2025年SSR节点/V2ray节点/Trojan节点/Clash节点/Singbox节点/Shadowrocket节点免费节点地址链接分享">2月12日最新Free Clash Meta订阅 | 21.1M/S|2025年SSR节点/V2ray节点/Trojan节点/Clash节点/Singbox节点/Shadowrocket节点免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-2-24-free-node-subscribe.htm" title="2月24日最新Free Clash Meta订阅 | 20M/S|2025年Trojan节点/SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点免费节点地址链接分享">2月24日最新Free Clash Meta订阅 | 20M/S|2025年Trojan节点/SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点免费节点地址链接分享</a></li>
                     </ul>
     </div>
 </div>
@@ -376,7 +376,7 @@ A4：在应用内进入“帮助与反馈”，选择在线客服或提交问题
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">20</span> <a href="/date/2026-02/" title="2026-02 归档">2026-02</a></h4>
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2026-02/" title="2026-02 归档">2026-02</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">18</span> <a href="/date/2026-01/" title="2026-01 归档">2026-01</a></h4>
