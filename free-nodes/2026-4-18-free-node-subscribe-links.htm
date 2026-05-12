@@ -254,6 +254,36 @@ sudo ufw allow 你的V2Ray端口/tcp
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>如何在 macOS 上运行 ClashX？</h5></div>
+    <div class="panel-body">
+        ClashX 是 macOS 平台专用客户端，用户可在 GitHub 下载 DMG 安装包。安装后导入订阅即可使用，支持系统代理集成、自动更新和延迟测试。界面简洁直观，深受苹果用户欢迎。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 订阅被墙或无法下载如何绕过？</h5></div>
+    <div class="panel-body">
+        若订阅源被直接屏蔽，可尝试先在境外服务器上用代理代理获取订阅并通过中转服务器公开一个新的链接；或者使用 HTTPS 与 CDN 中转、或将订阅以文件形式托管在不易被封的云存储上。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 如何通过命令行管理配置？</h5></div>
+    <div class="panel-body">
+        Clash 内置命令行接口，可用于启动、停止、切换配置或查看日志。通过命令行运行 `clash -f config.yaml` 可加载指定配置文件，适合服务器或无人值守场景。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VLESS + XTLS 模式能减少握手延迟吗？</h5></div>
+    <div class="panel-body">
+        XTLS 通过减少握手次数和加密开销，降低延迟，特别适合短连接或高并发场景。结合策略组，可保证连接稳定性和访问速度，适用于移动网络和游戏环境。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VMess 连接延迟过高该如何优化？</h5></div>
+    <div class="panel-body">
+        可尝试切换传输协议（如 WS、gRPC）、调整 MTU 或启用 MUX 多路复用功能。同时检查服务器地理位置、带宽和延迟，并选择最优节点以降低延迟。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 的混淆插件如何增强隐蔽性？</h5></div>
+    <div class="panel-body">
+        混淆插件可模拟正常协议特征，如 HTTP 或 TLS 流量，使 SSR 流量难以被检测。合理选择混淆方式和协议，可提升在高封锁环境下的长期稳定性和安全性。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Mellow TUN 模式对游戏流量有何作用？</h5></div>
     <div class="panel-body">
         TUN 模式拦截系统 IP 层流量，实现全局代理。游戏流量通过低延迟节点传输，减少丢包和延迟，提高游戏体验的流畅性和网络稳定性。<hr />    </div>
@@ -264,44 +294,14 @@ sudo ufw allow 你的V2Ray端口/tcp
         Rule Provider 是 Clash 的规则订阅机制，它可以通过远程 URL 自动更新分流规则文件。这样用户无需手动修改本地配置，就能保持规则同步更新，例如广告过滤或流媒体分流。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 如何通过命令行管理配置？</h5></div>
-    <div class="panel-body">
-        Clash 内置命令行接口，可用于启动、停止、切换配置或查看日志。通过命令行运行 `clash -f config.yaml` 可加载指定配置文件，适合服务器或无人值守场景。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Potatso Lite 节点手动切换有什么优势？</h5></div>
-    <div class="panel-body">
-        手动切换节点可以让用户根据网络延迟和用途选择最合适的节点，适合在节点不稳定或特殊访问需求下使用。虽然不自动，但可以灵活调整，提高访问效率。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>何为 multiplex (mux)，启用后会有哪些利弊？</h5></div>
     <div class="panel-body">
         mux 是多路复用技术，可在单一连接上传输多路流量，从而减少握手次数与连接开销。优点是提升短连接并发效率，缺点是在丢包或单连接异常时可能影响多条会话并增加调试复杂度。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 订阅被墙或无法下载如何绕过？</h5></div>
+    <div class="panel-heading"><h5>Potatso Lite 节点手动切换有什么优势？</h5></div>
     <div class="panel-body">
-        若订阅源被直接屏蔽，可尝试先在境外服务器上用代理代理获取订阅并通过中转服务器公开一个新的链接；或者使用 HTTPS 与 CDN 中转、或将订阅以文件形式托管在不易被封的云存储上。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + XTLS 模式能减少握手延迟吗？</h5></div>
-    <div class="panel-body">
-        XTLS 通过减少握手次数和加密开销，降低延迟，特别适合短连接或高并发场景。结合策略组，可保证连接稳定性和访问速度，适用于移动网络和游戏环境。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何在 macOS 上运行 ClashX？</h5></div>
-    <div class="panel-body">
-        ClashX 是 macOS 平台专用客户端，用户可在 GitHub 下载 DMG 安装包。安装后导入订阅即可使用，支持系统代理集成、自动更新和延迟测试。界面简洁直观，深受苹果用户欢迎。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 的混淆插件如何增强隐蔽性？</h5></div>
-    <div class="panel-body">
-        混淆插件可模拟正常协议特征，如 HTTP 或 TLS 流量，使 SSR 流量难以被检测。合理选择混淆方式和协议，可提升在高封锁环境下的长期稳定性和安全性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess 连接延迟过高该如何优化？</h5></div>
-    <div class="panel-body">
-        可尝试切换传输协议（如 WS、gRPC）、调整 MTU 或启用 MUX 多路复用功能。同时检查服务器地理位置、带宽和延迟，并选择最优节点以降低延迟。    </div>
+        手动切换节点可以让用户根据网络延迟和用途选择最合适的节点，适合在节点不稳定或特殊访问需求下使用。虽然不自动，但可以灵活调整，提高访问效率。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -330,16 +330,16 @@ sudo ufw allow 你的V2Ray端口/tcp
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-3-12-free-node-subscribe.htm" title="3月12日最新Free Clash Meta订阅 | 21.4M/S|2025年Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点/SSR节点免费节点地址链接分享">3月12日最新Free Clash Meta订阅 | 21.4M/S|2025年Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点/SSR节点免费节点地址链接分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-30-free-clash-meta-node.htm" title="3月30日最新Free Clash Meta订阅 | 18M/S|2025年Shadowrocket节点/Clash节点/Singbox节点/V2ray节点/Trojan节点/SSR节点免费节点地址链接分享">3月30日最新Free Clash Meta订阅 | 18M/S|2025年Shadowrocket节点/Clash节点/Singbox节点/V2ray节点/Trojan节点/SSR节点免费节点地址链接分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-12-free-high-speed-nodes.htm" title="4月12日最新Free Clash Meta订阅 | 21.6M/S|2025年Trojan节点/V2ray节点/Singbox节点/SSR节点/Clash节点/Shadowrocket节点免费节点地址链接分享">4月12日最新Free Clash Meta订阅 | 21.6M/S|2025年Trojan节点/V2ray节点/Singbox节点/SSR节点/Clash节点/Shadowrocket节点免费节点地址链接分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-21-free-clash-meta-node.htm" title="4月21日最新Free Clash Meta订阅 | 18.7M/S|2025年Clash节点/V2ray节点/Shadowrocket节点/Trojan节点/SSR节点/Singbox节点免费节点地址链接分享">4月21日最新Free Clash Meta订阅 | 18.7M/S|2025年Clash节点/V2ray节点/Shadowrocket节点/Trojan节点/SSR节点/Singbox节点免费节点地址链接分享</a></li>
                         <li class="py-2"><a href="/free-nodes/2026-4-20-clash-meta-github.htm" title="4月20日最新Free Clash Meta订阅 | 19.2M/S|2025年Trojan节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点/Singbox节点免费节点地址链接分享">4月20日最新Free Clash Meta订阅 | 19.2M/S|2025年Trojan节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点/Singbox节点免费节点地址链接分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-17-free-clash-meta-node.htm" title="4月17日最新Free Clash Meta订阅 | 19.4M/S|2025年Clash节点/V2ray节点/Trojan节点/Singbox节点/SSR节点/Shadowrocket节点免费节点地址链接分享">4月17日最新Free Clash Meta订阅 | 19.4M/S|2025年Clash节点/V2ray节点/Trojan节点/Singbox节点/SSR节点/Shadowrocket节点免费节点地址链接分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-15-node-share.htm" title="3月15日最新Free Clash Meta订阅 | 18.6M/S|2025年Singbox节点/V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Trojan节点免费节点地址链接分享">3月15日最新Free Clash Meta订阅 | 18.6M/S|2025年Singbox节点/V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Trojan节点免费节点地址链接分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-16-clash-meta-node-github.htm" title="3月16日最新Free Clash Meta订阅 | 21.7M/S|2025年Shadowrocket节点/Singbox节点/SSR节点/Clash节点/Trojan节点/V2ray节点免费节点地址链接分享">3月16日最新Free Clash Meta订阅 | 21.7M/S|2025年Shadowrocket节点/Singbox节点/SSR节点/Clash节点/Trojan节点/V2ray节点免费节点地址链接分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-4-10-clash-meta-github.htm" title="4月10日最新Free Clash Meta订阅 | 22.9M/S|2025年V2ray节点/SSR节点/Clash节点/Singbox节点/Shadowrocket节点/Trojan节点免费节点地址链接分享">4月10日最新Free Clash Meta订阅 | 22.9M/S|2025年V2ray节点/SSR节点/Clash节点/Singbox节点/Shadowrocket节点/Trojan节点免费节点地址链接分享</a></li>
-                        <li class="py-2"><a href="/free-nodes/2026-3-14-today-clash-meta-node.htm" title="3月14日最新Free Clash Meta订阅 | 21.5M/S|2025年Clash节点/Shadowrocket节点/Trojan节点/Singbox节点/V2ray节点/SSR节点免费节点地址链接分享">3月14日最新Free Clash Meta订阅 | 21.5M/S|2025年Clash节点/Shadowrocket节点/Trojan节点/Singbox节点/V2ray节点/SSR节点免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-27-node-share.htm" title="4月27日最新Free Clash Meta订阅 | 20.5M/S|2025年Trojan节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点/SSR节点免费节点地址链接分享">4月27日最新Free Clash Meta订阅 | 20.5M/S|2025年Trojan节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点/SSR节点免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-12-free-high-speed-nodes.htm" title="4月12日最新Free Clash Meta订阅 | 21.6M/S|2025年Trojan节点/V2ray节点/Singbox节点/SSR节点/Clash节点/Shadowrocket节点免费节点地址链接分享">4月12日最新Free Clash Meta订阅 | 21.6M/S|2025年Trojan节点/V2ray节点/Singbox节点/SSR节点/Clash节点/Shadowrocket节点免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-7-latest-clash-meta-node.htm" title="5月7日最新Free Clash Meta订阅 | 18.1M/S|2025年Singbox节点/Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点免费节点地址链接分享">5月7日最新Free Clash Meta订阅 | 18.1M/S|2025年Singbox节点/Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-3-free-node-subscribe-links.htm" title="5月3日最新Free Clash Meta订阅 | 21.9M/S|2025年Trojan节点/SSR节点/Singbox节点/Clash节点/V2ray节点/Shadowrocket节点免费节点地址链接分享">5月3日最新Free Clash Meta订阅 | 21.9M/S|2025年Trojan节点/SSR节点/Singbox节点/Clash节点/V2ray节点/Shadowrocket节点免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-22-free-clash-meta-node.htm" title="4月22日最新Free Clash Meta订阅 | 21.9M/S|2025年SSR节点/Singbox节点/Clash节点/V2ray节点/Trojan节点/Shadowrocket节点免费节点地址链接分享">4月22日最新Free Clash Meta订阅 | 21.9M/S|2025年SSR节点/Singbox节点/Clash节点/V2ray节点/Trojan节点/Shadowrocket节点免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-2-today-clash-meta-node.htm" title="5月2日最新Free Clash Meta订阅 | 20.2M/S|2025年Clash节点/Singbox节点/V2ray节点/Trojan节点/SSR节点/Shadowrocket节点免费节点地址链接分享">5月2日最新Free Clash Meta订阅 | 20.2M/S|2025年Clash节点/Singbox节点/V2ray节点/Trojan节点/SSR节点/Shadowrocket节点免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-19-node-share.htm" title="4月19日最新Free Clash Meta订阅 | 20.1M/S|2025年Singbox节点/Trojan节点/Shadowrocket节点/Clash节点/SSR节点/V2ray节点免费节点地址链接分享">4月19日最新Free Clash Meta订阅 | 20.1M/S|2025年Singbox节点/Trojan节点/Shadowrocket节点/Clash节点/SSR节点/V2ray节点免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-4-29-clash-meta-github.htm" title="4月29日最新Free Clash Meta订阅 | 19.3M/S|2025年Singbox节点/Clash节点/Trojan节点/SSR节点/V2ray节点/Shadowrocket节点免费节点地址链接分享">4月29日最新Free Clash Meta订阅 | 19.3M/S|2025年Singbox节点/Clash节点/Trojan节点/SSR节点/V2ray节点/Shadowrocket节点免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/free-nodes/2026-5-10-free-high-speed-nodes.htm" title="5月10日最新Free Clash Meta订阅 | 21.9M/S|2025年Shadowrocket节点/Clash节点/SSR节点/Trojan节点/Singbox节点/V2ray节点免费节点地址链接分享">5月10日最新Free Clash Meta订阅 | 21.9M/S|2025年Shadowrocket节点/Clash节点/SSR节点/Trojan节点/Singbox节点/V2ray节点免费节点地址链接分享</a></li>
                     </ul>
     </div>
 </div>
@@ -351,10 +351,10 @@ sudo ufw allow 你的V2Ray端口/tcp
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">14</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
+                <h4><span class="badge" style="float: right;">11</span> <a href="/date/2026-05/" title="2026-05 归档">2026-05</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-03/" title="2026-03 归档">2026-03</a></h4>
+                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2026-04/" title="2026-04 归档">2026-04</a></h4>
             </li>
                     </ul>
     </div>
