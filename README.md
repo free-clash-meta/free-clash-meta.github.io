@@ -1,4 +1,4 @@
-# 11月13日最新Free Clash Meta订阅 | 21.8M/S|2026年Singbox节点/SSR节点/Clash节点/V2ray节点/Shadowrocket节点免费节点地址链接分享  更新时间 2026-11-13 11:12:41
+# 11月20日最新Free Clash Meta订阅 | 18M/S|2026年SSR节点/Shadowrocket节点/V2ray节点/Clash节点/Singbox节点免费节点地址链接分享  更新时间 2026-11-20 09:25:04
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://free-clash-meta.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://free-clash-meta.github.io/uploads/2026/11/0-20261113.yaml
-- https://free-clash-meta.github.io/uploads/2026/11/1-20261113.yaml
-- https://free-clash-meta.github.io/uploads/2026/11/2-20261113.yaml
-- https://free-clash-meta.github.io/uploads/2026/11/3-20261113.yaml
-- https://free-clash-meta.github.io/uploads/2026/11/4-20261113.yaml
+- https://free-clash-meta.github.io/uploads/2026/11/0-20261120.yaml
+- https://free-clash-meta.github.io/uploads/2026/11/1-20261120.yaml
+- https://free-clash-meta.github.io/uploads/2026/11/2-20261120.yaml
+- https://free-clash-meta.github.io/uploads/2026/11/3-20261120.yaml
+- https://free-clash-meta.github.io/uploads/2026/11/4-20261120.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://free-clash-meta.github.io/uploads/2026/11/0-20261113.txt
-- https://free-clash-meta.github.io/uploads/2026/11/1-20261113.txt
-- https://free-clash-meta.github.io/uploads/2026/11/2-20261113.txt
-- https://free-clash-meta.github.io/uploads/2026/11/3-20261113.txt
-- https://free-clash-meta.github.io/uploads/2026/11/4-20261113.txt
+- https://free-clash-meta.github.io/uploads/2026/11/0-20261120.txt
+- https://free-clash-meta.github.io/uploads/2026/11/1-20261120.txt
+- https://free-clash-meta.github.io/uploads/2026/11/2-20261120.txt
+- https://free-clash-meta.github.io/uploads/2026/11/3-20261120.txt
+- https://free-clash-meta.github.io/uploads/2026/11/4-20261120.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://free-clash-meta.github.io/uploads/2026/11/20261113.json
+- https://free-clash-meta.github.io/uploads/2026/11/20261120.json
 
 ## 更多Clash节点订阅 ：
 
